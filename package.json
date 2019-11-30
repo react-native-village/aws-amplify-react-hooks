@@ -23,6 +23,10 @@
   },
   "author": "@playra",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com:react-native-village/aws-amplify-react-hooks.git"
+  },
   "devDependencies": {
     "eslint": "^6.7.2",
     "eslint-config-standard": "^14.1.0",
