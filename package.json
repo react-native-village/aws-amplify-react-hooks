@@ -1,0 +1,40 @@
+{
+  "name": "aws-amplify-react-hooks",
+  "version": "1.0.0",
+  "description": "React hooks for AWS Amplify",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "aws-amplify",
+    "react-hooks",
+    "react-native-hooks"
+  ],
+  "prettier": {
+    "singleQuote": true,
+    "printWidth": 120,
+    "tabWidth": 2,
+    "trailingComma": "none",
+    "bracketSpacing": true,
+    "semi": false,
+    "useTabs": false,
+    "jsxBracketSameLine": false
+  },
+  "author": "@playra",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^6.7.2",
+    "eslint-config-standard": "^14.1.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-node": "^10.0.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-react": "^7.17.0",
+    "eslint-plugin-standard": "^4.0.1"
+  },
+  "dependencies": {
+    "eslint-config-prettier": "^6.7.0",
+    "eslint-plugin-prettier": "^3.1.1",
+    "prettier": "^1.19.1"
+  }
+}
