@@ -6,9 +6,6 @@ import type { ActionT, StateT } from './types'
 
 export const getNames = (constObj: {}): Array<string> => Object.keys(constObj)
 
-const hello = 'world'
-console.log('hello', hello)
-
 // create initial state
 export const initialState = {
   data: [],
