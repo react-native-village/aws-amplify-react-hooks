@@ -4,6 +4,7 @@
   "description": "React hooks for AWS Amplify",
   "main": "index.js",
   "scripts": {
+    "start": "nodemon --exec babel-node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -27,18 +28,34 @@
     "type": "git",
     "url": "git://github.com:react-native-village/aws-amplify-react-hooks.git"
   },
+  "dependencies": {
+    "@aws-amplify/api": "^1.2.4",
+    "@aws-amplify/pubsub": "^1.2.4",
+    "@types/react": "^16.9.13",
+    "@types/react-dom": "^16.9.4",
+    "aws-amplify": "^1.2.4",
+    "eslint-config-prettier": "^6.7.0",
+    "eslint-plugin-prettier": "^3.1.1",
+    "lodash": "^4.17.15",
+    "prettier": "^1.19.1",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
+  },
   "devDependencies": {
+    "@babel/cli": "^7.7.4",
+    "@babel/core": "^7.7.4",
+    "@babel/node": "^7.7.4",
+    "@babel/preset-env": "^7.7.4",
+    "@babel/preset-flow": "^7.7.4",
+    "@babel/preset-react": "^7.7.4",
+    "babel-eslint": "^10.0.3",
     "eslint": "^6.7.2",
     "eslint-config-standard": "^14.1.0",
+    "eslint-plugin-flowtype": "^4.5.2",
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-node": "^10.0.0",
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-react": "^7.17.0",
     "eslint-plugin-standard": "^4.0.1"
-  },
-  "dependencies": {
-    "eslint-config-prettier": "^6.7.0",
-    "eslint-plugin-prettier": "^3.1.1",
-    "prettier": "^1.19.1"
   }
 }
