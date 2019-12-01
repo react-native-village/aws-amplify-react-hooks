@@ -1,0 +1,19 @@
+{
+    "dev": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-reactnativecrud-dev-154052-authRole",
+            "UnauthRoleArn": "arn:aws:iam::123118798050:role/amplify-reactnativecrud-dev-154052-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::123118798050:role/amplify-reactnativecrud-dev-154052-authRole",
+            "Region": "eu-west-1",
+            "DeploymentBucketName": "amplify-reactnativecrud-dev-154052-deployment",
+            "UnauthRoleName": "amplify-reactnativecrud-dev-154052-unauthRole",
+            "StackName": "amplify-reactnativecrud-dev-154052",
+            "StackId": "arn:aws:cloudformation:eu-west-1:123118798050:stack/amplify-reactnativecrud-dev-154052/d022f490-1437-11ea-9432-0a9bdcf5c20a"
+        },
+        "categories": {
+            "auth": {
+                "reactnativecrud735fcff5": {}
+            }
+        }
+    }
+}

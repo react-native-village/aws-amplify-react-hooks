@@ -1,0 +1,9 @@
+{
+	"auth": {
+		"reactnativecrud735fcff5": {
+			"service": "Cognito",
+			"providerPlugin": "awscloudformation",
+			"dependsOn": []
+		}
+	}
+}
