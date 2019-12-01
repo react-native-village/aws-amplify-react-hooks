@@ -6,7 +6,7 @@ import { Auth, API, graphqlOperation } from 'aws-amplify'
 import * as Keychain from 'react-native-keychain'
 import AppNavigator from './AppNavigator'
 import awsconfig from '../aws-exports'
-import { AmplifyProvider } from './screens/Jobs/crud'
+import { AmplifyProvider } from '../crud'
 
 const MEMORY_KEY_PREFIX = '@MyStorage:'
 let dataMemory = {}
