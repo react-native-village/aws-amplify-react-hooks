@@ -1,11 +1,9 @@
-// @flow
 import React, { useRef, useReducer, useEffect, useState } from 'react'
 import t from 'tcomb-form-native'
 import { AppContainer, Card, Button, Space, TextLink } from '../../components'
 import { structJob, options } from '../Authenticator/Form'
 import { goBack, PINK } from '../../constants'
 import { createJob, updateJob, deleteJob } from '../../graphql/mutations'
-//import { useMutation } from '../../../crud'
 import { useMutation } from 'aws-amplify-react-hooks'
 import { initialState, reducer } from './helper'
 
@@ -22,7 +20,8 @@ const JobAdd = ({ navigation }) => {
     const obj = navigation.state.params
     typeof obj !== 'undefined' && setOwner(true)
     dispatch({ type: 'CREATE', obj })
-  }, [])
+    // FIXME
+  }, []) //eslint-disable-line
 
   const onChange = item => dispatch({ type: 'SET_INPUT', item })
 
