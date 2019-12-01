@@ -1,19 +1,25 @@
+// @flow
+import type { Node } from 'react'
 import React, { createContext, useEffect, useContext, useReducer } from 'react'
 import _ from 'lodash'
+import type { ActionT, StateT, ClientT } from './types'
 
-const AmplifyContext = createContext(null)
+const AmplifyContext = createContext<null>(null)
 
-export const getNames = constObj => Object.keys(constObj)
+export const getNames = (constObj: {}): Array<string> => Object.keys(constObj)
 
-export const AmplifyProvider = ({ client, children }) => {
+// $FlowFixMe
+export const AmplifyProvider = ({ client, children }): ClientT => {
   return <AmplifyContext.Provider value={client}>{children}</AmplifyContext.Provider>
 }
 
-export const useMutation = input => {
-  const [state, dispatch] = useReducer(reducer, initialState)
+export const useMutation = (input: { id: string }) => {
+  // $FlowFixMe
+  const [state, dispatch] = useReducer<StateT, ActionT>(reducer, initialState)
 
+  // $FlowFixMe
   const { API, graphqlOperation } = useContext(AmplifyContext)
-  const create = async mutate => {
+  const create = async (mutate: string) => {
     dispatch({ type: 'LOADING' })
     try {
       await API.graphql(graphqlOperation(mutate, { input }))
@@ -23,7 +29,7 @@ export const useMutation = input => {
     }
   }
 
-  const update = async mutate => {
+  const update = async (mutate: string) => {
     dispatch({ type: 'LOADING' })
     try {
       await API.graphql(graphqlOperation(mutate, { input }))
@@ -32,7 +38,7 @@ export const useMutation = input => {
     }
   }
 
-  const del = async mutate => {
+  const del = async (mutate: string) => {
     dispatch({ type: 'LOADING' })
     try {
       const { id } = input
@@ -56,7 +62,7 @@ const initialState = {
 }
 
 // create reducer to update state
-const reducer = (state, action) => {
+const reducer = (state: StateT, action: ActionT) => {
   switch (action.type) {
     case 'CREATE':
       return { ...state, data: [action.items, ...state.data], loading: false, status: 'COMPLETE' }
@@ -75,6 +81,7 @@ const reducer = (state, action) => {
     case 'DELETE':
       return {
         ...state,
+        // $FlowFixMe
         data: [...state.data].filter(({ id }) => id !== action.obj.id),
         status: 'COMPLETE'
       }

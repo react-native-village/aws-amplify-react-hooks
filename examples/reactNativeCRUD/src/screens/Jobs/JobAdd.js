@@ -5,7 +5,8 @@ import { AppContainer, Card, Button, Space, TextLink } from '../../components'
 import { structJob, options } from '../Authenticator/Form'
 import { goBack, PINK } from '../../constants'
 import { createJob, updateJob, deleteJob } from '../../graphql/mutations'
-import { useMutation } from '../../../crud'
+//import { useMutation } from '../../../crud'
+import { useMutation } from 'aws-amplify-react-hooks'
 import { initialState, reducer } from './helper'
 
 const Form = t.form.Form // eslint-disable-line

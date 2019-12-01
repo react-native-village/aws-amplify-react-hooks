@@ -6,7 +6,9 @@ import { Auth, API, graphqlOperation } from 'aws-amplify'
 import * as Keychain from 'react-native-keychain'
 import AppNavigator from './AppNavigator'
 import awsconfig from '../aws-exports'
-import { AmplifyProvider } from '../crud'
+//import { AmplifyProvider } from '../crud'
+import { AmplifyProvider } from 'aws-amplify-react-hooks'
+//import { useQuery, getNames } from 'aws-amplify-react-hooks'
 
 const MEMORY_KEY_PREFIX = '@MyStorage:'
 let dataMemory = {}
@@ -51,13 +53,15 @@ Amplify.configure({
   storage: MyStorage
 })
 
-const App = () => (
-  <>
-    <AmplifyProvider client={client}>
-      <StatusBar barStyle="dark-content" />
-      <AppNavigator />
-    </AmplifyProvider>
-  </>
-)
+const App = () => {
+  return (
+    <>
+      <AmplifyProvider client={client}>
+        <StatusBar barStyle="dark-content" />
+        <AppNavigator />
+      </AmplifyProvider>
+    </>
+  )
+}
 
 export default App

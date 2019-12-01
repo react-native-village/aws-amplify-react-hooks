@@ -6,12 +6,12 @@ import { listJobs } from '../../graphql/queries'
 import { AppContainer, CardJob } from '../../components'
 import { onScreen, BG } from '../../constants'
 //import { useQuery, getNames } from 'aws-amplify-react-hooks'
-import { useQuery, getNames } from '../../../crud'
+//import { useQuery, getNames } from '../../../crud'
+import { useQuery, getNames } from 'aws-amplify-react-hooks'
 import { onCreateJob, onUpdateJob, onDeleteJob } from '../../graphql/subscriptions'
 
 const JobsMain = ({ navigation }) => {
   const owner = Auth.user.attributes.sub
-
   const { data, loading, error, fetchMore } = useQuery(
     {
       listJobs,
