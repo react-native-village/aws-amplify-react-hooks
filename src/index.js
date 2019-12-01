@@ -1,19 +1,114 @@
+// @flow
+import type { Node } from 'react'
 import React, { createContext, useEffect, useContext, useReducer } from 'react'
 import _ from 'lodash'
+import type { ActionT, StateT } from './types'
 
-const AmplifyContext = createContext(null)
+const AmplifyContext = createContext<null>(null)
 
-export const getNames = constObj => Object.keys(constObj)
+export const getNames = (constObj: {}): Array<string> => Object.keys(constObj)
 
-export const AmplifyProvider = ({ client, children }) => {
+type Client = {
+  client: {
+    Auth: {},
+    API: {},
+    graphqlOperation: void
+  },
+  children?: Node
+}
+
+// $FlowFixMe
+export const AmplifyProvider = ({ client, children }): Client => {
   return <AmplifyContext.Provider value={client}>{children}</AmplifyContext.Provider>
 }
 
-export const useMutation = input => {
-  const [state, dispatch] = useReducer(reducer, initialState)
+// create initial state
+export const initialState = {
+  data: [],
+  error: '',
+  loading: false,
+  status: 'PENDING',
+  nextToken: ''
+}
 
+export const useQuery = (query: {}, options: { variables: {} }, queryData: Array<string>) => {
+  // $FlowFixMe
+  const [state, dispatch] = useReducer<StateT, ActionT>(reducer, initialState)
+
+  const read = async () => {
+    dispatch({ type: 'LOADING' })
+    try {
+      const queryStr = queryData[0]
+      const res = await API.graphql(graphqlOperation(query[queryStr], options))
+      const { items, nextToken } = res.data[queryStr]
+      dispatch({ type: 'READ', data: items, nextToken })
+    } catch (err) {
+      dispatch({ type: 'ERROR', error: err.message })
+    }
+  }
+
+  // $FlowFixMe
+  const { Auth, API, graphqlOperation } = useContext(AmplifyContext)
+
+  useEffect(() => {
+    let isSubscribed = true
+    const owner = Auth.user.attributes.sub
+    const [createStr, updateStr, deleteStr] = [queryData[1], queryData[2], queryData[3]]
+    const error = ({ errors }) => dispatch({ type: 'ERROR', error: errors[0].message })
+    const subCreate = API.graphql(graphqlOperation(query[createStr], { owner })).subscribe({
+      next: e => dispatch({ type: 'SUBSCRIPTION', obj: e.value.data[createStr] }),
+      error
+    })
+    const subUpdate = API.graphql(graphqlOperation(query[updateStr], { owner })).subscribe({
+      next: e => {
+        return dispatch({ type: 'SUBSCRIPTION', obj: e.value.data[updateStr] })
+      },
+      error
+    })
+    const subDelete = API.graphql(graphqlOperation(query[deleteStr], { owner })).subscribe({
+      next: e => dispatch({ type: 'DELETE', obj: e.value.data[deleteStr] }),
+      error
+    })
+    return () => {
+      isSubscribed = false
+      subCreate.unsubscribe() && subUpdate.unsubscribe() && subDelete.unsubscribe()
+    }
+    // FIXME
+  }, []) //eslint-disable-line
+
+  const fetchMore = async () => {
+    try {
+      const { nextToken } = state
+      const variables = { ...options.variables, nextToken }
+      const queryStr = queryData[0]
+      const res = await API.graphql(graphqlOperation(query[queryStr], variables))
+      nextToken !== null &&
+        dispatch({
+          type: 'READ',
+          data: res.data[queryStr].items,
+          nextToken: res.data[queryStr].nextToken
+        })
+    } catch (err) {
+      dispatch({ type: 'ERROR', error: err.message })
+    }
+  }
+
+  useEffect(() => {
+    read()
+    // FIXME
+  }, []) //eslint-disable-line
+
+  const { data, loading, error, status } = state
+  return { data, loading, error, status, fetchMore }
+}
+
+export const useMutation = (input: { id: string }) => {
+  // $FlowFixMe
+  const [state, dispatch] = useReducer<StateT, ActionT>(reducer, initialState)
+
+  // $FlowFixMe
   const { API, graphqlOperation } = useContext(AmplifyContext)
-  const create = async mutate => {
+  const create = async (mutate: string) => {
     dispatch({ type: 'LOADING' })
     try {
       await API.graphql(graphqlOperation(mutate, { input }))
@@ -23,7 +118,7 @@ export const useMutation = input => {
     }
   }
 
-  const update = async mutate => {
+  const update = async (mutate: string) => {
     dispatch({ type: 'LOADING' })
     try {
       await API.graphql(graphqlOperation(mutate, { input }))
@@ -32,7 +127,7 @@ export const useMutation = input => {
     }
   }
 
-  const del = async mutate => {
+  const del = async (mutate: string) => {
     dispatch({ type: 'LOADING' })
     try {
       const { id } = input
@@ -46,17 +141,8 @@ export const useMutation = input => {
   return [create, update, del, { loading, error, status }]
 }
 
-// create initial state
-const initialState = {
-  data: [],
-  error: '',
-  loading: false,
-  status: 'PENDING',
-  nextToken: ''
-}
-
 // create reducer to update state
-const reducer = (state, action) => {
+export const reducer = (state: StateT, action: ActionT) => {
   switch (action.type) {
     case 'CREATE':
       return { ...state, data: [action.items, ...state.data], loading: false, status: 'COMPLETE' }
@@ -75,6 +161,7 @@ const reducer = (state, action) => {
     case 'DELETE':
       return {
         ...state,
+        // $FlowFixMe
         data: [...state.data].filter(({ id }) => id !== action.obj.id),
         status: 'COMPLETE'
       }
