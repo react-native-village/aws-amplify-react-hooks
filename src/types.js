@@ -44,4 +44,14 @@ type DeleteT = {
   }
 }
 
+export type ClientT = {
+  client: {
+    Auth: {},
+    API: {},
+    graphqlOperation: void
+  },
+  children?: Node
+}
+
+
 export type ActionT = CreateT | SubscriptionT | ReadT | ErrorT | CompleteT | LoadingT | DeleteT

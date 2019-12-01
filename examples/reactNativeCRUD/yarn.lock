@@ -1592,6 +1592,12 @@ atob@^2.1.1:
   resolved "https://registry.yarnpkg.com/atob/-/atob-2.1.2.tgz#6d9517eb9e030d2436666651e86bd9f6f13533c9"
   integrity sha512-Wm6ukoaOGJi/73p/cl2GvLjTI5JM1k/O14isD73YML8StrH/7/lRFgmg8nICZgD3bZZvjwCGxtMOD3wWNAu8cg==
 
+"aws-amplify-react-hooks@file:../../aws-amplify-react-hooks-1.0.3.tgz":
+  version "1.0.3"
+  resolved "file:../../aws-amplify-react-hooks-1.0.3.tgz#eec9204cea6473df7a7cc99d3b75fb94256ace42"
+  dependencies:
+    lodash "^4.17.15"
+
 aws-amplify-react-native@^2.2.3:
   version "2.2.3"
   resolved "https://registry.yarnpkg.com/aws-amplify-react-native/-/aws-amplify-react-native-2.2.3.tgz#0d4bb4c669bb1d64d96fc7d4dc25381f6adb23b4"
