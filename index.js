@@ -1,10 +1,26 @@
 // @flow
-import { useEffect, useReducer } from 'react'
-import { Auth, API, graphqlOperation } from 'aws-amplify'
+import type { Node } from 'react'
+import React, { createContext, useEffect, useContext, useReducer } from 'react'
 import _ from 'lodash'
 import type { ActionT, StateT } from './types'
 
+const AmplifyContext = createContext<null>(null)
+
 export const getNames = (constObj: {}): Array<string> => Object.keys(constObj)
+
+type Client = {
+  client: {
+    Auth: {},
+    API: {},
+    graphqlOperation: void
+  },
+  children?: Node
+}
+
+// $FlowFixMe
+export const AmplifyProvider = ({ client, children }): Client => {
+  return <AmplifyContext.Provider value={client}>{children}</AmplifyContext.Provider>
+}
 
 // create initial state
 export const initialState = {
@@ -31,7 +47,11 @@ export const useQuery = (query: {}, options: { variables: {} }, queryData: Array
     }
   }
 
+  // $FlowFixMe
+  const { Auth, API, graphqlOperation } = useContext(AmplifyContext)
+
   useEffect(() => {
+    let isSubscribed = true
     const owner = Auth.user.attributes.sub
     const [createStr, updateStr, deleteStr] = [queryData[1], queryData[2], queryData[3]]
     const error = ({ errors }) => dispatch({ type: 'ERROR', error: errors[0].message })
@@ -49,7 +69,10 @@ export const useQuery = (query: {}, options: { variables: {} }, queryData: Array
       next: e => dispatch({ type: 'DELETE', obj: e.value.data[deleteStr] }),
       error
     })
-    return () => subCreate.unsubscribe() && subUpdate.unsubscribe() && subDelete.unsubscribe()
+    return () => {
+      isSubscribed = false
+      subCreate.unsubscribe() && subUpdate.unsubscribe() && subDelete.unsubscribe()
+    }
     // FIXME
   }, []) //eslint-disable-line
 
@@ -83,6 +106,8 @@ export const useMutation = (input: { id: string }) => {
   // $FlowFixMe
   const [state, dispatch] = useReducer<StateT, ActionT>(reducer, initialState)
 
+  // $FlowFixMe
+  const { API, graphqlOperation } = useContext(AmplifyContext)
   const create = async (mutate: string) => {
     dispatch({ type: 'LOADING' })
     try {
