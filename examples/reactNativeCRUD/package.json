@@ -25,7 +25,7 @@
     "@aws-amplify/pubsub": "^1.2.4",
     "amazon-cognito-identity-js": "^3.2.0",
     "aws-amplify": "^1.2.4",
-    "aws-amplify-react-hooks": "file:../../",
+    "aws-amplify-react-hooks": "^1.0.5",
     "aws-amplify-react-native": "^2.2.3",
     "lodash": "^4.17.15",
     "react": "16.9.0",

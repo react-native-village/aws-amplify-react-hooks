@@ -11,11 +11,8 @@ const Form = t.form.Form // eslint-disable-line
 
 const JobAdd = ({ navigation }) => {
   const [state, dispatch] = useReducer(reducer, initialState)
-  const { input } = state
-
+  const onChange = item => dispatch({ type: 'SET_INPUT', item })
   const [check, setOwner] = useState(false)
-  const [create, update, del, { loading, error }] = useMutation(input)
-
   useEffect(() => {
     const obj = navigation.state.params
     typeof obj !== 'undefined' && setOwner(true)
@@ -23,12 +20,10 @@ const JobAdd = ({ navigation }) => {
     // FIXME
   }, []) //eslint-disable-line
 
-  const onChange = item => dispatch({ type: 'SET_INPUT', item })
-
+  const { input } = state
+  const [create, update, del, { loading, error }] = useMutation(input)
   const onCreate = () => create(createJob) && goBack(navigation)()
-
   const onUpdate = () => update(updateJob) && goBack(navigation)()
-
   const onDelete = () => del(deleteJob) && goBack(navigation)()
 
   const registerForm = useRef('')
