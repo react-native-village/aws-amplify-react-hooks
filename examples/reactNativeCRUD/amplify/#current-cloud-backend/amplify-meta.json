@@ -20,7 +20,7 @@
 				"s3TemplateURL": "https://s3.amazonaws.com/amplify-reactnativecrud-dev-154052-deployment/amplify-cfn-templates/auth/reactnativecrud735fcff5-cloudformation-template.yml",
 				"logicalId": "authreactnativecrud735fcff5"
 			},
-			"lastPushTimeStamp": "2019-12-01T12:44:48.138Z",
+			"lastPushTimeStamp": "2019-12-01T13:32:10.786Z",
 			"output": {
 				"AppClientSecret": "1bcu6i1kvefsdclviqr8ehomttjs32rhtvj6gh7nkvptg16nb1o0",
 				"UserPoolId": "eu-west-1_pNXbJuOZd",
@@ -31,6 +31,31 @@
 				"UserPoolName": "reactnativecrud735fcff5_userpool_735fcff5"
 			},
 			"lastPushDirHash": "hdOR7QQtm6PfigCIOeOfmEFLF3U="
+		}
+	},
+	"api": {
+		"reactnativecrud": {
+			"service": "AppSync",
+			"providerPlugin": "awscloudformation",
+			"output": {
+				"authConfig": {
+					"additionalAuthenticationProviders": [],
+					"defaultAuthentication": {
+						"authenticationType": "AMAZON_COGNITO_USER_POOLS",
+						"userPoolConfig": {
+							"userPoolId": "authreactnativecrud735fcff5"
+						}
+					}
+				},
+				"GraphQLAPIIdOutput": "x4zjwus5svawbk4px6sx7gmiii",
+				"GraphQLAPIEndpointOutput": "https://2rlgnaejcfhirf4siighrugy5u.appsync-api.eu-west-1.amazonaws.com/graphql"
+			},
+			"providerMetadata": {
+				"s3TemplateURL": "https://s3.amazonaws.com/amplify-reactnativecrud-dev-154052-deployment/amplify-cfn-templates/api/cloudformation-template.json",
+				"logicalId": "apireactnativecrud"
+			},
+			"lastPushTimeStamp": "2019-12-01T13:32:11.209Z",
+			"lastPushDirHash": "4EmC0HKYUo/zvtBPjuM/I9L7BSM="
 		}
 	}
 }

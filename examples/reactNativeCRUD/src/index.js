@@ -1,45 +1,63 @@
+// flow
 import React from 'react'
 import { StatusBar } from 'react-native'
 import Amplify from '@aws-amplify/core'
-import { Authenticator } from 'aws-amplify-react-native'
-import { AmplifyTheme, Localei18n } from './components'
+import { Auth, API, graphqlOperation } from 'aws-amplify'
+import * as Keychain from 'react-native-keychain'
+import AppNavigator from './AppNavigator'
 import awsconfig from '../aws-exports'
+import { AmplifyProvider } from './screens/Jobs/crud'
 
-const signUpConfig = {
-  hideAllDefaults: true,
-  signUpFields: [
-    {
-      label: 'Email',
-      key: 'email',
-      required: true,
-      displayOrder: 1,
-      type: 'string'
-    },
-    {
-      label: 'Password',
-      key: 'password',
-      required: true,
-      displayOrder: 2,
-      type: 'password'
-    }
-  ]
+const MEMORY_KEY_PREFIX = '@MyStorage:'
+let dataMemory = {}
+
+const client = {
+  Auth,
+  API,
+  graphqlOperation
+}
+
+AmplifyProvider(client)
+
+class MyStorage {
+  static syncPromise = null
+
+  static setItem(key, value) {
+    Keychain.setGenericPassword(MEMORY_KEY_PREFIX + key, value)
+    dataMemory[key] = value
+    return dataMemory[key]
+  }
+
+  static getItem(key) {
+    return Object.prototype.hasOwnProperty.call(dataMemory, key) ? dataMemory[key] : undefined
+  }
+
+  static removeItem(key) {
+    Keychain.resetGenericPassword()
+    return delete dataMemory[key]
+  }
+
+  static clear() {
+    dataMemory = {}
+    return dataMemory
+  }
 }
 
 Amplify.configure({
   ...awsconfig,
   Analytics: {
-    disabled: true
-  }
+    disabled: false
+  },
+  storage: MyStorage
 })
 
-const App = () => {
-  return (
-    <>
-      <Localei18n />
+const App = () => (
+  <>
+    <AmplifyProvider client={client}>
       <StatusBar barStyle="dark-content" />
-      <Authenticator usernameAttributes="email" signUpConfig={signUpConfig} theme={AmplifyTheme} />
-    </>
-  )
-}
+      <AppNavigator />
+    </AmplifyProvider>
+  </>
+)
 
 export default App
