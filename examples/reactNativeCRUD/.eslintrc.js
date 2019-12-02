@@ -1,8 +1,8 @@
 module.exports = {
   root: true,
   parser: 'babel-eslint',
-  extends: '@react-native-community',
-  plugins: ['react', 'react-native', 'jsx-a11y', 'import'],
+  extends: ['@react-native-community', 'airbnb', 'standard', 'prettier', 'plugin:flowtype/recommended'],
+  plugins: ['react', 'react-native', 'jsx-a11y', 'import', 'react-hooks'],
   parserOptions: {
     ecmaFeatures: {
       jsx: true
@@ -12,6 +12,8 @@ module.exports = {
     'react-native/react-native': true
   },
   rules: {
+    'react-hooks/rules-of-hooks': 'error',
+    'react-hooks/exhaustive-deps': 'warn',
     'react/jsx-filename-extension': ['off'],
     'react/jsx-one-expression-per-line': 0,
     'linebreak-style': ['off'],

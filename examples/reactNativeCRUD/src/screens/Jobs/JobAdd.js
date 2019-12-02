@@ -4,18 +4,16 @@ import { AppContainer, Card, Button, Space, TextLink } from '../../components'
 import { structJob, options } from '../Authenticator/Form'
 import { goBack, PINK } from '../../constants'
 import { createJob, updateJob, deleteJob } from '../../graphql/mutations'
-import { useMutation } from 'aws-amplify-react-hooks'
+import { useMutation } from './crud'
 
 const Form = t.form.Form // eslint-disable-line
 
 const JobAdd = ({ navigation }) => {
   const [check, setOwner] = useState(false)
   const [input, setJob] = useState({
-    input: {
-      position: '',
-      rate: '',
-      description: ''
-    }
+    position: '',
+    rate: '',
+    description: ''
   })
 
   const onChange = item => setJob(item)
@@ -24,17 +22,17 @@ const JobAdd = ({ navigation }) => {
     const obj = navigation.state.params
     typeof obj !== 'undefined' && setOwner(true)
     setJob(obj)
-    // FIXME
-  }, []) //eslint-disable-line
+  }, [navigation])
 
   const [create, update, del, { loading, error }] = useMutation(input)
-  const onCreate = () => create(createJob) && goBack(navigation)()
-  const onUpdate = () => update(updateJob) && goBack(navigation)()
-  const onDelete = () => del(deleteJob) && goBack(navigation)()
+
+  const onCreate = async () => (await create(createJob)) && goBack(navigation)()
+  const onUpdate = async () => (await update(updateJob, input)) && goBack(navigation)()
+  const onDelete = async () => (await del(deleteJob)) && goBack(navigation)()
 
   const registerForm = useRef('')
   return (
-    <AppContainer message={error} loading={loading} title="Add" onPress={goBack(navigation)}>
+    <AppContainer loading={loading} message={error} title="Add" onPress={goBack(navigation)}>
       <Card>
         <Form ref={registerForm} type={structJob} options={options} value={input} onChange={text => onChange(text)} />
         <Space height={40} />

@@ -4,12 +4,9 @@ import { StatusBar } from 'react-native'
 import Amplify from '@aws-amplify/core'
 import { Auth, API, graphqlOperation } from 'aws-amplify'
 import * as Keychain from 'react-native-keychain'
+import { AmplifyProvider } from './screens/Jobs/crud'
 import AppNavigator from './AppNavigator'
 import awsconfig from '../aws-exports'
-import { AmplifyProvider } from 'aws-amplify-react-hooks'
-
-const MEMORY_KEY_PREFIX = '@MyStorage:'
-let dataMemory = {}
 
 const client = {
   Auth,
@@ -18,6 +15,9 @@ const client = {
 }
 
 AmplifyProvider(client)
+
+const MEMORY_KEY_PREFIX = '@MyStorage:'
+let dataMemory = {}
 
 class MyStorage {
   static syncPromise = null
