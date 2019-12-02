@@ -1,6 +1,6 @@
 {
   "name": "aws-amplify-react-hooks",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "React hooks for AWS Amplify",
   "main": "index.js",
   "scripts": {
@@ -63,5 +63,7 @@
     "aws-amplify-react": "^2.5.4",
     "prettier": "^1.19.1"
   },
-  "publishConfig": { "registry": "https://npm.pkg.github.com/" }
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  }
 }
