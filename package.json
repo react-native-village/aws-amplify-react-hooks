@@ -62,8 +62,5 @@
     "aws-amplify": "^1.2.4",
     "aws-amplify-react": "^2.5.4",
     "prettier": "^1.19.1"
-  },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
   }
 }

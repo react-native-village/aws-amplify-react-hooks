@@ -1,10 +1,11 @@
 import React from 'react'
 import { FlatList } from 'react-native'
 import { Auth } from 'aws-amplify'
+import { useQuery, getNames } from 'aws-amplify-react-hooks'
 import { listJobs } from '../../graphql/queries'
 import { AppContainer, CardJob } from '../../components'
 import { onScreen, BG } from '../../constants'
-import { useQuery, getNames } from './crud'
+//import { useQuery, getNames } from './crud'
 import { onCreateJob, onUpdateJob, onDeleteJob } from '../../graphql/subscriptions'
 
 const JobsMain = ({ navigation }) => {
@@ -25,10 +26,12 @@ const JobsMain = ({ navigation }) => {
 
   const _renderItem = ({ item }) => {
     const check = owner === item.owner
-    return <CardJob item={item} onPress={onScreen(check ? 'JOB_ADD' : 'JOB', navigation, item)} />
+    return <CardJob item={item} onPress={onScreen(check ? 'JOB_ADD' : 'JOB_DETAIL', navigation, item)} />
   }
 
   const _keyExtractor = obj => obj.id.toString()
+
+  console.log('data.length', data.length)
 
   return (
     <AppContainer
