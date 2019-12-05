@@ -38,6 +38,13 @@
     "lodash": "^4.17.15"
   },
   "devDependencies": {
+    "@aws-amplify/api": "^1.2.4",
+    "@aws-amplify/auth": "^1.5.0",
+    "@aws-amplify/pubsub": "^1.2.4",
+    "@types/react": "^16.9.13",
+    "@types/react-dom": "^16.9.4",
+    "aws-amplify": "^1.2.4",
+    "aws-amplify-react": "^2.5.4",
     "babel-eslint": "^10.0.3",
     "commitizen": "^4.0.3",
     "cz-conventional-changelog": "^3.0.2",
@@ -52,15 +59,8 @@
     "eslint-plugin-react": "^7.17.0",
     "eslint-plugin-standard": "^4.0.1",
     "metro-react-native-babel-preset": "^0.57.0",
+    "prettier": "^1.19.1",
     "react": "^16.12.0",
-    "react-dom": "^16.12.0",
-    "@types/react": "^16.9.13",
-    "@types/react-dom": "^16.9.4",
-    "@aws-amplify/api": "^1.2.4",
-    "@aws-amplify/auth": "^1.5.0",
-    "@aws-amplify/pubsub": "^1.2.4",
-    "aws-amplify": "^1.2.4",
-    "aws-amplify-react": "^2.5.4",
-    "prettier": "^1.19.1"
+    "react-dom": "^16.12.0"
   }
 }

@@ -31,8 +31,6 @@ const JobsMain = ({ navigation }) => {
 
   const _keyExtractor = obj => obj.id.toString()
 
-  console.log('data.length', data.length)
-
   return (
     <AppContainer
       flatlist
