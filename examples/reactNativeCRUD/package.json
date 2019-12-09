@@ -25,7 +25,7 @@
     "@aws-amplify/pubsub": "^1.2.4",
     "amazon-cognito-identity-js": "^3.2.0",
     "aws-amplify": "^1.2.4",
-    "aws-amplify-react-hooks": "^1.0.6",
+    "aws-amplify-react-hooks": "^1.0.7",
     "aws-amplify-react-native": "^2.2.3",
     "babel-preset-airbnb": "^4.4.0",
     "eslint-config-airbnb": "^18.0.1",
