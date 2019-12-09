@@ -68,15 +68,15 @@
 				}
 			}
 		},
-		"authreactnativecrud735fcff5": {
+		"authreactnativecrudeb7cc400": {
 			"Type": "AWS::CloudFormation::Stack",
 			"Properties": {
-				"TemplateURL": "https://s3.amazonaws.com/amplify-reactnativecrud-dev-154052-deployment/amplify-cfn-templates/auth/reactnativecrud735fcff5-cloudformation-template.yml",
+				"TemplateURL": "https://s3.amazonaws.com/amplify-reactnativecrud-dev-162931-deployment/amplify-cfn-templates/auth/reactnativecrudeb7cc400-cloudformation-template.yml",
 				"Parameters": {
-					"identityPoolName": "reactnativecrud735fcff5_identitypool_735fcff5",
+					"identityPoolName": "reactnativecrudeb7cc400_identitypool_eb7cc400",
 					"allowUnauthenticatedIdentities": false,
-					"resourceNameTruncated": "reactn735fcff5",
-					"userPoolName": "reactnativecrud735fcff5_userpool_735fcff5",
+					"resourceNameTruncated": "reactneb7cc400",
+					"userPoolName": "reactnativecrudeb7cc400_userpool_eb7cc400",
 					"autoVerifiedAttributes": "email",
 					"mfaConfiguration": "OFF",
 					"mfaTypes": "SMS Text Message",
@@ -92,9 +92,9 @@
 					"userpoolClientRefreshTokenValidity": 30,
 					"userpoolClientWriteAttributes": "email",
 					"userpoolClientReadAttributes": "email",
-					"userpoolClientLambdaRole": "reactn735fcff5_userpoolclient_lambda_role",
+					"userpoolClientLambdaRole": "reactneb7cc400_userpoolclient_lambda_role",
 					"userpoolClientSetAttributes": false,
-					"resourceName": "reactnativecrud735fcff5",
+					"resourceName": "reactnativecrudeb7cc400",
 					"authSelections": "identityPoolAndUserPool",
 					"authRoleArn": {
 						"Fn::GetAtt": [
@@ -119,7 +119,7 @@
 		"apireactnativecrud": {
 			"Type": "AWS::CloudFormation::Stack",
 			"Properties": {
-				"TemplateURL": "https://s3.amazonaws.com/amplify-reactnativecrud-dev-154052-deployment/amplify-cfn-templates/api/cloudformation-template.json",
+				"TemplateURL": "https://s3.amazonaws.com/amplify-reactnativecrud-dev-162931-deployment/amplify-cfn-templates/api/cloudformation-template.json",
 				"Parameters": {
 					"CreateAPIKey": 0,
 					"AppSyncApiName": "reactnativecrud",
@@ -127,12 +127,12 @@
 					"DynamoDBEnableServerSideEncryption": "false",
 					"AuthCognitoUserPoolId": {
 						"Fn::GetAtt": [
-							"authreactnativecrud735fcff5",
+							"authreactnativecrudeb7cc400",
 							"Outputs.UserPoolId"
 						]
 					},
-					"S3DeploymentBucket": "amplify-reactnativecrud-dev-154052-deployment",
-					"S3DeploymentRootKey": "amplify-appsync-files/c594bbab46248f118647a59b8a3af9d20ebc6121",
+					"S3DeploymentBucket": "amplify-reactnativecrud-dev-162931-deployment",
+					"S3DeploymentRootKey": "amplify-appsync-files/0b255ddefa6bcd7a68aa11d3ad1eafeac5dc86a2",
 					"env": "dev"
 				}
 			}
@@ -141,7 +141,7 @@
 			"DependsOn": [
 				"AuthRole",
 				"UnauthRole",
-				"authreactnativecrud735fcff5"
+				"authreactnativecrudeb7cc400"
 			],
 			"Type": "AWS::Lambda::Function",
 			"Properties": {
@@ -224,7 +224,7 @@
 				},
 				"idpId": {
 					"Fn::GetAtt": [
-						"authreactnativecrud735fcff5",
+						"authreactnativecrudeb7cc400",
 						"Outputs.IdentityPoolId"
 					]
 				},

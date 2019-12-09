@@ -5,7 +5,6 @@ import { useQuery, getNames } from 'aws-amplify-react-hooks'
 import { listJobs } from '../../graphql/queries'
 import { AppContainer, CardJob } from '../../components'
 import { onScreen, BG } from '../../constants'
-//import { useQuery, getNames } from './crud'
 import { onCreateJob, onUpdateJob, onDeleteJob } from '../../graphql/subscriptions'
 
 const JobsMain = ({ navigation }) => {

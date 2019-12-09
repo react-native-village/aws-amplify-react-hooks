@@ -1,36 +1,36 @@
 {
 	"providers": {
 		"awscloudformation": {
-			"AuthRoleName": "amplify-reactnativecrud-dev-154052-authRole",
-			"UnauthRoleArn": "arn:aws:iam::123118798050:role/amplify-reactnativecrud-dev-154052-unauthRole",
-			"AuthRoleArn": "arn:aws:iam::123118798050:role/amplify-reactnativecrud-dev-154052-authRole",
+			"AuthRoleName": "amplify-reactnativecrud-dev-162931-authRole",
+			"UnauthRoleArn": "arn:aws:iam::123118798050:role/amplify-reactnativecrud-dev-162931-unauthRole",
+			"AuthRoleArn": "arn:aws:iam::123118798050:role/amplify-reactnativecrud-dev-162931-authRole",
 			"Region": "eu-west-1",
-			"DeploymentBucketName": "amplify-reactnativecrud-dev-154052-deployment",
-			"UnauthRoleName": "amplify-reactnativecrud-dev-154052-unauthRole",
-			"StackName": "amplify-reactnativecrud-dev-154052",
-			"StackId": "arn:aws:cloudformation:eu-west-1:123118798050:stack/amplify-reactnativecrud-dev-154052/d022f490-1437-11ea-9432-0a9bdcf5c20a"
+			"DeploymentBucketName": "amplify-reactnativecrud-dev-162931-deployment",
+			"UnauthRoleName": "amplify-reactnativecrud-dev-162931-unauthRole",
+			"StackName": "amplify-reactnativecrud-dev-162931",
+			"StackId": "arn:aws:cloudformation:eu-west-1:123118798050:stack/amplify-reactnativecrud-dev-162931/ef238110-1a87-11ea-9432-0a9bdcf5c20a"
 		}
 	},
 	"auth": {
-		"reactnativecrud735fcff5": {
+		"reactnativecrudeb7cc400": {
 			"service": "Cognito",
 			"providerPlugin": "awscloudformation",
 			"dependsOn": [],
 			"providerMetadata": {
-				"s3TemplateURL": "https://s3.amazonaws.com/amplify-reactnativecrud-dev-154052-deployment/amplify-cfn-templates/auth/reactnativecrud735fcff5-cloudformation-template.yml",
-				"logicalId": "authreactnativecrud735fcff5"
+				"s3TemplateURL": "https://s3.amazonaws.com/amplify-reactnativecrud-dev-162931-deployment/amplify-cfn-templates/auth/reactnativecrudeb7cc400-cloudformation-template.yml",
+				"logicalId": "authreactnativecrudeb7cc400"
 			},
-			"lastPushTimeStamp": "2019-12-01T13:32:10.786Z",
+			"lastPushTimeStamp": "2019-12-09T13:41:02.693Z",
 			"output": {
-				"AppClientSecret": "1bcu6i1kvefsdclviqr8ehomttjs32rhtvj6gh7nkvptg16nb1o0",
-				"UserPoolId": "eu-west-1_pNXbJuOZd",
-				"AppClientIDWeb": "5efbtupv2h2k41hfr4fukkiar6",
-				"AppClientID": "1enfv6u0smg9leh6o00aum01cd",
-				"IdentityPoolId": "eu-west-1:2a3de9d3-7558-435f-a4c9-c9bf2676dbc5",
-				"IdentityPoolName": "reactnativecrud735fcff5_identitypool_735fcff5__dev",
-				"UserPoolName": "reactnativecrud735fcff5_userpool_735fcff5"
+				"AppClientSecret": "21kiq7a8rlpvftqagpubkij66fltigr4i1e9o1urrto5vorrrqa",
+				"UserPoolId": "eu-west-1_bsjuOs5BE",
+				"AppClientIDWeb": "7dvvhb0skf5unnmpl4q9u1qd3g",
+				"AppClientID": "hqabfchjm8t7ep0ep1n17umbc",
+				"IdentityPoolId": "eu-west-1:699a1626-b6e5-4f4f-a8e5-70382658aa17",
+				"IdentityPoolName": "reactnativecrudeb7cc400_identitypool_eb7cc400__dev",
+				"UserPoolName": "reactnativecrudeb7cc400_userpool_eb7cc400"
 			},
-			"lastPushDirHash": "hdOR7QQtm6PfigCIOeOfmEFLF3U="
+			"lastPushDirHash": "tlSH/6+z+wzEuIRvEgXLnDw/qYw="
 		}
 	},
 	"api": {
@@ -43,19 +43,19 @@
 					"defaultAuthentication": {
 						"authenticationType": "AMAZON_COGNITO_USER_POOLS",
 						"userPoolConfig": {
-							"userPoolId": "authreactnativecrud735fcff5"
+							"userPoolId": "authreactnativecrudeb7cc400"
 						}
 					}
 				},
-				"GraphQLAPIIdOutput": "x4zjwus5svawbk4px6sx7gmiii",
-				"GraphQLAPIEndpointOutput": "https://2rlgnaejcfhirf4siighrugy5u.appsync-api.eu-west-1.amazonaws.com/graphql"
+				"GraphQLAPIIdOutput": "yd6wnvq4jfabjbig25w6batyca",
+				"GraphQLAPIEndpointOutput": "https://aniy25exbze4bgfw4imjjaofyu.appsync-api.eu-west-1.amazonaws.com/graphql"
 			},
 			"providerMetadata": {
-				"s3TemplateURL": "https://s3.amazonaws.com/amplify-reactnativecrud-dev-154052-deployment/amplify-cfn-templates/api/cloudformation-template.json",
+				"s3TemplateURL": "https://s3.amazonaws.com/amplify-reactnativecrud-dev-162931-deployment/amplify-cfn-templates/api/cloudformation-template.json",
 				"logicalId": "apireactnativecrud"
 			},
-			"lastPushTimeStamp": "2019-12-01T13:32:11.209Z",
-			"lastPushDirHash": "4EmC0HKYUo/zvtBPjuM/I9L7BSM="
+			"lastPushTimeStamp": "2019-12-09T13:41:02.693Z",
+			"lastPushDirHash": "zCiU3oBV6cL+VfI1gxA6gE3sn0w="
 		}
 	}
 }

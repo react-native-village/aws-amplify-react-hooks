@@ -22,7 +22,7 @@ type T = ComponentType<{
 
 type Client = Element<T>
 
-export const AmplifyProvider = ({ client, children }: { children?: Node, client: null }): Client => {
+export const AmplifyProvider = ({ client, children }: { children: Node, client: null }): Client => {
   return <AmplifyContext.Provider value={client}>{children}</AmplifyContext.Provider>
 }
 

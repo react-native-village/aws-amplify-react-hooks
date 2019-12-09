@@ -5,7 +5,6 @@ import { AppContainer, Card, Button, Space, TextLink } from '../../components'
 import { structJob, options } from '../Authenticator/Form'
 import { goBack, PINK } from '../../constants'
 import { createJob, updateJob, deleteJob } from '../../graphql/mutations'
-//import { useMutation } from './crud'
 
 const Form = t.form.Form // eslint-disable-line
 
@@ -38,9 +37,13 @@ const JobAdd = ({ navigation }) => {
         <Form ref={registerForm} type={structJob} options={options} value={input} onChange={text => onChange(text)} />
         <Space height={40} />
         <Button title="DONE" onPress={() => (check ? onUpdate() : onCreate())} />
-        <TextLink title="or" />
-        <Space height={10} />
-        <Button title="DELETE" color={PINK} onPress={onDelete} />
+        {check && (
+          <>
+            <TextLink title="or" />
+            <Space height={10} />
+            <Button title="DELETE" color={PINK} onPress={onDelete} />
+          </>
+        )}
         <Space />
       </Card>
     </AppContainer>

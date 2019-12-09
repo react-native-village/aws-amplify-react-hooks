@@ -1,8 +1,8 @@
 {
-    "identityPoolName": "reactnativecrud735fcff5_identitypool_735fcff5",
+    "identityPoolName": "reactnativecrudeb7cc400_identitypool_eb7cc400",
     "allowUnauthenticatedIdentities": false,
-    "resourceNameTruncated": "reactn735fcff5",
-    "userPoolName": "reactnativecrud735fcff5_userpool_735fcff5",
+    "resourceNameTruncated": "reactneb7cc400",
+    "userPoolName": "reactnativecrudeb7cc400_userpool_eb7cc400",
     "autoVerifiedAttributes": [
         "email"
     ],
@@ -28,9 +28,9 @@
     "userpoolClientReadAttributes": [
         "email"
     ],
-    "userpoolClientLambdaRole": "reactn735fcff5_userpoolclient_lambda_role",
+    "userpoolClientLambdaRole": "reactneb7cc400_userpoolclient_lambda_role",
     "userpoolClientSetAttributes": false,
-    "resourceName": "reactnativecrud735fcff5",
+    "resourceName": "reactnativecrudeb7cc400",
     "authSelections": "identityPoolAndUserPool",
     "authRoleArn": {
         "Fn::GetAtt": [

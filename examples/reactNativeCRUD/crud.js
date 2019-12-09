@@ -1,5 +1,5 @@
 // @flow
-import type { Node } from 'react'
+import type { Node, ComponentType, Element } from 'react'
 import React, { createContext, useEffect, useContext, useReducer } from 'react'
 import _ from 'lodash'
 import type { ActionT, StateT } from './types'
@@ -8,17 +8,21 @@ const AmplifyContext = createContext<null>(null)
 
 export const getNames = (constObj: {}): Array<string> => Object.keys(constObj)
 
-type Client = {
-  client: {
-    Auth: {},
-    API: {},
-    graphqlOperation: void
-  },
-  children?: Node
+type ClientType = {
+  Auth: {},
+  API: {},
+  graphqlOperation: void
 }
 
-// $FlowFixMe
-export const AmplifyProvider = ({ client, children }): Client => {
+type T = ComponentType<{
+  value: any,
+  client: ClientType | null,
+  children?: Node
+}>
+
+type Client = Element<T>
+
+export const AmplifyProvider = ({ client, children }: { children: Node, client: null }): Client => {
   return <AmplifyContext.Provider value={client}>{children}</AmplifyContext.Provider>
 }
 
@@ -34,6 +38,7 @@ export const initialState = {
 export const useQuery = (query: {}, options: { variables: {} }, queryData: Array<string>) => {
   // $FlowFixMe
   const [state, dispatch] = useReducer<StateT, ActionT>(reducer, initialState)
+  //console.log('state', state)
 
   const read = async () => {
     dispatch({ type: 'LOADING' })
@@ -51,16 +56,21 @@ export const useQuery = (query: {}, options: { variables: {} }, queryData: Array
   const { Auth, API, graphqlOperation } = useContext(AmplifyContext)
 
   useEffect(() => {
+    read()
     let isSubscribed = true
     const owner = Auth.user.attributes.sub
     const [createStr, updateStr, deleteStr] = [queryData[1], queryData[2], queryData[3]]
     const error = ({ errors }) => dispatch({ type: 'ERROR', error: errors[0].message })
     const subCreate = API.graphql(graphqlOperation(query[createStr], { owner })).subscribe({
-      next: e => dispatch({ type: 'SUBSCRIPTION', obj: e.value.data[createStr] }),
+      next: e => {
+        const obj = e.value.data[createStr]
+        dispatch({ type: 'SUBSCRIPTION', obj })
+      },
       error
     })
     const subUpdate = API.graphql(graphqlOperation(query[updateStr], { owner })).subscribe({
       next: e => {
+        //console.log('e', e)
         return dispatch({ type: 'SUBSCRIPTION', obj: e.value.data[updateStr] })
       },
       error
@@ -95,11 +105,6 @@ export const useQuery = (query: {}, options: { variables: {} }, queryData: Array
     }
   }
 
-  useEffect(() => {
-    read()
-    // FIXME
-  }, []) //eslint-disable-line
-
   const { data, loading, error, status } = state
   return { data, loading, error, status, fetchMore }
 }
@@ -113,8 +118,8 @@ export const useMutation = (input: { id: string }) => {
   const create = async (mutate: string) => {
     dispatch({ type: 'LOADING' })
     try {
-      await API.graphql(graphqlOperation(mutate, { input }))
-      return true
+      const obj = await API.graphql(graphqlOperation(mutate, { input }))
+      return obj
     } catch (err) {
       dispatch({ type: 'ERROR', error: err.errors[0].message })
     }
@@ -123,7 +128,8 @@ export const useMutation = (input: { id: string }) => {
   const update = async (mutate: string) => {
     dispatch({ type: 'LOADING' })
     try {
-      await API.graphql(graphqlOperation(mutate, { input }))
+      const obj = await API.graphql(graphqlOperation(mutate, { input }))
+      return obj
     } catch (err) {
       dispatch({ type: 'ERROR', error: err.errors[0].message })
     }
@@ -133,7 +139,8 @@ export const useMutation = (input: { id: string }) => {
     dispatch({ type: 'LOADING' })
     try {
       const { id } = input
-      await API.graphql(graphqlOperation(mutate, { input: { id } }))
+      const obj = await API.graphql(graphqlOperation(mutate, { input: { id } }))
+      return obj
     } catch (err) {
       dispatch({ type: 'ERROR', error: err.errors[0].message })
     }
@@ -149,6 +156,8 @@ export const reducer = (state: StateT, action: ActionT) => {
     case 'CREATE':
       return { ...state, data: [action.items, ...state.data], loading: false, status: 'COMPLETE' }
     case 'SUBSCRIPTION':
+      // $FlowFixMe
+      delete action.obj.__typename //eslint-disable-line
       // flatlist is wrong with fetchMore, so this solution
       return { ...state, data: _.uniqBy([action.obj, ...state.data], 'id'), loading: false, status: 'COMPLETE' }
     case 'READ':
