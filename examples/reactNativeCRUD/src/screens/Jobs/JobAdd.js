@@ -1,6 +1,7 @@
 import React, { useRef, useEffect, useState } from 'react'
 import t from 'tcomb-form-native'
-import { useMutation } from 'aws-amplify-react-hooks'
+//import { useMutation } from 'aws-amplify-react-hooks'
+import { useMutation } from '../../../lib'
 import { AppContainer, Card, Button, Space, TextLink } from '../../components'
 import { structJob, options } from '../Authenticator/Form'
 import { goBack, PINK } from '../../constants'
@@ -24,11 +25,11 @@ const JobAdd = ({ navigation }) => {
     setJob(obj)
   }, [navigation])
 
-  const [create, update, del, { loading, error }] = useMutation(input)
+  const [setCreate, setUpdate, setDelete, { loading, error }] = useMutation(input)
 
-  const onCreate = async () => (await create(createJob)) && goBack(navigation)()
-  const onUpdate = async () => (await update(updateJob, input)) && goBack(navigation)()
-  const onDelete = async () => (await del(deleteJob)) && goBack(navigation)()
+  const onCreate = async () => (await setCreate(createJob)) && goBack(navigation)()
+  const onUpdate = async () => (await setUpdate(updateJob)) && goBack(navigation)()
+  const onDelete = async () => (await setDelete(deleteJob)) && goBack(navigation)()
 
   const registerForm = useRef('')
   return (

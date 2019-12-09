@@ -57,7 +57,7 @@ export const useQuery = (query: {}, options: { variables: {} }, queryData: Array
 
   useEffect(() => {
     read()
-    let isSubscribed = true
+    let isSubscribed = true // eslint-disable-line
     const owner = Auth.user.attributes.sub
     const [createStr, updateStr, deleteStr] = [queryData[1], queryData[2], queryData[3]]
     const error = ({ errors }) => dispatch({ type: 'ERROR', error: errors[0].message })
@@ -69,10 +69,7 @@ export const useQuery = (query: {}, options: { variables: {} }, queryData: Array
       error
     })
     const subUpdate = API.graphql(graphqlOperation(query[updateStr], { owner })).subscribe({
-      next: e => {
-        //console.log('e', e)
-        return dispatch({ type: 'SUBSCRIPTION', obj: e.value.data[updateStr] })
-      },
+      next: e => dispatch({ type: 'SUBSCRIPTION', obj: e.value.data[updateStr] }),
       error
     })
     const subDelete = API.graphql(graphqlOperation(query[deleteStr], { owner })).subscribe({
@@ -115,7 +112,7 @@ export const useMutation = (input: { id: string }) => {
 
   // $FlowFixMe
   const { API, graphqlOperation } = useContext(AmplifyContext)
-  const create = async (mutate: string) => {
+  const setCreate = async (mutate: string) => {
     dispatch({ type: 'LOADING' })
     try {
       const obj = await API.graphql(graphqlOperation(mutate, { input }))
@@ -125,7 +122,7 @@ export const useMutation = (input: { id: string }) => {
     }
   }
 
-  const update = async (mutate: string) => {
+  const setUpdate = async (mutate: string) => {
     dispatch({ type: 'LOADING' })
     try {
       const obj = await API.graphql(graphqlOperation(mutate, { input }))
@@ -135,7 +132,7 @@ export const useMutation = (input: { id: string }) => {
     }
   }
 
-  const del = async (mutate: string) => {
+  const setDelete = async (mutate: string) => {
     dispatch({ type: 'LOADING' })
     try {
       const { id } = input
@@ -147,7 +144,7 @@ export const useMutation = (input: { id: string }) => {
   }
 
   const { loading, error, status } = state
-  return [create, update, del, { loading, error, status }]
+  return [setCreate, setUpdate, setDelete, { loading, error, status }]
 }
 
 // create reducer to update state
