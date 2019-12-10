@@ -13,6 +13,11 @@ type CreateT = {
   items: {}
 }
 
+type UpdateT = {
+  type: 'UPDATE',
+  items: {}
+}
+
 type ReadT = {
   type: 'READ',
   data: Array<{}>,
@@ -44,4 +49,4 @@ type DeleteT = {
   }
 }
 
-export type ActionT = CreateT | SubscriptionT | ReadT | ErrorT | CompleteT | LoadingT | DeleteT
+export type ActionT = CreateT | SubscriptionT | ReadT | ErrorT | CompleteT | LoadingT | DeleteT | UpdateT

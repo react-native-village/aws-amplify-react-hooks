@@ -1806,10 +1806,10 @@ atob@^2.1.1:
   resolved "https://registry.yarnpkg.com/atob/-/atob-2.1.2.tgz#6d9517eb9e030d2436666651e86bd9f6f13533c9"
   integrity sha512-Wm6ukoaOGJi/73p/cl2GvLjTI5JM1k/O14isD73YML8StrH/7/lRFgmg8nICZgD3bZZvjwCGxtMOD3wWNAu8cg==
 
-aws-amplify-react-hooks@^1.0.7:
-  version "1.0.7"
-  resolved "https://registry.yarnpkg.com/aws-amplify-react-hooks/-/aws-amplify-react-hooks-1.0.7.tgz#9ccea6aaecc8761da14982472b64895522ccdbc6"
-  integrity sha512-vr/cQicYo7rMed7HZkR17fDVjup4PHJ34tmtd5IPvEpO9Fg7VonoZlvljjOWyoYbyBIq2zuKp/LD1mKivjUNCA==
+aws-amplify-react-hooks@^1.0.8:
+  version "1.0.8"
+  resolved "https://registry.yarnpkg.com/aws-amplify-react-hooks/-/aws-amplify-react-hooks-1.0.8.tgz#8141d7458ae493fe6b0c639d4df8c2d8a6811cd2"
+  integrity sha512-+sEdr/Btc4EO6GMORDlx4HdDztEiD2HSaBoGJpTkAu8nG28AXjwt5TiZGHkfGNi0uYHyFnTcuZq+dTt0XcxSZw==
   dependencies:
     lodash "^4.17.15"
 

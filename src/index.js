@@ -115,8 +115,9 @@ export const useMutation = (input: { id: string }) => {
   const setCreate = async (mutate: string) => {
     dispatch({ type: 'LOADING' })
     try {
-      const obj = await API.graphql(graphqlOperation(mutate, { input }))
-      return obj
+      const data = await API.graphql(graphqlOperation(mutate, { input }))
+      dispatch({type: 'CREATE', data })
+      return data
     } catch (err) {
       dispatch({ type: 'ERROR', error: err.errors[0].message })
     }
@@ -143,8 +144,8 @@ export const useMutation = (input: { id: string }) => {
     }
   }
 
-  const { loading, error, status } = state
-  return [setCreate, setUpdate, setDelete, { loading, error, status }]
+  const { data, loading, error, status } = state
+  return [setCreate, setUpdate, setDelete, { data, loading, error, status }]
 }
 
 // create reducer to update state
