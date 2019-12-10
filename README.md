@@ -23,8 +23,11 @@ react-native run-android
 # API
 
 [AmplifyProvider](https://github.com/react-native-village/aws-amplify-react-hooks#amplifyprovider)
+
 [Usage](https://github.com/react-native-village/aws-amplify-react-hooks#usage)
+
 [useQuery](https://github.com/react-native-village/aws-amplify-react-hooks#usequery)
+
 [useMutation](https://github.com/react-native-village/aws-amplify-react-hooks#usemutation)
 
 ## AmplifyProvider
