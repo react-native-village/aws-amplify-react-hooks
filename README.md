@@ -1,3 +1,4 @@
+![Cover](https://github.com/react-native-village/aws-amplify-react-hooks/blob/master/aws-amplify-react-hooks.png?raw=true)
 
 # aws-amplify-react-hooks
 AWS Amplify react &amp;&amp; react-native hooks
