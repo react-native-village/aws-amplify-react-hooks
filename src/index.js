@@ -116,7 +116,6 @@ export const useMutation = (input: { id: string }) => {
     dispatch({ type: 'LOADING' })
     try {
       const data = await API.graphql(graphqlOperation(mutate, { input }))
-      dispatch({type: 'CREATE', data })
       return data
     } catch (err) {
       dispatch({ type: 'ERROR', error: err.errors[0].message })
@@ -144,15 +143,13 @@ export const useMutation = (input: { id: string }) => {
     }
   }
 
-  const { data, loading, error, status } = state
-  return [setCreate, setUpdate, setDelete, { data, loading, error, status }]
+  const { loading, error, status } = state
+  return [setCreate, setUpdate, setDelete, { loading, error, status }]
 }
 
 // create reducer to update state
 export const reducer = (state: StateT, action: ActionT) => {
   switch (action.type) {
-    case 'CREATE':
-      return { ...state, data: [action.items, ...state.data], loading: false, status: 'COMPLETE' }
     case 'SUBSCRIPTION':
       // $FlowFixMe
       delete action.obj.__typename //eslint-disable-line
