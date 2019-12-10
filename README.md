@@ -114,7 +114,7 @@ Flatlist with pagination
 
 ```javascript
 import React from 'react'
-import { FlatList } from 'react-native'
+import { View, Text, FlatList } from 'react-native'
 import { useQuery, getNames } from 'aws-amplify-react-hooks'
 import { listJobs } from '../../graphql/queries' // from Amplify autogenerate file
 import { onCreateJob, onUpdateJob, onDeleteJob } from '../../graphql/subscriptions' // from Amplify autogenerate file
@@ -138,6 +138,13 @@ const Jobs = () => {
   }
 
   const _keyExtractor = obj => obj.id.toString()
+  
+  if (loading) {
+    return <Text>Loading...</Text>
+  }
+  if (error) {
+    return <Text>Error! {error}</Text>
+  }
 
   return (
     <>
@@ -158,7 +165,8 @@ const Jobs = () => {
 ## useMutation
 ```javascript
 import React, { useState } from 'react' 
-import { Button } from 'react-native'
+import { View, Text, Button } from 'react-native'
+
 import { useMutation } from 'aws-amplify-react-hooks' 
 import { createJob, updateJob, deleteJob } from '../../graphql/mutations' // from Amplify autogenerate file
 
@@ -177,6 +185,13 @@ const Jobs = () => {
   }
   const onUpdate = async () => (await setUpdate(updateJob))
   const onDelete = async () => (await setDelete(deleteJob))
+  
+  if (loading) {
+    return <Text>Loading...</Text>
+  }
+  if (error) {
+    return <Text>Error! {error}</Text>
+  }
   
   return (
     <>
