@@ -64,8 +64,30 @@ render(<App />, document.getElementById('root'))
 ```
 
 ## useQuery
+```javascript
+const { 
+  data: Array<mixed>,
+  loading: string,
+  error: string,
+  fetchMore: function
+} = useQuery(query {}, options: { variables: {[key: string]: any }}, queryData: Array<string>)
+```
+  
+`query` - The first argument is a GraphQL query READ operation, the second is a CREATE subscription operation, the third is an UPDATE subscription operation and the fourth is a DELETE subscription operation.
 
-Simple example
+`option` - An object containing all the variables that your request should fulfill.
+
+`queryData` - An array of GraphQL operation names in the READ, CREATE, UPDATE, DELETE sequence.
+
+`data` — The returned data array.
+
+`loading` - Loading indicator.
+
+`error` - Error.
+
+`fetchMore` - Often in your application there will be some views in which you need to display a list that contains too much data so that it can either be retrieved or displayed immediately. Pagination is the most common solution to this problem, and the useQuery hook has built-in functionality that makes it pretty simple. The easiest way to do pagination is to use the fetchMore function, which is included in the result object returned by the useQuery hook. This basically allows you to make a new GraphQL query and combine the result with the original result.
+  
+### Simple example
 ```javascript
 import React from 'react'
 import { View, Text } from 'react-native'
@@ -108,7 +130,7 @@ const Jobs = () => {
 
 ```
 
-Flatlist with pagination
+### Flatlist with pagination
 
 ```javascript
 import React from 'react'
@@ -161,6 +183,27 @@ const Jobs = () => {
 ```
 
 ## useMutation
+```javascript
+const [
+  setCreate: Promise<{}>,
+  setUpdate: Promise<{}>,
+  setDelete: Promise<{}>
+{ 
+  loading: string,
+  error: string
+}
+] = useMutation(input: {})
+```
+  
+`setCreate` `setUpdate` `setDelete` - Functions CREATE, UPDATE, DELETE
+
+`loading` - Loading indicator.
+
+`error` - Error.
+
+`input` - Error.
+
+
 ```javascript
 import React, { useState } from 'react' 
 import { View, Text, Button } from 'react-native'
