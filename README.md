@@ -150,6 +150,7 @@ const Jobs = () => {
 
 ## useMutation
 
+The `useMutation` returns a tuple with mutation function first and the result of mutation execution in second.
 ```javascript
 import { Button } from 'react-native'
 import { useMutation } from 'aws-amplify-react-hooks' 
