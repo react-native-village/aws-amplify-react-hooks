@@ -165,12 +165,11 @@ const Jobs = () => {
   }
   const onUpdate = async () => (await setUpdate(updateJob))
   const onDelete = async () => (await setDelete(deleteJob))
-    return (
-      <>
+  return (
+    <>
       <Button title="CREATE" onPress={onCreate} />
-      </>
+    </>
   )
 }
-
 
 ``` 
