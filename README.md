@@ -157,13 +157,19 @@ const Jobs = () => {
 
 ## useMutation
 ```javascript
+import React, { useState } from 'react' 
 import { Button } from 'react-native'
 import { useMutation } from 'aws-amplify-react-hooks' 
 import { createJob, updateJob, deleteJob } from '../../graphql/mutations' // from Amplify autogenerate file
 
 const Jobs = () => {  
-  const [setCreate, setUpdate, setDelete, { loading, error }] = useMutation(input)
+  const [input, setJob] = useState({
+    position: '',
+    rate: '',
+    description: ''
+  })
 
+  const [setCreate, setUpdate, setDelete, { loading, error }] = useMutation(input)
 
   const onCreate = async () => {
     const obj = await setCreate(createJob)
@@ -180,3 +186,4 @@ const Jobs = () => {
 }
 
 ``` 
+
