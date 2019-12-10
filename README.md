@@ -16,7 +16,15 @@ Or if using [yarn](https://yarnpkg.com/en/)
 git clone git@github.com:react-native-village/aws-amplify-react-hooks.git
 cd examples/reactNativeCRUD
 yarn
-amplify mock api
+react-native run-ios
+react-native run-android
 ```
 
 # API
+## AmplifyProvider
+
+Similar to
+[ApolloProvider from react-apollo](https://www.apollographql.com/docs/react/essentials/get-started.html#creating-provider).
+In order for this package to work, you need to wrap your component tree with
+`AmplifyProvider` at an appropriate level, encapsulating all components which
+will use hooks.
