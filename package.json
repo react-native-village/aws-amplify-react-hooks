@@ -1,6 +1,6 @@
 {
   "name": "aws-amplify-react-hooks",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "React hooks for AWS Amplify",
   "main": "index.js",
   "scripts": {
