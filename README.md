@@ -184,6 +184,27 @@ const Jobs = () => {
 
 ## useMutation
 ```javascript
+const [
+  setCreate: Promise<{}>,
+  setUpdate: Promise<{}>,
+  setDelete: Promise<{}>
+{ 
+  loading: string,
+  error: string
+}
+] = useMutation(input: {})
+```
+  
+`setCreate` `setUpdate` `setDelete` - Functions CREATE, UPDATE, DELETE
+
+`loading` - Loading indicator.
+
+`error` - Error.
+
+`input` - Error.
+
+
+```javascript
 import React, { useState } from 'react' 
 import { View, Text, Button } from 'react-native'
 
