@@ -56,14 +56,16 @@ render(<App />, document.getElementById('root'))
 
 ## useQuery
 
+### simple example
 ```javascript
+import { View, Text } from 'react-native'
 import { useQuery, getNames } from 'aws-amplify-react-hooks'
 import { listJobs } from '../../graphql/queries'
 import { onCreateJob, onUpdateJob, onDeleteJob } from '../../graphql/subscriptions'
 
 
 const Jobs = () => {
-    const { data, loading, error, fetchMore } = useQuery(
+    const { data, loading, error } = useQuery(
     {
       listJobs,
       onCreateJob,
