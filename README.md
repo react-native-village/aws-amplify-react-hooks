@@ -56,7 +56,7 @@ render(<App />, document.getElementById('root'))
 
 ## useQuery
 
-### simple example
+Simple example
 ```javascript
 import { View, Text } from 'react-native'
 import { useQuery, getNames } from 'aws-amplify-react-hooks'
@@ -97,3 +97,6 @@ const Jobs = () => {
 }
 
 ```
+
+Flatlist
+
