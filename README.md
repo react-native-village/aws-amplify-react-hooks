@@ -1,3 +1,4 @@
+![Cover](https://github.com/react-native-village/aws-amplify-react-hooks/blob/master/aws-amplify-react-hooks.png?raw=true)
 
 # aws-amplify-react-hooks
 AWS Amplify react &amp;&amp; react-native hooks
@@ -25,8 +26,6 @@ react-native run-android
 # API
 
 [AmplifyProvider](https://github.com/react-native-village/aws-amplify-react-hooks#amplifyprovider)
-
-[Usage](https://github.com/react-native-village/aws-amplify-react-hooks#usage)
 
 [useQuery](https://github.com/react-native-village/aws-amplify-react-hooks#usequery)
 
@@ -113,7 +112,7 @@ Flatlist with pagination
 
 ```javascript
 import React from 'react'
-import { FlatList } from 'react-native'
+import { View, Text, FlatList } from 'react-native'
 import { useQuery, getNames } from 'aws-amplify-react-hooks'
 import { listJobs } from '../../graphql/queries' // from Amplify autogenerate file
 import { onCreateJob, onUpdateJob, onDeleteJob } from '../../graphql/subscriptions' // from Amplify autogenerate file
@@ -137,6 +136,13 @@ const Jobs = () => {
   }
 
   const _keyExtractor = obj => obj.id.toString()
+  
+  if (loading) {
+    return <Text>Loading...</Text>
+  }
+  if (error) {
+    return <Text>Error! {error}</Text>
+  }
 
   return (
     <>
@@ -156,13 +162,20 @@ const Jobs = () => {
 
 ## useMutation
 ```javascript
-import { Button } from 'react-native'
+import React, { useState } from 'react' 
+import { View, Text, Button } from 'react-native'
+
 import { useMutation } from 'aws-amplify-react-hooks' 
 import { createJob, updateJob, deleteJob } from '../../graphql/mutations' // from Amplify autogenerate file
 
 const Jobs = () => {  
-  const [setCreate, setUpdate, setDelete, { loading, error }] = useMutation(input)
+  const [input, setJob] = useState({
+    position: '',
+    rate: '',
+    description: ''
+  })
 
+  const [setCreate, setUpdate, setDelete, { loading, error }] = useMutation(input)
 
   const onCreate = async () => {
     const obj = await setCreate(createJob)
@@ -170,6 +183,13 @@ const Jobs = () => {
   }
   const onUpdate = async () => (await setUpdate(updateJob))
   const onDelete = async () => (await setDelete(deleteJob))
+  
+  if (loading) {
+    return <Text>Loading...</Text>
+  }
+  if (error) {
+    return <Text>Error! {error}</Text>
+  }
   
   return (
     <>
@@ -179,3 +199,4 @@ const Jobs = () => {
 }
 
 ``` 
+
