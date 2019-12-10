@@ -64,7 +64,21 @@ render(<App />, document.getElementById('root'))
 ```
 
 ## useQuery
-
+```javascript
+const { 
+  data: Array<string>,
+  loading, error: string,
+  fetchMore: function
+} = useQuery(query {}, options: { variables: {[key: string]: any }}, queryData: Array<string>)
+```
+  
+`query` - The first argument is a GraphQL query READ operation, the second is a CREATE subscription operation, the third is an UPDATE subscription operation and the fourth is a DELETE subscription operation.
+`option` - An object containing all the variables that your request should fulfill.
+`queryData` - An array of GraphQL operation names in the READ, CREATE, UPDATE, DELETE sequence.
+`data` — The returned data array.
+`loading` - Loading indicator.
+`error` - Error.
+  
 Simple example
 ```javascript
 import React from 'react'
