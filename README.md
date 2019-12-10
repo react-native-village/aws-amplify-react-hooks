@@ -85,7 +85,7 @@ const {
 
 `error` - Error.
   
-Simple example
+### Simple example
 ```javascript
 import React from 'react'
 import { View, Text } from 'react-native'
@@ -128,7 +128,7 @@ const Jobs = () => {
 
 ```
 
-Flatlist with pagination
+### Flatlist with pagination
 
 ```javascript
 import React from 'react'
