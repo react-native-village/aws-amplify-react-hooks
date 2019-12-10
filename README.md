@@ -84,6 +84,8 @@ const {
 `loading` - Loading indicator.
 
 `error` - Error.
+
+`fetchMore` - Often in your application there will be some views in which you need to display a list that contains too much data so that it can either be retrieved or displayed immediately. Pagination is the most common solution to this problem, and the useQuery hook has built-in functionality that makes it pretty simple. The easiest way to do pagination is to use the fetchMore function, which is included in the result object returned by the useQuery hook. This basically allows you to make a new GraphQL query and combine the result with the original result.
   
 ### Simple example
 ```javascript
