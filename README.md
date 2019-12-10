@@ -1,5 +1,7 @@
+
 # aws-amplify-react-hooks
 AWS Amplify react &amp;&amp; react-native hooks
+
 
 # Installation
 
