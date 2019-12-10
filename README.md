@@ -22,6 +22,10 @@ react-native run-android
 
 # API
 
+AmplifyProvider
+Usage
+useQuery
+
 ## AmplifyProvider
 
 Similar to
@@ -143,3 +147,25 @@ const Jobs = ({ navigation }) => {
 }
 
 ```
+
+##useMutation
+
+```javascript
+import { useMutation } from 'aws-amplify-react-hooks' 
+import { createJob, updateJob, deleteJob } from '../../graphql/mutations' // from Amplify autogenerate file
+
+const JobAdd = ({ navigation }) => {  
+    const [setCreate, setUpdate, setDelete, { data, loading, error }] = useMutation(
+    input,
+    getNames({ createJob, updateJob, deleteJob })
+  )
+
+
+  const onCreate = async () => (await setCreate(createJob))
+  const onUpdate = async () => (await setUpdate(updateJob))
+  const onDelete = async () => (await setDelete(deleteJob))
+  
+  )
+}
+
+``` 
