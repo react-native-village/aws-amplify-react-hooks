@@ -112,7 +112,7 @@ import { useQuery, getNames } from 'aws-amplify-react-hooks'
 import { listJobs } from '../../graphql/queries' // from Amplify autogenerate file
 import { onCreateJob, onUpdateJob, onDeleteJob } from '../../graphql/subscriptions' // from Amplify autogenerate file
 
-const Jobs = ({ navigation }) => {
+const Jobs = () => {
   const { data, loading, error, fetchMore } = useQuery(
     {
       listJobs,
@@ -151,10 +151,11 @@ const Jobs = ({ navigation }) => {
 ## useMutation
 
 ```javascript
+import { Button } from 'react-native'
 import { useMutation } from 'aws-amplify-react-hooks' 
 import { createJob, updateJob, deleteJob } from '../../graphql/mutations' // from Amplify autogenerate file
 
-const JobAdd = ({ navigation }) => {  
+const Jobs = () => {  
   const [setCreate, setUpdate, setDelete, { loading, error }] = useMutation(input)
 
 
@@ -164,8 +165,12 @@ const JobAdd = ({ navigation }) => {
   }
   const onUpdate = async () => (await setUpdate(updateJob))
   const onDelete = async () => (await setDelete(deleteJob))
-  
+    return (
+      <>
+      <Button title="CREATE" onPress={onCreate} />
+      </>
   )
 }
+
 
 ``` 
