@@ -58,10 +58,11 @@ render(<App />, document.getElementById('root'))
 
 Simple example
 ```javascript
+import React from 'react'
 import { View, Text } from 'react-native'
 import { useQuery, getNames } from 'aws-amplify-react-hooks'
-import { listJobs } from '../../graphql/queries'
-import { onCreateJob, onUpdateJob, onDeleteJob } from '../../graphql/subscriptions'
+import { listJobs } from '../../graphql/queries' // from Amplify autogenerate file
+import { onCreateJob, onUpdateJob, onDeleteJob } from '../../graphql/subscriptions' // from Amplify autogenerate file 
 
 
 const Jobs = () => {
@@ -98,5 +99,47 @@ const Jobs = () => {
 
 ```
 
-Flatlist
+Flatlist with pagination
 
+```javascript
+import React from 'react'
+import { FlatList } from 'react-native'
+import { useQuery, getNames } from 'aws-amplify-react-hooks'
+import { listJobs } from '../../graphql/queries' // from Amplify autogenerate file
+import { onCreateJob, onUpdateJob, onDeleteJob } from '../../graphql/subscriptions' // from Amplify autogenerate file
+
+const Jobs = ({ navigation }) => {
+  const { data, loading, error, fetchMore } = useQuery(
+    {
+      listJobs,
+      onCreateJob,
+      onUpdateJob,
+      onDeleteJob
+    },
+    {
+      variables: { limit: 5 }
+    },
+    getNames({ listJobs, onCreateJob, onUpdateJob, onDeleteJob })
+  )
+
+  const _renderItem = ({ item }) => {
+    return <Text>{item.position}</Text>
+  }
+
+  const _keyExtractor = obj => obj.id.toString()
+
+  return (
+    <>
+      <FlatList
+        scrollEventThrottle={16}
+        data={data}
+        renderItem={_renderItem}
+        keyExtractor={_keyExtractor}
+        onEndReachedThreshold={0.5}
+        onEndReached={fetchMore}
+      />
+    </>
+  )
+}
+
+```
