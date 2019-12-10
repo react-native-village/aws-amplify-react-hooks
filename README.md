@@ -66,8 +66,8 @@ render(<App />, document.getElementById('root'))
 ## useQuery
 ```javascript
 const { 
-  data: Array<string>,
-  loading,
+  data: Array<mixed>,
+  loading: string,
   error: string,
   fetchMore: function
 } = useQuery(query {}, options: { variables: {[key: string]: any }}, queryData: Array<string>)
