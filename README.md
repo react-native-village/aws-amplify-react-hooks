@@ -201,7 +201,7 @@ const [
 
 `error` - Error.
 
-`input` - Error.
+`input` - Mutation value.
 
 
 ```javascript
