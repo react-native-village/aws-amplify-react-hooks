@@ -21,6 +21,7 @@ react-native run-android
 ```
 
 # API
+
 ## AmplifyProvider
 
 Similar to
@@ -28,3 +29,28 @@ Similar to
 In order for this package to work, you need to wrap your component tree with
 `AmplifyProvider` at an appropriate level, encapsulating all components which
 will use hooks.
+
+### Usage
+
+```javascript
+import React from 'react'
+import { AmplifyProvider } from 'aws-amplify-react-hooks'  
+import { Auth, API, graphqlOperation } from 'aws-amplify'
+
+const client = {
+  Auth,
+  API,
+  graphqlOperation
+}
+
+AmplifyProvider(client)
+
+const App = () => (
+  <AmplifyProvider client={client}>
+    <AppNavigator />
+  </AmplifyProviderc>
+)
+
+render(<App />, document.getElementById('root'))
+```
+
