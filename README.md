@@ -54,3 +54,44 @@ const App = () => (
 render(<App />, document.getElementById('root'))
 ```
 
+## useQuery
+
+```javascript
+import { useQuery, getNames } from 'aws-amplify-react-hooks'
+import { listJobs } from '../../graphql/queries'
+import { onCreateJob, onUpdateJob, onDeleteJob } from '../../graphql/subscriptions'
+
+
+const Jobs = () => {
+    const { data, loading, error, fetchMore } = useQuery(
+    {
+      listJobs,
+      onCreateJob,
+      onUpdateJob,
+      onDeleteJob
+    },
+    {
+      variables: { limit: 5 }
+    },
+    getNames({ listJobs, onCreateJob, onUpdateJob, onDeleteJob })
+  )
+
+  if (loading) {
+    return <Text>Loading...</Text>
+  }
+  if (error) {
+    return <Text>Error! {error}</Text>
+  }
+
+  return (
+    <>
+      {data.map(item => (
+        <View key={item.id}>
+          <Text>{item.position}</Text>
+        </View>
+      ))}
+    </>
+  )
+}
+
+```
