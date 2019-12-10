@@ -67,7 +67,8 @@ render(<App />, document.getElementById('root'))
 ```javascript
 const { 
   data: Array<string>,
-  loading, error: string,
+  loading,
+  error: string,
   fetchMore: function
 } = useQuery(query {}, options: { variables: {[key: string]: any }}, queryData: Array<string>)
 ```
