@@ -87,6 +87,15 @@ It's time to test it in practice! Therefore, we write the command in the console
 With this team, you can quickly test your achievements of change without the need to allocate or update the cloud resources that you use at each stage. In this way, you can configure unit and integration tests that can be performed quickly without affecting your cloud backend.
 
  [Details](https://dev.to/playra/crud-create-read-update-delete-aws-amplify-graphql-react-native-4m2b)
+ 
+## We start the project 🚀
+iOS
+
+`cd messaga && react-native run-ios`
+
+Android
+
+`cd messaga && react-native run-android`
 
 
 ## Done
