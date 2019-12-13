@@ -71,7 +71,7 @@
 		"authreactnativecrudeb7cc400": {
 			"Type": "AWS::CloudFormation::Stack",
 			"Properties": {
-				"TemplateURL": "https://s3.amazonaws.com/amplify-reactnativecrud-dev-162931-deployment/amplify-cfn-templates/auth/reactnativecrudeb7cc400-cloudformation-template.yml",
+				"TemplateURL": "https://s3.amazonaws.com/amplify-reactnativecrud-prod-133551-deployment/amplify-cfn-templates/auth/reactnativecrudeb7cc400-cloudformation-template.yml",
 				"Parameters": {
 					"identityPoolName": "reactnativecrudeb7cc400_identitypool_eb7cc400",
 					"allowUnauthenticatedIdentities": false,
@@ -112,14 +112,14 @@
 					"usernameAttributes": "email",
 					"userPoolGroupList": "",
 					"dependsOn": "",
-					"env": "dev"
+					"env": "prod"
 				}
 			}
 		},
 		"apireactnativecrud": {
 			"Type": "AWS::CloudFormation::Stack",
 			"Properties": {
-				"TemplateURL": "https://s3.amazonaws.com/amplify-reactnativecrud-dev-162931-deployment/amplify-cfn-templates/api/cloudformation-template.json",
+				"TemplateURL": "https://s3.amazonaws.com/amplify-reactnativecrud-prod-133551-deployment/amplify-cfn-templates/api/cloudformation-template.json",
 				"Parameters": {
 					"CreateAPIKey": 0,
 					"AppSyncApiName": "reactnativecrud",
@@ -131,9 +131,9 @@
 							"Outputs.UserPoolId"
 						]
 					},
-					"S3DeploymentBucket": "amplify-reactnativecrud-dev-162931-deployment",
+					"S3DeploymentBucket": "amplify-reactnativecrud-prod-133551-deployment",
 					"S3DeploymentRootKey": "amplify-appsync-files/0b255ddefa6bcd7a68aa11d3ad1eafeac5dc86a2",
-					"env": "dev"
+					"env": "prod"
 				}
 			}
 		},

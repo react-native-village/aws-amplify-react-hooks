@@ -58,5 +58,11 @@ buck-out/
 # CocoaPods
 /ios/Pods/
 
-amplify/mock-data
 
+#amplify
+amplify/.config/local-env-info.json
+amplify/mock-data
+amplify/backend/amplify-meta.json
+build/
+dist/
+node_modules/

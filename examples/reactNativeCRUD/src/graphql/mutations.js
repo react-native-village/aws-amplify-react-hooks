@@ -10,7 +10,7 @@ export const createJob = `mutation CreateJob($input: CreateJobInput!) {
     owner
   }
 }
-`
+`;
 export const updateJob = `mutation UpdateJob($input: UpdateJobInput!) {
   updateJob(input: $input) {
     id
@@ -20,7 +20,7 @@ export const updateJob = `mutation UpdateJob($input: UpdateJobInput!) {
     owner
   }
 }
-`
+`;
 export const deleteJob = `mutation DeleteJob($input: DeleteJobInput!) {
   deleteJob(input: $input) {
     id
@@ -30,4 +30,4 @@ export const deleteJob = `mutation DeleteJob($input: DeleteJobInput!) {
     owner
   }
 }
-`
+`;

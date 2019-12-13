@@ -1,14 +1,14 @@
 {
 	"providers": {
 		"awscloudformation": {
-			"AuthRoleName": "amplify-reactnativecrud-dev-162931-authRole",
-			"UnauthRoleArn": "arn:aws:iam::123118798050:role/amplify-reactnativecrud-dev-162931-unauthRole",
-			"AuthRoleArn": "arn:aws:iam::123118798050:role/amplify-reactnativecrud-dev-162931-authRole",
+			"AuthRoleName": "amplify-reactnativecrud-prod-133551-authRole",
+			"UnauthRoleArn": "arn:aws:iam::123118798050:role/amplify-reactnativecrud-prod-133551-unauthRole",
+			"AuthRoleArn": "arn:aws:iam::123118798050:role/amplify-reactnativecrud-prod-133551-authRole",
 			"Region": "eu-west-1",
-			"DeploymentBucketName": "amplify-reactnativecrud-dev-162931-deployment",
-			"UnauthRoleName": "amplify-reactnativecrud-dev-162931-unauthRole",
-			"StackName": "amplify-reactnativecrud-dev-162931",
-			"StackId": "arn:aws:cloudformation:eu-west-1:123118798050:stack/amplify-reactnativecrud-dev-162931/ef238110-1a87-11ea-9432-0a9bdcf5c20a"
+			"DeploymentBucketName": "amplify-reactnativecrud-prod-133551-deployment",
+			"UnauthRoleName": "amplify-reactnativecrud-prod-133551-unauthRole",
+			"StackName": "amplify-reactnativecrud-prod-133551",
+			"StackId": "arn:aws:cloudformation:eu-west-1:123118798050:stack/amplify-reactnativecrud-prod-133551/55ede200-1d94-11ea-9cf0-0abd335268a4"
 		}
 	},
 	"auth": {
@@ -17,17 +17,17 @@
 			"providerPlugin": "awscloudformation",
 			"dependsOn": [],
 			"providerMetadata": {
-				"s3TemplateURL": "https://s3.amazonaws.com/amplify-reactnativecrud-dev-162931-deployment/amplify-cfn-templates/auth/reactnativecrudeb7cc400-cloudformation-template.yml",
+				"s3TemplateURL": "https://s3.amazonaws.com/amplify-reactnativecrud-prod-133551-deployment/amplify-cfn-templates/auth/reactnativecrudeb7cc400-cloudformation-template.yml",
 				"logicalId": "authreactnativecrudeb7cc400"
 			},
-			"lastPushTimeStamp": "2019-12-09T13:41:02.693Z",
+			"lastPushTimeStamp": "2019-12-13T10:42:16.218Z",
 			"output": {
-				"AppClientSecret": "21kiq7a8rlpvftqagpubkij66fltigr4i1e9o1urrto5vorrrqa",
-				"UserPoolId": "eu-west-1_bsjuOs5BE",
-				"AppClientIDWeb": "7dvvhb0skf5unnmpl4q9u1qd3g",
-				"AppClientID": "hqabfchjm8t7ep0ep1n17umbc",
-				"IdentityPoolId": "eu-west-1:699a1626-b6e5-4f4f-a8e5-70382658aa17",
-				"IdentityPoolName": "reactnativecrudeb7cc400_identitypool_eb7cc400__dev",
+				"AppClientSecret": "13ptgl4sjf632rqbk3trgpjkftrg8en0262j4ggl0q7f8mgsn7c8",
+				"UserPoolId": "eu-west-1_yq6fcTNla",
+				"AppClientIDWeb": "4elq2544gee4na4a1565ppgs6p",
+				"AppClientID": "114ik48bv76gs68n0v91gj4l0s",
+				"IdentityPoolId": "eu-west-1:bd56b445-da55-4b9c-8bcb-c78bdd3ddd72",
+				"IdentityPoolName": "reactnativecrudeb7cc400_identitypool_eb7cc400__prod",
 				"UserPoolName": "reactnativecrudeb7cc400_userpool_eb7cc400"
 			},
 			"lastPushDirHash": "tlSH/6+z+wzEuIRvEgXLnDw/qYw="
@@ -47,15 +47,15 @@
 						}
 					}
 				},
-				"GraphQLAPIIdOutput": "yd6wnvq4jfabjbig25w6batyca",
-				"GraphQLAPIEndpointOutput": "https://aniy25exbze4bgfw4imjjaofyu.appsync-api.eu-west-1.amazonaws.com/graphql"
+				"GraphQLAPIIdOutput": "s2g3mpnx5zevhktdk3jaqruqka",
+				"GraphQLAPIEndpointOutput": "https://e6evbixj2fbpfeelz2k2nlyvgy.appsync-api.eu-west-1.amazonaws.com/graphql"
 			},
 			"providerMetadata": {
-				"s3TemplateURL": "https://s3.amazonaws.com/amplify-reactnativecrud-dev-162931-deployment/amplify-cfn-templates/api/cloudformation-template.json",
+				"s3TemplateURL": "https://s3.amazonaws.com/amplify-reactnativecrud-prod-133551-deployment/amplify-cfn-templates/api/cloudformation-template.json",
 				"logicalId": "apireactnativecrud"
 			},
-			"lastPushTimeStamp": "2019-12-09T13:41:02.693Z",
-			"lastPushDirHash": "zCiU3oBV6cL+VfI1gxA6gE3sn0w="
+			"lastPushTimeStamp": "2019-12-13T10:42:16.218Z",
+			"lastPushDirHash": "FPDPzdidIjVB63bixaF82o3+wt8="
 		}
 	}
 }
