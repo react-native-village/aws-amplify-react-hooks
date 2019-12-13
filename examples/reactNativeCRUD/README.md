@@ -1,6 +1,6 @@
 # Install example
 
-## Install dependencies
+## Step 1 - Install dependencies
 
 `yarn`
 
@@ -9,14 +9,14 @@ or
 `npm install`
 
 
-## Init Amplify
+## Step 2 - Init Amplify
 
 `amplify init`
 
 ![amplify init](https://miro.medium.com/max/2948/1*LFe2FrFge8oeAWV6BikVcg.png)
 
 
-## Connecting Authentication Plugin — Auth 🔐
+## Step 3 - Connecting Authentication Plugin — Auth 🔐
 Now that the application is in the cloud, you can add some features, such as allowing users to register with our application and log in.
 We connect the authentication plugin.
 amplify add auth
@@ -36,7 +36,7 @@ Send changes to the cloud 💭
 )
 
 
-## Backend - Create an API
+## Stap 4 - Backend - Create an API
 
 We will now create the GraphQL API, which interacts with the DynamoDB NoSQL database to perform CRUD operations (create, read, update, delete).
 
@@ -76,3 +76,4 @@ With this team, you can quickly test your achievements of change without the nee
  [Details](https://dev.to/playra/crud-create-read-update-delete-aws-amplify-graphql-react-native-4m2b)
 
 
+## Done
