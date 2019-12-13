@@ -1,7 +1,13 @@
 # Install example
 
 Install dependencies
+
 `yarn`
+
+or
+
+`npm install`
+
 
 ## Init Amplify
 
