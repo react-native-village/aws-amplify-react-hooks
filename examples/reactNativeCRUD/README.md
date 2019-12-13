@@ -22,15 +22,21 @@ or
 
 `npm install`
 
+# Step 2 - Register your AWS account
 
-## Step 2 - Init Amplify
+We register according to this [instruction](https://aws-amplify.github.io/docs/) 📃 and check all 5 steps according to the video tutorial..
+Attention!!! You will need a bank card 💳, where should be more than 1 $ 💵
+There we look and put the Amplify Command Line Interface (CLI)
+
+
+## Step 3 - Init Amplify
 
 `amplify init`
 
 ![amplify init](https://miro.medium.com/max/2948/1*LFe2FrFge8oeAWV6BikVcg.png)
 
 
-## Step 3 - Connecting Authentication Plugin — Auth 🔐
+## Step 4 - Connecting Authentication Plugin — Auth 🔐
 Now that the application is in the cloud, you can add some features, such as allowing users to register with our application and log in.
 We connect the authentication plugin.
 amplify add auth
@@ -49,7 +55,7 @@ Send changes to the cloud 💭
 [Details](https://dev.to/playra/crud-create-read-update-delete-aws-amplify-graphql-react-native-4m2b)
 
 
-## Stap 4 - Backend - Create an API
+## Stap 5 - Backend - Create an API
 
 We will now create the GraphQL API, which interacts with the DynamoDB NoSQL database to perform CRUD operations (create, read, update, delete).
 
@@ -88,7 +94,7 @@ With this team, you can quickly test your achievements of change without the nee
 
  [Details](https://dev.to/playra/crud-create-read-update-delete-aws-amplify-graphql-react-native-4m2b)
  
-## We start the project 🚀
+## Step 6 - We start the project 🚀
 iOS
 
 `cd messaga && react-native run-ios`
@@ -98,4 +104,4 @@ Android
 `cd messaga && react-native run-android`
 
 
-## Done
+## Done ✅
