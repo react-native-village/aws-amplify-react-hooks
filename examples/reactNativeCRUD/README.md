@@ -3,8 +3,16 @@
 # CRUD
 
 
-## Step 1 - Install dependencies
 
+## Step 1 - Fast start example
+
+ Clone repository
+ `git clone git@github.com:react-native-village/aws-amplify-react-hooks.git`
+ 
+Let's go to the example folder
+`cd aws-amplify-react-hooks/examples/reactNativeCRUD`
+
+Install dependencies
 `yarn`
 
 or
