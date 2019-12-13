@@ -22,7 +22,7 @@ or
 
 `npm install`
 
-# Step 2 - Register your AWS account
+## Step 2 - Register your AWS account
 
 We register according to this [instruction](https://aws-amplify.github.io/docs/) 📃 and check all 5 steps according to the video tutorial..
 Attention!!! You will need a bank card 💳, where should be more than 1 $ 💵
