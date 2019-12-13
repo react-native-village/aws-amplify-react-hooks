@@ -1,6 +1,6 @@
 # Install example
 
-Install dependencies
+## Install dependencies
 
 `yarn`
 
@@ -14,6 +14,7 @@ or
 `amplify init`
 
 ![amplify init](https://miro.medium.com/max/2948/1*LFe2FrFge8oeAWV6BikVcg.png)
+
 
 ## Connecting Authentication Plugin — Auth 🔐
 Now that the application is in the cloud, you can add some features, such as allowing users to register with our application and log in.
