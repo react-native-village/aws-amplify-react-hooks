@@ -32,6 +32,9 @@ Send changes to the cloud 💭
 
 ✔ All resources are updated in the cloud
 
+![Details]( [Details](https://dev.to/playra/crud-create-read-update-delete-aws-amplify-graphql-react-native-4m2b)
+)
+
 
 ## Backend - Create an API
 
