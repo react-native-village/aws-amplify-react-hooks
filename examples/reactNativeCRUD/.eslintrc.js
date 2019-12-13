@@ -1,7 +1,7 @@
 module.exports = {
   root: true,
   parser: 'babel-eslint',
-  extends: ['@react-native-community', 'airbnb', 'standard', 'prettier', 'plugin:flowtype/recommended'],
+  extends: ['@react-native-community', 'airbnb', 'prettier', 'plugin:flowtype/recommended'],
   plugins: ['react', 'react-native', 'jsx-a11y', 'import', 'react-hooks'],
   parserOptions: {
     ecmaFeatures: {
