@@ -66,7 +66,7 @@ We will now create the GraphQL API, which interacts with the DynamoDB NoSQL data
 After the selected items, a diagram will open, which is always available for editing at ./amplify/backend/api/messaga/schema.graphql
 Where we add the following code:
 
-```
+```graphql
 type Job 
   @model
   @auth(
