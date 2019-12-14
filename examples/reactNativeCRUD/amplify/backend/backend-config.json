@@ -1,0 +1,26 @@
+{
+	"auth": {
+		"reactnativecrud1bf54d20": {
+			"service": "Cognito",
+			"providerPlugin": "awscloudformation",
+			"dependsOn": []
+		}
+	},
+	"api": {
+		"reactnativecrud": {
+			"service": "AppSync",
+			"providerPlugin": "awscloudformation",
+			"output": {
+				"authConfig": {
+					"additionalAuthenticationProviders": [],
+					"defaultAuthentication": {
+						"authenticationType": "AMAZON_COGNITO_USER_POOLS",
+						"userPoolConfig": {
+							"userPoolId": "authreactnativecrud1bf54d20"
+						}
+					}
+				}
+			}
+		}
+	}
+}

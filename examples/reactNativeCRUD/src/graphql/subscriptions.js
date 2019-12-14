@@ -1,8 +1,8 @@
 // @flow
 // this is an auto generated file. This will be overwritten
 
-export const onCreateJob = `subscription OnCreateJob($owner: String!) {
-  onCreateJob(owner: $owner) {
+export const onCreateJob = `subscription OnCreateJob {
+  onCreateJob {
     id
     position
     rate
@@ -11,8 +11,8 @@ export const onCreateJob = `subscription OnCreateJob($owner: String!) {
   }
 }
 `;
-export const onUpdateJob = `subscription OnUpdateJob($owner: String!) {
-  onUpdateJob(owner: $owner) {
+export const onUpdateJob = `subscription OnUpdateJob {
+  onUpdateJob {
     id
     position
     rate
@@ -21,8 +21,8 @@ export const onUpdateJob = `subscription OnUpdateJob($owner: String!) {
   }
 }
 `;
-export const onDeleteJob = `subscription OnDeleteJob($owner: String!) {
-  onDeleteJob(owner: $owner) {
+export const onDeleteJob = `subscription OnDeleteJob {
+  onDeleteJob {
     id
     position
     rate
