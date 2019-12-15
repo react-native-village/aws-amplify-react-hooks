@@ -3,7 +3,7 @@ import { StatusBar } from 'react-native'
 import Amplify from '@aws-amplify/core'
 import { Authenticator } from 'aws-amplify-react-native'
 import awsconfig from '../aws-exports'
-import { AmplifyTheme } from './components'
+import { AmplifyTheme, Localei18n } from './components'
 
 Amplify.configure({
   ...awsconfig,
@@ -35,6 +35,7 @@ const signUpConfig = {
 const App = () => {
   return (
     <>
+      <Localei18n />
       <StatusBar barStyle="dark-content" />
       <Authenticator usernameAttributes="email" signUpConfig={signUpConfig} theme={AmplifyTheme} />
     </>
