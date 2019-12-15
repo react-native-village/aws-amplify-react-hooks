@@ -1,6 +1,32 @@
 import { createAppContainer } from 'react-navigation'
 import { createStackNavigator } from 'react-navigation-stack'
-import { ConfirmSignUp, Hello, User, SignIn, SignUp, Forgot, ForgotPassSubmit } from './screens/Authenticator'
+import { createBottomTabNavigator } from 'react-navigation-tabs'
+import { ConfirmSignUp, Hello, SignIn, SignUp, Forgot, ForgotPassSubmit } from './screens/Authenticator'
+import { User, Jobs } from './screens'
+import { TabBar } from './components'
+import { PURPLE } from './constants'
+
+const TabNavigator = {
+  screen: createBottomTabNavigator(
+    {
+      JOBS: { screen: Jobs },
+      USER: { screen: User }
+    },
+    {
+      initialRouteName: 'JOBS',
+      tabBarComponent: TabBar,
+      tabBarPosition: 'bottom',
+      animationEnabled: true,
+      lazy: true,
+      backBehavior: 'initialRoute',
+      tabBarOptions: {
+        showLabel: false,
+        activeTintColor: PURPLE,
+        inactiveTintColor: '#390032'
+      }
+    }
+  )
+}
 
 const AppNavigator = createStackNavigator(
   {
@@ -9,12 +35,15 @@ const AppNavigator = createStackNavigator(
     SIGN_UP: { screen: SignUp },
     FORGOT: { screen: Forgot },
     CONFIRM_SIGN_UP: { screen: ConfirmSignUp },
-    USER: { screen: User },
-    FORGOT_PASSWORD_SUBMIT: { screen: ForgotPassSubmit }
+    FORGOT_PASSWORD_SUBMIT: { screen: ForgotPassSubmit },
+    MAIN: TabNavigator
   },
   {
     initialRouteName: 'HELLO',
-    headerMode: 'none'
+    headerMode: 'none',
+    defaultNavigationOptions: {
+      gesturesEnabled: false
+    }
   }
 )
 
