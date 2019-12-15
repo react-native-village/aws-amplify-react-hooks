@@ -223,6 +223,8 @@ PODS:
     - React
   - RNGestureHandler (1.5.2):
     - React
+  - RNKeychain (4.0.4):
+    - React
   - RNReanimated (1.4.0):
     - React
   - RNScreens (1.0.0-alpha.23):
@@ -261,6 +263,7 @@ DEPENDENCIES:
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
   - RNAWSCognito (from `../node_modules/amazon-cognito-identity-js`)
   - RNGestureHandler (from `../node_modules/react-native-gesture-handler`)
+  - RNKeychain (from `../node_modules/react-native-keychain`)
   - RNReanimated (from `../node_modules/react-native-reanimated`)
   - RNScreens (from `../node_modules/react-native-screens`)
   - RNVectorIcons (from `../node_modules/react-native-vector-icons`)
@@ -324,6 +327,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/amazon-cognito-identity-js"
   RNGestureHandler:
     :path: "../node_modules/react-native-gesture-handler"
+  RNKeychain:
+    :path: "../node_modules/react-native-keychain"
   RNReanimated:
     :path: "../node_modules/react-native-reanimated"
   RNScreens:
@@ -362,6 +367,7 @@ SPEC CHECKSUMS:
   ReactCommon: 198c7c8d3591f975e5431bec1b0b3b581aa1c5dd
   RNAWSCognito: 8cdb673873f82dc770c769b87c336eb4b67b8ae0
   RNGestureHandler: 946a7691e41df61e2c4b1884deab41a4cdc3afff
+  RNKeychain: 79cfca6cd5030bbabcd1a2c009531b84e358116d
   RNReanimated: b2ab0b693dddd2339bd2f300e770f6302d2e960c
   RNScreens: f28b48b8345f2f5f39ed6195518291515032a788
   RNVectorIcons: 0bb4def82230be1333ddaeee9fcba45f0b288ed4

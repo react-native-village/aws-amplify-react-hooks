@@ -7302,6 +7302,11 @@ react-native-iphone-x-helper@^1.2.1:
   resolved "https://registry.yarnpkg.com/react-native-iphone-x-helper/-/react-native-iphone-x-helper-1.2.1.tgz#645e2ffbbb49e80844bb4cbbe34a126fda1e6772"
   integrity sha512-/VbpIEp8tSNNHIvstuA3Swx610whci1Zpc9mqNkqn14DkMbw+ORviln2u0XyHG1kPvvwTNGZY6QpeFwxYaSdbQ==
 
+react-native-keychain@^4.0.4:
+  version "4.0.4"
+  resolved "https://registry.yarnpkg.com/react-native-keychain/-/react-native-keychain-4.0.4.tgz#099ce546d893fcc6503adf686507eb045584b7a6"
+  integrity sha512-FoxVpjaztOM9BLoZLourPDVhe7g2UoKogIvyiL0M4BMjQdX4uL8vutnJLDzRENAMdUlhmhkDPzTHi3/OjL8A+Q==
+
 react-native-reanimated@^1.4.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/react-native-reanimated/-/react-native-reanimated-1.4.0.tgz#7f1acbf9be08492d834f512700570978052be2f9"
