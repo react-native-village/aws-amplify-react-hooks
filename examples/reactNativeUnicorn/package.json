@@ -18,7 +18,16 @@
     "aws-amplify-react-native": "^2.2.3",
     "react": "16.9.0",
     "react-native": "0.61.5",
-    "react-native-vector-icons": "^6.6.0"
+    "react-native-floating-label": "^0.2.3",
+    "react-native-gesture-handler": "^1.5.2",
+    "react-native-iphone-x-helper": "^1.2.1",
+    "react-native-reanimated": "^1.4.0",
+    "react-native-screens": "1.0.0-alpha.23",
+    "react-native-statusbar-alert": "^0.4.0",
+    "react-native-vector-icons": "^6.6.0",
+    "react-navigation": "^4.0.10",
+    "react-navigation-stack": "^1.10.3",
+    "tcomb-form-native": "^0.6.20"
   },
   "prettier": {
     "singleQuote": true,
