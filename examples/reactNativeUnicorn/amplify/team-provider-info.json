@@ -10,6 +10,11 @@
             "StackName": "amplify-reactnativeunicorn-test-120548",
             "StackId": "arn:aws:cloudformation:us-east-1:765295725060:stack/amplify-reactnativeunicorn-test-120548/22f36a50-1f1a-11ea-960b-0e6f11df9e98",
             "AmplifyAppId": "d37n6f0v507kqb"
+        },
+        "categories": {
+            "auth": {
+                "reactnativeunicorn44026833": {}
+            }
         }
     }
 }

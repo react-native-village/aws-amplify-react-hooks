@@ -1,1 +1,9 @@
-{}
+{
+	"auth": {
+		"reactnativeunicorn44026833": {
+			"service": "Cognito",
+			"providerPlugin": "awscloudformation",
+			"dependsOn": []
+		}
+	}
+}
