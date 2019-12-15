@@ -16,6 +16,12 @@ const formValidation = {
   password: t.refinement(t.String, value => value.length >= 8)
 }
 
+export const structJob = t.struct({
+  position: t.refinement(t.String, value => value.length >= 3 && value <= 30),
+  rate: t.Number,
+  description: t.String
+})
+
 export const structSignIn = t.struct({
   email: formValidation.email,
   password: formValidation.password
@@ -308,6 +314,75 @@ export const options = {
       secureTextEntry: false,
       keyboardType: 'numeric',
       error: 'Confident in their actions?',
+      factory: FloatingLabel
+    },
+    position: {
+      stylesheet: formStyles,
+      placeholder: 'Position',
+      secureTextEntry: false,
+      autoCapitalize: 'none',
+      error: 'Please enter position name',
+      factory: FloatingLabel
+    },
+    rate: {
+      stylesheet: formStyles,
+      placeholder: 'Rate',
+
+      secureTextEntry: false,
+      autoCapitalize: 'none',
+      keyboardType: 'numeric',
+      error: 'Please enter rate',
+      factory: FloatingLabel
+    },
+    description: {
+      stylesheet: {
+        ...Form.stylesheet,
+        controlLabel: {
+          normal: {
+            color: LABEL_COLOR,
+            fontFamily: '3270Narrow',
+            fontSize: FONT_SIZE,
+            marginLeft: 5,
+            marginBottom: 7,
+            justifyContent: 'center',
+            fontWeight: FONT_WEIGHT
+          },
+          error: {
+            color: ERROR_COLOR,
+            fontFamily: '3270Narrow',
+            fontSize: FONT_SIZE,
+            marginLeft: 5,
+            marginRight: 7,
+            fontWeight: FONT_WEIGHT
+          }
+        },
+        textbox: {
+          normal: {
+            height: 300,
+            color: INPUT_COLOR,
+            fontFamily: '3270Narrow',
+            fontSize: FONT_SIZE,
+            paddingHorizontal: 12,
+            borderRadius: 4,
+            textAlignVertical: 'top',
+            borderColor: BORDER_COLOR,
+            borderWidth: 0.5,
+            paddingTop: 13,
+            paddingBottom: 0,
+            marginLeft: 5,
+            marginRight: 5
+          },
+          error: {
+            ...Form.stylesheet.textbox.error,
+            height: 150
+          }
+        }
+      },
+      placeholder: 'Description',
+      secureTextEntry: false,
+      multiline: true,
+      autoCapitalize: 'none',
+      error: 'Please enter rate',
       factory: FloatingLabel
     }
   }
