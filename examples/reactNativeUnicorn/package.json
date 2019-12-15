@@ -12,9 +12,12 @@
   },
   "precommit": "lint",
   "dependencies": {
+    "@aws-amplify/api": "^2.1.1",
     "@aws-amplify/core": "^2.2.0",
+    "@aws-amplify/pubsub": "^2.1.1",
     "amazon-cognito-identity-js": "^3.2.0",
     "aws-amplify": "^2.2.0",
+    "aws-amplify-react-hooks": "^1.0.13",
     "aws-amplify-react-native": "^2.2.3",
     "react": "16.9.0",
     "react-native": "0.61.5",
@@ -29,6 +32,7 @@
     "react-native-vector-icons": "^6.6.0",
     "react-navigation": "^4.0.10",
     "react-navigation-stack": "^1.10.3",
+    "react-navigation-tabs": "^2.6.2",
     "tcomb-form-native": "^0.6.20"
   },
   "prettier": {
