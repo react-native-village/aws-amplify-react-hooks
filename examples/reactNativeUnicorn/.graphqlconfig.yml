@@ -1,0 +1,15 @@
+projects:
+  reactnativeunicorn:
+    schemaPath: amplify/backend/api/reactnativeunicorn/build/schema.graphql
+    includes:
+      - src/graphql/**/*.js
+    excludes:
+      - ./amplify/**
+    extensions:
+      amplify:
+        codeGenTarget: flow
+        generatedFileName: src/API.js
+        docsFilePath: src/graphql
+        region: us-east-1
+        apiId: null
+        maxDepth: 2
