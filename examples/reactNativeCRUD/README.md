@@ -39,11 +39,11 @@ There we look and put the Amplify Command Line Interface (CLI)
 ## Step 4 - Connecting Authentication Plugin — Auth 🔐
 Now that the application is in the cloud, you can add some features, such as allowing users to register with our application and log in.
 We connect the authentication plugin.
-amplify add auth
+
+`amplify add auth`
+
 Select the default configuration. This adds auth resource configurations locally to your amplify/backend/auth directory.
 Select the profile we want to use. default. Enter and how users will log in. Email (write off money for SMS).
-
-`amplify push`
 
 
 ![auth](https://miro.medium.com/max/3188/1*KD6KyPjd9Ac3REpgsTC9CQ.png)
