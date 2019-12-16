@@ -13,7 +13,7 @@ export const createJob = `mutation CreateJob(
     owner
   }
 }
-`;
+`
 export const updateJob = `mutation UpdateJob(
   $input: UpdateJobInput!
   $condition: ModelJobConditionInput
@@ -26,7 +26,7 @@ export const updateJob = `mutation UpdateJob(
     owner
   }
 }
-`;
+`
 export const deleteJob = `mutation DeleteJob(
   $input: DeleteJobInput!
   $condition: ModelJobConditionInput
@@ -39,4 +39,4 @@ export const deleteJob = `mutation DeleteJob(
     owner
   }
 }
-`;
+`

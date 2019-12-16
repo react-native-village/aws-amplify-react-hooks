@@ -10,7 +10,7 @@ export const getJob = `query GetJob($id: ID!) {
     owner
   }
 }
-`;
+`
 export const listJobs = `query ListJobs($filter: ModelJobFilterInput, $limit: Int, $nextToken: String) {
   listJobs(filter: $filter, limit: $limit, nextToken: $nextToken) {
     items {
@@ -23,4 +23,4 @@ export const listJobs = `query ListJobs($filter: ModelJobFilterInput, $limit: In
     nextToken
   }
 }
-`;
+`
