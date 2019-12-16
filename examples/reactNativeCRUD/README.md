@@ -100,11 +100,11 @@ With this team, you can quickly test your achievements of change without the nee
 ## Step 6 - We start the project 🚀
 iOS
 
-`cd messaga && react-native run-ios`
+`react-native run-ios`
 
 Android
 
-`cd messaga && react-native run-android`
+`react-native run-android`
 
 
 ## Done ✅
