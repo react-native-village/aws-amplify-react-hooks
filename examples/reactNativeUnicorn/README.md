@@ -12,7 +12,7 @@
  
 Let's go to the example folder
 
-`cd aws-amplify-react-hooks/examples/reactNativeCRUD`
+`cd aws-amplify-react-hooks/examples/reactNativeUnicorn`
 
 Install dependencies
 
