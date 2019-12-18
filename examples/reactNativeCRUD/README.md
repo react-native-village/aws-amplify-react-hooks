@@ -39,9 +39,12 @@ There we look and put the Amplify Command Line Interface (CLI)
 ## Step 4 - Connecting Authentication Plugin — Auth 🔐
 Now that the application is in the cloud, you can add some features, such as allowing users to register with our application and log in.
 We connect the authentication plugin.
-amplify add auth
+
+`amplify add auth`
+
 Select the default configuration. This adds auth resource configurations locally to your amplify/backend/auth directory.
 Select the profile we want to use. default. Enter and how users will log in. Email (write off money for SMS).
+
 
 ![auth](https://miro.medium.com/max/3188/1*KD6KyPjd9Ac3REpgsTC9CQ.png)
 
@@ -92,6 +95,12 @@ It's time to test it in practice! Therefore, we write the command in the console
 
 With this team, you can quickly test your achievements of change without the need to allocate or update the cloud resources that you use at each stage. In this way, you can configure unit and integration tests that can be performed quickly without affecting your cloud backend.
 
+Send changes to the cloud 💭
+
+`amplify push`
+
+✔ All resources are updated in the cloud
+
  [Details](https://dev.to/playra/crud-create-read-update-delete-aws-amplify-graphql-react-native-4m2b)
  
 ## Step 6 - We start the project 🚀
@@ -102,6 +111,22 @@ iOS
 Android
 
 `react-native run-android`
+
+# Troubleshooting
+
+If incomprehensible errors appear, it means that somewhere you made a mistake in the configuration, so it is better to start from the beginning.
+
+1. Delete the amplfy folder
+
+`rm -rf amplify`
+
+2. Delete the amplfy configuration file
+
+`rm -rf aws-exports.js`
+
+3. We go through these [steps](https://github.com/react-native-village/aws-amplify-react-hooks/blob/master/examples/reactNativeCRUD/README.md#step-3---init-amplify
+) again
+
 
 
 ## Done ✅

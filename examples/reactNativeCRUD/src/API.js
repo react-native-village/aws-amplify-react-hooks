@@ -152,6 +152,10 @@ export type ListJobsQuery = {|
   |},
 |};
 
+export type OnCreateJobSubscriptionVariables = {|
+  owner: string,
+|};
+
 export type OnCreateJobSubscription = {|
   onCreateJob: ? {|
     __typename: "Job",
@@ -163,6 +167,10 @@ export type OnCreateJobSubscription = {|
   |},
 |};
 
+export type OnUpdateJobSubscriptionVariables = {|
+  owner: string,
+|};
+
 export type OnUpdateJobSubscription = {|
   onUpdateJob: ? {|
     __typename: "Job",
@@ -172,6 +180,10 @@ export type OnUpdateJobSubscription = {|
     description: string,
     owner: ?string,
   |},
+|};
+
+export type OnDeleteJobSubscriptionVariables = {|
+  owner: string,
 |};
 
 export type OnDeleteJobSubscription = {|
