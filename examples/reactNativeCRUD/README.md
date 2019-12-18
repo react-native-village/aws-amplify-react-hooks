@@ -95,6 +95,12 @@ It's time to test it in practice! Therefore, we write the command in the console
 
 With this team, you can quickly test your achievements of change without the need to allocate or update the cloud resources that you use at each stage. In this way, you can configure unit and integration tests that can be performed quickly without affecting your cloud backend.
 
+Send changes to the cloud 💭
+
+`amplify push`
+
+✔ All resources are updated in the cloud
+
  [Details](https://dev.to/playra/crud-create-read-update-delete-aws-amplify-graphql-react-native-4m2b)
  
 ## Step 6 - We start the project 🚀
