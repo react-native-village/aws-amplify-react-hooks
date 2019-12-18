@@ -1,12 +1,28 @@
+// @flow
+import type { Node, ComponentType, Element } from 'react'
 import React, { createContext, useEffect, useContext, useReducer } from 'react'
 import _ from 'lodash'
 import type { ActionT, StateT } from './types'
 
-const AmplifyContext = createContext(null)
+const AmplifyContext = createContext<null>(null)
 
-export const getNames = constObj => Object.keys(constObj)
+export const getNames = (constObj: {}): Array<string> => Object.keys(constObj)
 
-export const AmplifyProvider = ({ client, children }) => {
+type ClientType = {
+  Auth: {},
+  API: {},
+  graphqlOperation: void
+}
+
+type T = ComponentType<{
+  value: any,
+  client: ClientType | null,
+  children?: Node
+}>
+
+type Client = Element<T>
+
+export const AmplifyProvider = ({ client, children }: { children: Node, client: null }): Client => {
   return <AmplifyContext.Provider value={client}>{children}</AmplifyContext.Provider>
 }
 
