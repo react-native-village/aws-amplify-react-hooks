@@ -9,9 +9,9 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'flex-start'
   },
-  h3: {
+  h5: {
     fontFamily: '3270Narrow',
-    fontSize: 21,
+    fontSize: 14,
     color: WHITE
   }
 })
@@ -20,13 +20,13 @@ type Props = {
   title: string
 }
 
-const H3 = memo<Props>(({ title }) => {
-  const { container, h3 } = styles
+const H5 = memo<Props>(({ title }) => {
+  const { container, h5 } = styles
   return (
     <View style={container}>
-      <Text style={h3}>{title}</Text>
+      <Text style={h5}>{title}</Text>
     </View>
   )
 })
 
-export { H3 }
+export { H5 }

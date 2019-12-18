@@ -7,6 +7,7 @@ export const PURPLE = '#7A1374'
 export const BLUE = '#00FFFF'
 export const GREEN = '#2E7767'
 export const RED = '#FC2847'
+export const GREY = '#979797'
 export const LABEL_COLOR = BLUE
 export const INPUT_COLOR = PINK
 export const ERROR_COLOR = RED

@@ -1,7 +1,6 @@
 import React from 'react'
 import { StyleSheet, ScrollView } from 'react-native'
-import { H1, H2, H3, Space } from './components'
-//import { CardJob, H1, H2, Space } from './components'
+import { H1, H2, H3, H4, H5, H6, H7, Space } from './components'
 import { WHITE, BG } from './constants'
 
 const styles = StyleSheet.create({
@@ -37,6 +36,14 @@ const App = () => {
         <H2 title="H2 Text" />
         <Space height={20} />
         <H3 title="H3 Text" />
+        <Space height={20} />
+        <H4 title="H4 Text" />
+        <Space height={20} />
+        <H5 title="H5 Text" />
+        <Space height={20} />
+        <H6 title="H6 Text" />
+        <Space height={20} />
+        <H7 title="H7 Text" />
       </ScrollView>
     </>
   )

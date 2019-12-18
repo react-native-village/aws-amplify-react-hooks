@@ -9,7 +9,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'flex-start'
   },
-  h1: {
+  h2: {
     fontFamily: '3270Narrow',
     fontSize: 21
   }
@@ -20,12 +20,12 @@ type Props = {
 }
 
 const H2 = memo<Props>(({ title }) => {
-  const { container, h1 } = styles
+  const { container, h2 } = styles
   return (
     <View style={container}>
-      <Text style={[h1, { color: BLUE }]}>{title}</Text>
-      <Text style={[h1, { color: PINK, marginTop: -24, marginLeft: -1 }]}>{title}</Text>
-      <Text style={[h1, { color: WHITE, marginTop: -23 }]}>{title}</Text>
+      <Text style={[h2, { color: BLUE }]}>{title}</Text>
+      <Text style={[h2, { color: PINK, marginTop: -24, marginLeft: -1 }]}>{title}</Text>
+      <Text style={[h2, { color: WHITE, marginTop: -23 }]}>{title}</Text>
     </View>
   )
 })
