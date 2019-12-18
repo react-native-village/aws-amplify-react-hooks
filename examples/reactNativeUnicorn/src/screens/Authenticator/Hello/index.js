@@ -17,7 +17,7 @@ const Hello = ({ navigation }) => {
           const { username, password } = credentials
           const user = await Auth.signIn(username, password)
           setLoading(false)
-          user && onScreen('USER', navigation)()
+          user && onScreen('JOBS', navigation)()
         } else {
           setLoading(false)
         }

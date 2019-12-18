@@ -3,22 +3,32 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "android": "react-native run-android",
-    "ios": "react-native run-ios",
-    "start": "react-native start",
-    "test": "jest",
-    "lint": "esw src/**",
-    "lint-watch": "esw -w --changed src/**"
+   "ios": "react-native run-ios --simulator='iPhone SE'",
+   "android": "react-native run-android",
+   "lint": "esw src/**",
+   "lint-watch": "esw -w --changed src/**",
+    "postinstall":"cd ./ios && pod install && cd .."
   },
   "precommit": "lint",
+  "prettier": {
+    "singleQuote": true,
+    "printWidth": 120,
+    "tabWidth": 2,
+    "trailingComma": "none",
+    "bracketSpacing": true,
+    "semi": false,
+    "useTabs": false,
+    "jsxBracketSameLine": false
+  },
   "dependencies": {
-    "@aws-amplify/api": "^2.1.1",
-    "@aws-amplify/core": "^2.2.0",
-    "@aws-amplify/pubsub": "^2.1.1",
+    "@aws-amplify/api": "1.2.4",
+    "@aws-amplify/core": "1.2.4",
+    "@aws-amplify/pubsub": "1.2.4",
     "amazon-cognito-identity-js": "^3.2.0",
-    "aws-amplify": "^2.2.0",
+    "aws-amplify": "^1.2.4",
     "aws-amplify-react-hooks": "^1.0.13",
     "aws-amplify-react-native": "^2.2.3",
+    "lodash": "^4.17.15",
     "react": "16.9.0",
     "react-native": "0.61.5",
     "react-native-floating-label": "^0.2.3",
@@ -34,16 +44,6 @@
     "react-navigation-stack": "^1.10.3",
     "react-navigation-tabs": "^2.6.2",
     "tcomb-form-native": "^0.6.20"
-  },
-  "prettier": {
-    "singleQuote": true,
-    "printWidth": 120,
-    "tabWidth": 2,
-    "trailingComma": "none",
-    "bracketSpacing": true,
-    "semi": false,
-    "useTabs": false,
-    "jsxBracketSameLine": false
   },
   "devDependencies": {
     "@babel/core": "^7.7.5",

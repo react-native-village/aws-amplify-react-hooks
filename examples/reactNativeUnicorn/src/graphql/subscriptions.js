@@ -10,7 +10,7 @@ export const onCreateJob = `subscription OnCreateJob($owner: String!) {
     owner
   }
 }
-`
+`;
 export const onUpdateJob = `subscription OnUpdateJob($owner: String!) {
   onUpdateJob(owner: $owner) {
     id
@@ -20,7 +20,7 @@ export const onUpdateJob = `subscription OnUpdateJob($owner: String!) {
     owner
   }
 }
-`
+`;
 export const onDeleteJob = `subscription OnDeleteJob($owner: String!) {
   onDeleteJob(owner: $owner) {
     id
@@ -30,4 +30,4 @@ export const onDeleteJob = `subscription OnDeleteJob($owner: String!) {
     owner
   }
 }
-`
+`;

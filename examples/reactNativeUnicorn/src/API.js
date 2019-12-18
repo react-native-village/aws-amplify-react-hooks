@@ -10,66 +10,6 @@ export type CreateJobInput = {|
   owner?: ?string,
 |};
 
-export type ModelJobConditionInput = {|
-  position?: ?ModelStringInput,
-  rate?: ?ModelIntInput,
-  description?: ?ModelStringInput,
-  and?: ?Array< ?ModelJobConditionInput >,
-  or?: ?Array< ?ModelJobConditionInput >,
-  not?: ?ModelJobConditionInput,
-|};
-
-export type ModelStringInput = {|
-  ne?: ?string,
-  eq?: ?string,
-  le?: ?string,
-  lt?: ?string,
-  ge?: ?string,
-  gt?: ?string,
-  contains?: ?string,
-  notContains?: ?string,
-  between?: ?Array< ?string >,
-  beginsWith?: ?string,
-  attributeExists?: ?boolean,
-  attributeType?: ?ModelAttributeTypes,
-  size?: ?ModelSizeInput,
-|};
-
-export type ModelAttributeTypes =
-  "binary" |
-  "binarySet" |
-  "bool" |
-  "list" |
-  "map" |
-  "number" |
-  "numberSet" |
-  "string" |
-  "stringSet" |
-  "_null";
-
-
-export type ModelSizeInput = {|
-  ne?: ?number,
-  eq?: ?number,
-  le?: ?number,
-  lt?: ?number,
-  ge?: ?number,
-  gt?: ?number,
-  between?: ?Array< ?number >,
-|};
-
-export type ModelIntInput = {|
-  ne?: ?number,
-  eq?: ?number,
-  le?: ?number,
-  lt?: ?number,
-  ge?: ?number,
-  gt?: ?number,
-  between?: ?Array< ?number >,
-  attributeExists?: ?boolean,
-  attributeType?: ?ModelAttributeTypes,
-|};
-
 export type UpdateJobInput = {|
   id: string,
   position?: ?string,
@@ -83,17 +23,17 @@ export type DeleteJobInput = {|
 |};
 
 export type ModelJobFilterInput = {|
-  id?: ?ModelIDInput,
-  position?: ?ModelStringInput,
-  rate?: ?ModelIntInput,
-  description?: ?ModelStringInput,
-  owner?: ?ModelStringInput,
+  id?: ?ModelIDFilterInput,
+  position?: ?ModelStringFilterInput,
+  rate?: ?ModelIntFilterInput,
+  description?: ?ModelStringFilterInput,
+  owner?: ?ModelStringFilterInput,
   and?: ?Array< ?ModelJobFilterInput >,
   or?: ?Array< ?ModelJobFilterInput >,
   not?: ?ModelJobFilterInput,
 |};
 
-export type ModelIDInput = {|
+export type ModelIDFilterInput = {|
   ne?: ?string,
   eq?: ?string,
   le?: ?string,
@@ -104,14 +44,35 @@ export type ModelIDInput = {|
   notContains?: ?string,
   between?: ?Array< ?string >,
   beginsWith?: ?string,
-  attributeExists?: ?boolean,
-  attributeType?: ?ModelAttributeTypes,
-  size?: ?ModelSizeInput,
+|};
+
+export type ModelStringFilterInput = {|
+  ne?: ?string,
+  eq?: ?string,
+  le?: ?string,
+  lt?: ?string,
+  ge?: ?string,
+  gt?: ?string,
+  contains?: ?string,
+  notContains?: ?string,
+  between?: ?Array< ?string >,
+  beginsWith?: ?string,
+|};
+
+export type ModelIntFilterInput = {|
+  ne?: ?number,
+  eq?: ?number,
+  le?: ?number,
+  lt?: ?number,
+  ge?: ?number,
+  gt?: ?number,
+  contains?: ?number,
+  notContains?: ?number,
+  between?: ?Array< ?number >,
 |};
 
 export type CreateJobMutationVariables = {|
   input: CreateJobInput,
-  condition?: ?ModelJobConditionInput,
 |};
 
 export type CreateJobMutation = {|
@@ -127,7 +88,6 @@ export type CreateJobMutation = {|
 
 export type UpdateJobMutationVariables = {|
   input: UpdateJobInput,
-  condition?: ?ModelJobConditionInput,
 |};
 
 export type UpdateJobMutation = {|
@@ -143,7 +103,6 @@ export type UpdateJobMutation = {|
 
 export type DeleteJobMutationVariables = {|
   input: DeleteJobInput,
-  condition?: ?ModelJobConditionInput,
 |};
 
 export type DeleteJobMutation = {|

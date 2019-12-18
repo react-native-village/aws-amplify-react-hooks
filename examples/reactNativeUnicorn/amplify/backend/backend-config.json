@@ -1,6 +1,6 @@
 {
 	"auth": {
-		"reactnativeunicorn44026833": {
+		"reactnativeunicorn296b30d4": {
 			"service": "Cognito",
 			"providerPlugin": "awscloudformation",
 			"dependsOn": []
@@ -16,7 +16,7 @@
 					"defaultAuthentication": {
 						"authenticationType": "AMAZON_COGNITO_USER_POOLS",
 						"userPoolConfig": {
-							"userPoolId": "authreactnativeunicorn44026833"
+							"userPoolId": "authreactnativeunicorn296b30d4"
 						}
 					}
 				}

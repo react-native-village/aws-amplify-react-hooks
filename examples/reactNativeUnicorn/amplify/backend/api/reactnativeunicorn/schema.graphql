@@ -1,4 +1,10 @@
-type Job @model @auth(rules: [{ allow: owner, ownerField: "owner", operations: [create, update, delete] }]) {
+type Job 
+  @model
+  @auth(
+    rules: [
+      {allow: owner, ownerField: "owner", operations: [create, update, delete]},
+    ])
+{
   id: ID!
   position: String!
   rate: Int!

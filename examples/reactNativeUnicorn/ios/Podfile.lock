@@ -273,7 +273,7 @@ DEPENDENCIES:
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  https://github.com/CocoaPods/Specs.git:
     - boost-for-react-native
     - JKBigInteger2
 
@@ -381,4 +381,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 9ca4bce392ca01ad8dfa97c2e57238c4a560e275
 
-COCOAPODS: 1.6.1
+COCOAPODS: 1.8.3
