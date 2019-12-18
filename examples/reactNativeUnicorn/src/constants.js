@@ -1,6 +1,7 @@
 import { Dimensions } from 'react-native'
 
 export const BG = '#0B0B0B'
+export const WHITE = '#FFFFFF'
 export const PINK = '#F20AF5'
 export const PURPLE = '#7A1374'
 export const BLUE = '#00FFFF'
