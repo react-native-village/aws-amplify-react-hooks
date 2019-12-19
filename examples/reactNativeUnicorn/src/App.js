@@ -1,6 +1,6 @@
 import React from 'react'
 import { StyleSheet, ScrollView } from 'react-native'
-import { H1, H2, H3, H4, H5, H6, H7, CardBorder, CardInfo, Space } from './components'
+import { H1, H2, H3, H4, H5, H6, H7, CardAbout, CardInfo, Space } from './components'
 import { WHITE, BG } from './constants'
 
 const styles = StyleSheet.create({
@@ -52,7 +52,10 @@ const App = () => {
         <Space height={20} />
         <H7 title="H7 Text" />
         <Space height={40} />
+        <CardAbout title="For 3 years our company has been engaged in financial technologies in online games, in particular in CS:GO and Dota 2. A significant number of users from all over the world use our platform to quickly and safely exchange, buy or sell their in-game items." />
+        <Space height={30} />
         <CardInfo cardinfo={cardinfo} />
+        <Space height={100} />
       </ScrollView>
     </>
   )
