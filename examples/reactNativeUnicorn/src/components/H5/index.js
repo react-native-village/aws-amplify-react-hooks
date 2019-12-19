@@ -12,7 +12,8 @@ const styles = StyleSheet.create({
   h5: {
     fontFamily: '3270Narrow',
     fontSize: 14,
-    color: WHITE
+    color: WHITE,
+    textTransform: 'uppercase'
   }
 })
 

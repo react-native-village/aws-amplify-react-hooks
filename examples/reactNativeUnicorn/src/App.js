@@ -1,6 +1,6 @@
 import React from 'react'
 import { StyleSheet, ScrollView } from 'react-native'
-import { H1, H2, H3, H4, H5, H6, H7, CardBorder, Space } from './components'
+import { H1, H2, H3, H4, H5, H6, H7, CardBorder, CardInfo, Space } from './components'
 import { WHITE, BG } from './constants'
 
 const styles = StyleSheet.create({
@@ -26,6 +26,13 @@ const styles = StyleSheet.create({
 //   owner: 'ReactNative Company'
 // }
 
+const cardinfo = {
+  position: 'React-Native Developer, Front-end Developer',
+  language: 'Java Script, Python',
+  stack: 'React-Native, Apollo, GraphQl, AWS Amplify',
+  experience: '5 years'
+}
+
 const App = () => {
   return (
     <>
@@ -44,8 +51,8 @@ const App = () => {
         <H6 title="H6 Text" />
         <Space height={20} />
         <H7 title="H7 Text" />
-        <Space height={20} />
-        <CardBorder />
+        <Space height={40} />
+        <CardInfo cardinfo={cardinfo} />
       </ScrollView>
     </>
   )

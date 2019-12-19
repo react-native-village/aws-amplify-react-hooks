@@ -1,38 +1,50 @@
 // @flow
 import React, { memo } from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, View } from 'react-native'
 import { WHITE, PINK, BLUE } from '../../constants'
 
+const container = {
+  flex: 1,
+  justifyContent: 'center',
+  alignItems: 'flex-start',
+  borderWidth: 1,
+  borderRadius: 17,
+  borderColor: WHITE,
+  padding: 30,
+  width: '100%'
+}
+
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'flex-start',
-    borderWidth: 1,
-    borderRadius: 17,
-    borderColor: 'white',
-    padding: 30,
-    width: '100%'
+  containerWhite: {
+    ...container,
+    marginTop: 2,
+    marginLeft: 5
   },
-  h2: {
-    fontFamily: '3270Narrow',
-    fontSize: 21
+  containerBlue: {
+    ...container,
+    padding: 0,
+    borderColor: BLUE
+  },
+  containerPink: {
+    ...container,
+    padding: 0,
+    borderColor: PINK,
+    marginLeft: -5,
+    marginTop: 1
   }
 })
 
 type Props = {
-  title: string
+  children?: React.Node
 }
 
-const CardBorder = memo<Props>(({ title = 'some text' }) => {
-  const { container, h2 } = styles
+const CardBorder = memo<Props>(({ children }) => {
+  const { containerWhite, containerBlue, containerPink } = styles
   return (
     <>
-      <View style={[container, { padding: 0, borderColor: BLUE }]}>
-        <View style={[container, { padding: 0, borderColor: PINK, marginLeft: -5, marginTop: 1 }]}>
-          <View style={[container, { marginTop: 2, marginLeft: 5 }]}>
-            <Text style={[h2, { color: WHITE }]}>{title}</Text>
-          </View>
+      <View style={containerBlue}>
+        <View style={containerPink}>
+          <View style={containerWhite}>{children}</View>
         </View>
       </View>
     </>
