@@ -24,7 +24,7 @@ type Props = {
   title: string
 }
 
-const CardBorder = memo<Props>(({ title }) => {
+const CardBorder = memo<Props>(({ title = 'some text' }) => {
   const { container, h2 } = styles
   return (
     <>
