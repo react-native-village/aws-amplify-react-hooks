@@ -1,8 +1,22 @@
 import React from 'react'
 import { StyleSheet, ScrollView } from 'react-native'
-import { H1, H2, H3, H4, H5, H6, H7, CardContacts, CardVacancies, CardAbout, CardInfo, Space } from './components'
+import {
+  H1,
+  H2,
+  H3,
+  H4,
+  H5,
+  H6,
+  H7,
+  CardContacts,
+  CardVacancies,
+  CardAbout,
+  CardInfo,
+  CardCareer,
+  Space
+} from './components'
 import { BG } from './constants'
-import { cardinfo, cardabout, cardcontacts, cardvacancies } from './data'
+import { cardinfo, cardabout, cardcontacts, cardvacancies, cardcareer } from './data'
 
 const styles = StyleSheet.create({
   scrollView: {
@@ -30,6 +44,8 @@ const App = () => {
         <Space height={20} />
         <H7 title="H7 Text" />
         <Space height={40} />
+        <CardCareer cardcareer={cardcareer} />
+        <Space height={30} />
         <CardVacancies cardvacancies={cardvacancies} />
         <Space height={30} />
         <CardContacts cardcontacts={cardcontacts} />

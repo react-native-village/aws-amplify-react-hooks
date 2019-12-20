@@ -22,4 +22,12 @@ const cardvacancies = {
   cost: '5600'
 }
 
-export { cardinfo, cardabout, cardcontacts, cardvacancies }
+const cardcareer = {
+  institution: 'MIT',
+  start: '2011',
+  end: '2016',
+  description: 'Faculty of computer science and artificial intelligence. Thesis - data protection in mobile devices.',
+  link: 'Sertifikat'
+}
+
+export { cardinfo, cardabout, cardcontacts, cardvacancies, cardcareer }
