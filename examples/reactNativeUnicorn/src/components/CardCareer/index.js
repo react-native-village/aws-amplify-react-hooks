@@ -16,11 +16,10 @@ const CardCareer = memo<Props>(({ cardcareer }) => {
     <>
       <CardBorder>
         <H3 title={institution} />
-        <H7 title={start} />
-        <H7 title={finish} />
-        <Space height={10} />
+        <H7 title={`[${start} - ${finish}]`} />
+        <Space height={5} />
         <H4 title={description} />
-        <Space height={10} />
+        <Space height={5} />
         <H6 title={link} />
       </CardBorder>
     </>
