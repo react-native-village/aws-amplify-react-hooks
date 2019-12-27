@@ -96,6 +96,10 @@ With this team, you can quickly test your achievements of change without the nee
 
  [Details](https://dev.to/playra/crud-create-read-update-delete-aws-amplify-graphql-react-native-4m2b)
  
+ `amplify push`
+
+✔ All resources are updated in the cloud
+ 
 ## Step 6 - We start the project 🚀
 iOS
 
