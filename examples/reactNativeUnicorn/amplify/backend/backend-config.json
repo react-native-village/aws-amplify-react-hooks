@@ -1,0 +1,32 @@
+{
+	"auth": {
+		"reactnativeunicorn96d3b0c8": {
+			"service": "Cognito",
+			"providerPlugin": "awscloudformation",
+			"dependsOn": []
+		}
+	},
+	"api": {
+		"reactnativeunicorn": {
+			"service": "AppSync",
+			"providerPlugin": "awscloudformation",
+			"output": {
+				"authConfig": {
+					"additionalAuthenticationProviders": [],
+					"defaultAuthentication": {
+						"authenticationType": "AMAZON_COGNITO_USER_POOLS",
+						"userPoolConfig": {
+							"userPoolId": "authreactnativeunicorn96d3b0c8"
+						}
+					}
+				}
+			}
+		}
+	},
+	"storage": {
+		"unicorn": {
+			"service": "S3",
+			"providerPlugin": "awscloudformation"
+		}
+	}
+}

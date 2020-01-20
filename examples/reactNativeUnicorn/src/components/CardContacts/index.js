@@ -3,7 +3,7 @@ import React, { memo } from 'react'
 import { CardBorder, H4, H5, H6, Space } from '..'
 
 type Props = {
-  cardinfo: {
+  cardcontacts: {
     location: string,
     web: string,
     phone: string

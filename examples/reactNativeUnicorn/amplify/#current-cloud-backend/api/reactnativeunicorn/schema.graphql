@@ -1,0 +1,37 @@
+type Job 
+  @model
+  @auth(
+    rules: [
+      {allow: owner, ownerField: "owner", operations: [create, update, delete]},
+    ])
+{
+  id: ID!
+  position: String!
+  rate: Int!
+  description: String!
+  owner: String
+}
+
+type User
+  @model 
+  @auth(
+    rules: [
+      {allow: owner, ownerField: "owner", operations: [create, update, delete]},
+    ])
+{
+  id: ID!
+  avatar: S3Object
+  username: String!
+  firstName: String!
+  lastName: String!
+  description: String!
+  location: String!
+  web: String!
+  phone: String!
+}
+
+type S3Object {
+  bucket: String!
+  region: String!
+  key: String!
+}

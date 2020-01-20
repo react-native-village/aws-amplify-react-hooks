@@ -13,7 +13,8 @@ import {
   CardAbout,
   CardInfo,
   CardCareer,
-  Space
+  Space,
+  Star
 } from './components'
 import { BG } from './constants'
 import { cardinfo, cardabout, cardcontacts, cardvacancies, cardcareer } from './data'
@@ -30,6 +31,8 @@ const App = () => {
   return (
     <>
       <ScrollView style={styles.scrollView}>
+        <Star bool={false} />
+        <Space height={20} />
         <H1 title="H1 Text" />
         <Space height={20} />
         <H2 title="H2 Text" />
