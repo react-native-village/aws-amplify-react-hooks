@@ -31,3 +31,57 @@ export const deleteJob = `mutation DeleteJob($input: DeleteJobInput!) {
   }
 }
 `;
+export const createUser = `mutation CreateUser($input: CreateUserInput!) {
+  createUser(input: $input) {
+    id
+    avatar {
+      bucket
+      region
+      key
+    }
+    username
+    firstName
+    lastName
+    description
+    location
+    web
+    phone
+  }
+}
+`;
+export const updateUser = `mutation UpdateUser($input: UpdateUserInput!) {
+  updateUser(input: $input) {
+    id
+    avatar {
+      bucket
+      region
+      key
+    }
+    username
+    firstName
+    lastName
+    description
+    location
+    web
+    phone
+  }
+}
+`;
+export const deleteUser = `mutation DeleteUser($input: DeleteUserInput!) {
+  deleteUser(input: $input) {
+    id
+    avatar {
+      bucket
+      region
+      key
+    }
+    username
+    firstName
+    lastName
+    description
+    location
+    web
+    phone
+  }
+}
+`;

@@ -327,7 +327,6 @@ export const options = {
     rate: {
       stylesheet: formStyles,
       placeholder: 'Rate',
-
       secureTextEntry: false,
       autoCapitalize: 'none',
       keyboardType: 'numeric',

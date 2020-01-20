@@ -13,7 +13,7 @@ const JobAdd = ({ navigation }) => {
   const [check, setOwner] = useState(false)
   const [input, setJob] = useState({
     position: '',
-    rate: '',
+    rate: 0,
     description: ''
   })
 

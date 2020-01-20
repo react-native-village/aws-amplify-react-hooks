@@ -31,3 +31,57 @@ export const onDeleteJob = `subscription OnDeleteJob($owner: String!) {
   }
 }
 `;
+export const onCreateUser = `subscription OnCreateUser($owner: String!) {
+  onCreateUser(owner: $owner) {
+    id
+    avatar {
+      bucket
+      region
+      key
+    }
+    username
+    firstName
+    lastName
+    description
+    location
+    web
+    phone
+  }
+}
+`;
+export const onUpdateUser = `subscription OnUpdateUser($owner: String!) {
+  onUpdateUser(owner: $owner) {
+    id
+    avatar {
+      bucket
+      region
+      key
+    }
+    username
+    firstName
+    lastName
+    description
+    location
+    web
+    phone
+  }
+}
+`;
+export const onDeleteUser = `subscription OnDeleteUser($owner: String!) {
+  onDeleteUser(owner: $owner) {
+    id
+    avatar {
+      bucket
+      region
+      key
+    }
+    username
+    firstName
+    lastName
+    description
+    location
+    web
+    phone
+  }
+}
+`;

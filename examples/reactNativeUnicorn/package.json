@@ -3,11 +3,11 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-   "ios": "react-native run-ios --simulator='iPhone SE'",
-   "android": "react-native run-android",
-   "lint": "esw src/**",
-   "lint-watch": "esw -w --changed src/**",
-    "postinstall":"cd ./ios && pod install && cd .."
+    "ios": "react-native run-ios --simulator='iPhone SE'",
+    "android": "react-native run-android",
+    "lint": "esw src/**",
+    "lint-watch": "esw -w --changed src/**",
+    "postinstall": "cd ./ios && pod install && cd .."
   },
   "precommit": "lint",
   "prettier": {
@@ -33,6 +33,7 @@
     "react-native": "0.61.5",
     "react-native-floating-label": "^0.2.3",
     "react-native-gesture-handler": "^1.5.2",
+    "react-native-image-crop-picker": "^0.26.1",
     "react-native-iphone-x-helper": "^1.2.1",
     "react-native-keychain": "^4.0.4",
     "react-native-reanimated": "^1.4.0",
@@ -40,6 +41,7 @@
     "react-native-spinkit": "^1.5.0",
     "react-native-statusbar-alert": "^0.4.0",
     "react-native-vector-icons": "^6.6.0",
+    "react-native-video": "^5.0.2",
     "react-navigation": "^4.0.10",
     "react-navigation-stack": "^1.10.3",
     "react-navigation-tabs": "^2.6.2",

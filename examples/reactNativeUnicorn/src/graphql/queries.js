@@ -24,3 +24,41 @@ export const listJobs = `query ListJobs($filter: ModelJobFilterInput, $limit: In
   }
 }
 `;
+export const getUser = `query GetUser($id: ID!) {
+  getUser(id: $id) {
+    id
+    avatar {
+      bucket
+      region
+      key
+    }
+    username
+    firstName
+    lastName
+    description
+    location
+    web
+    phone
+  }
+}
+`;
+export const listUsers = `query ListUsers(
+  $filter: ModelUserFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listUsers(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      username
+      firstName
+      lastName
+      description
+      location
+      web
+      phone
+    }
+    nextToken
+  }
+}
+`;
