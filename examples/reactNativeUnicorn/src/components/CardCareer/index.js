@@ -3,15 +3,17 @@ import React, { memo } from 'react'
 import { CardBorder, H4, H6, H3, H7, Space } from '..'
 
 type Props = {
-  cardinfo: {
-    location: string,
-    web: string,
-    phone: string
+  obj: {
+    institution: string,
+    start: string,
+    finish: string,
+    description: string,
+    link: string
   }
 }
 
-const CardCareer = memo<Props>(({ cardcareer }) => {
-  const { institution, start, finish, description, link } = cardcareer
+const CardCareer = memo<Props>(({ obj }) => {
+  const { institution, start, finish, description, link } = obj
   return (
     <>
       <CardBorder>

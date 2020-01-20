@@ -1,3 +1,4 @@
+// @flow
 import React from 'react'
 import { StyleSheet, ScrollView } from 'react-native'
 import {
@@ -13,12 +14,13 @@ import {
   CardAbout,
   CardInfo,
   CardCareer,
+  CardResume,
   Space,
   Star,
   Avatar
 } from './components'
 import { BG } from './constants'
-import { cardinfo, cardabout, cardcontacts, cardvacancies, cardcareer } from './data'
+import { cardinfo, cardabout, cardcontacts, cardvacancies, cardcareer, cardresume } from './data'
 
 const styles = StyleSheet.create({
   scrollView: {
@@ -32,7 +34,11 @@ const App = () => {
   return (
     <>
       <ScrollView style={styles.scrollView}>
-        <Avatar uri={'https://pbs.twimg.com/profile_images/1054434556156162054/1H_7AxP0.jpg'} />
+        <CardResume obj={cardresume} obj2={cardinfo} />
+        <Space height={30} />
+        <Avatar uri="https://pbs.twimg.com/profile_images/1054434556156162054/1H_7AxP0.jpg" size="large" />
+        <Avatar uri="https://pbs.twimg.com/profile_images/1054434556156162054/1H_7AxP0.jpg" size="medium" />
+        <Avatar uri="https://pbs.twimg.com/profile_images/1054434556156162054/1H_7AxP0.jpg" size="small" />
         <Space height={20} />
         <Star bool={false} />
         <Space height={20} />
@@ -50,15 +56,15 @@ const App = () => {
         <Space height={20} />
         <H7 title="H7 Text" />
         <Space height={40} />
-        <CardCareer cardcareer={cardcareer} />
+        <CardCareer obj={cardcareer} />
         <Space height={30} />
-        <CardVacancies cardvacancies={cardvacancies} />
+        <CardVacancies obj={cardvacancies} />
         <Space height={30} />
-        <CardContacts cardcontacts={cardcontacts} />
+        <CardContacts obj={cardcontacts} />
         <Space height={30} />
         <CardAbout title={cardabout} />
         <Space height={30} />
-        <CardInfo cardinfo={cardinfo} />
+        <CardInfo obj={cardinfo} />
         <Space height={100} />
       </ScrollView>
     </>

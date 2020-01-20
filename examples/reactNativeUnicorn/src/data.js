@@ -1,8 +1,9 @@
 const cardinfo = {
   position: 'React-Native Developer, Front-end Developer',
   language: 'Java Script, Python',
-  stack: 'React-Native, Apollo, GraphQl, AWS Amplify',
-  experience: '5 years'
+  stack: 'React-Native, Apollo, GraphQL, AWS Amplify',
+  experience: '5 years',
+  salary: 5000
 }
 
 const cardabout =
@@ -18,8 +19,14 @@ const cardvacancies = {
   title: 'React Native Developer',
   description:
     'Our product is an international trading platform for the exchange of virtual items. (CS: GO, Dota 2) which is shared by more than 5 million users.',
-  company: 'CS.Money',
-  cost: '5600'
+  company: 'CS.Money'
+}
+
+const cardresume = {
+  rate: 123,
+  avatar: 'https://pbs.twimg.com/profile_images/1054434556156162054/1H_7AxP0.jpg',
+  title: 'Dimka Reactnative',
+  cost: 5600
 }
 
 const cardcareer = {
@@ -30,4 +37,4 @@ const cardcareer = {
   link: 'Sertifikat'
 }
 
-export { cardinfo, cardabout, cardcontacts, cardvacancies, cardcareer }
+export { cardinfo, cardabout, cardcontacts, cardvacancies, cardcareer, cardresume }

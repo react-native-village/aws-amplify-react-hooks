@@ -3,15 +3,15 @@ import React, { memo } from 'react'
 import { CardBorder, H4, H5, H6, Space } from '..'
 
 type Props = {
-  cardcontacts: {
+  obj: {
     location: string,
     web: string,
     phone: string
   }
 }
 
-const CardContacts = memo<Props>(({ cardcontacts }) => {
-  const { location, web, phone } = cardcontacts
+const CardContacts = memo<Props>(({ obj }) => {
+  const { location, web, phone } = obj
   return (
     <>
       <CardBorder>

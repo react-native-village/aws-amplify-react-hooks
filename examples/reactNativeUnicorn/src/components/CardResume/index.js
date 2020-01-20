@@ -1,14 +1,20 @@
 // @flow
 import React, { memo, useState } from 'react'
 import { View, StyleSheet } from 'react-native'
-import { CardBorder, H2, H4, Space, Star, Cost } from '..'
+import { Avatar, CardBorder, CardInfo, H2, Space, Star, Rate, Cost } from '..'
 
 type Props = {
   obj: {
     title: string,
-    description: string,
-    company: string,
+    avatar: string,
+    rate: number,
     cost: number
+  },
+  obj2: {
+    position: string,
+    language: string,
+    stack: string,
+    experience: string
   }
 }
 
@@ -20,8 +26,8 @@ const styles = StyleSheet.create({
   }
 })
 
-const CardVacancies = memo<Props>(({ obj }) => {
-  const { title, description, company, cost } = obj
+const CardResume = memo<Props>(({ obj, obj2 }) => {
+  const { title, rate, avatar } = obj
   const { container } = styles
   const [star, setStar] = useState(false)
   return (
@@ -32,15 +38,14 @@ const CardVacancies = memo<Props>(({ obj }) => {
           <Star bool={star} onPress={() => setStar(!star)} />
         </View>
         <Space height={20} />
-        <H4 title={description} />
+        <Avatar uri={avatar} size="large" />
         <Space height={20} />
-        <View style={container}>
-          <H4 title={company} />
-          <Cost cost={cost} />
-        </View>
+        <Rate title={rate} />
+        <Space height={20} />
+        <CardInfo obj={obj2} bool={false} />
       </CardBorder>
     </>
   )
 })
 
-export { CardVacancies }
+export { CardResume }

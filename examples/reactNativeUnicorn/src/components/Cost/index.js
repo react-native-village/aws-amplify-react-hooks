@@ -4,6 +4,11 @@ import { StyleSheet, Text, View } from 'react-native'
 import type { TextStyleProp } from 'react-native/Libraries/StyleSheet/StyleSheet'
 import { GREY } from '../../constants'
 
+type Props = {
+  cost: number,
+  style: TextStyleProp
+}
+
 const styles = StyleSheet.create({
   container: {
     justifyContent: 'center',
@@ -16,18 +21,13 @@ const styles = StyleSheet.create({
   }
 })
 
-type Props = {
-  title: string,
-  style: TextStyleProp
-}
-
-const H4 = memo<Props>(({ title, style }) => {
+const Cost = memo<Props>(({ cost, style }) => {
   const { container, h4 } = styles
   return (
     <View style={container}>
-      <Text style={[h4, style]}>{title}</Text>
+      <Text style={[h4, style]}>{`$ ${cost}`}</Text>
     </View>
   )
 })
 
-export { H4 }
+export { Cost }

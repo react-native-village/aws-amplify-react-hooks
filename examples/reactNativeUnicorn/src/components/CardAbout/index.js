@@ -3,12 +3,7 @@ import React, { memo } from 'react'
 import { CardBorder, H4 } from '..'
 
 type Props = {
-  cardinfo: {
-    position: string,
-    language: string,
-    stack: string,
-    experience: string
-  }
+  title: string
 }
 
 const CardAbout = memo<Props>(({ title }) => {
