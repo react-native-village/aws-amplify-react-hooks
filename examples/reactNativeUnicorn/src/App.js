@@ -14,7 +14,8 @@ import {
   CardInfo,
   CardCareer,
   Space,
-  Star
+  Star,
+  Avatar
 } from './components'
 import { BG } from './constants'
 import { cardinfo, cardabout, cardcontacts, cardvacancies, cardcareer } from './data'
@@ -31,6 +32,8 @@ const App = () => {
   return (
     <>
       <ScrollView style={styles.scrollView}>
+        <Avatar uri={'https://pbs.twimg.com/profile_images/1054434556156162054/1H_7AxP0.jpg'} />
+        <Space height={20} />
         <Star bool={false} />
         <Space height={20} />
         <H1 title="H1 Text" />
