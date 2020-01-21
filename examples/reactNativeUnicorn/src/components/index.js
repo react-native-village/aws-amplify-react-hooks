@@ -19,4 +19,5 @@ export * from './Avatar'
 export * from './Rate'
 export * from './Dollar'
 export * from './IconCircle'
+export * from './Line'
 
