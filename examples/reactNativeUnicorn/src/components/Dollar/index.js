@@ -1,3 +1,4 @@
+//@flow
 import React, { memo } from 'react'
 import { StyleSheet, View, Text } from 'react-native'
 import { GREY } from '../../constants'
