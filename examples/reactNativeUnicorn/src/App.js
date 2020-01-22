@@ -19,6 +19,7 @@ import {
   Star,
   Avatar,
   Dollar,
+  Cost,
   Line,
   IconCircle
 } from './components'
@@ -38,6 +39,7 @@ const App = () => {
     <>
       <ScrollView style={styles.scrollView}>
         <Dollar />
+        <Cost />
         <Line />
         <IconCircle />
         <Space height={30} />
