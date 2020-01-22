@@ -2,6 +2,7 @@
 import React from 'react'
 import { StyleSheet, ScrollView, View } from 'react-native'
 import {
+  Comments,
   Background,
   H1,
   H2,
@@ -45,6 +46,7 @@ const App = () => {
         <View style={{ alignItems: 'center' }}>
           <Button title="Buttons" />
           <Space height={30} />
+          <Comments title={3} />
           <Space height={30} />
           <ButtonDeveloperSub title="Ivan Ivanov" color={BLUE} />
           <Space height={30} />
@@ -56,9 +58,9 @@ const App = () => {
           <Space height={30} />
           <IconCircle />
           <Space height={30} />
-          <Button title="Done" titleStyle={{ fontSize: 30 }} />
+          <Button title="Done" textStyle={{ fontSize: 30 }} />
           <Space height={20} />
-          <Button title="Cancel" titleStyle={{ fontSize: 30 }} color={PINK} />
+          <Button title="Cancel" textStyle={{ fontSize: 30 }} color={PINK} />
           <Space height={90} />
         </View>
 
