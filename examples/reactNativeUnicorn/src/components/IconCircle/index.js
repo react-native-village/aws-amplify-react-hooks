@@ -1,3 +1,4 @@
+// @flow
 import React, { memo } from 'react'
 import { View, Image, StyleSheet, TouchableOpacity } from 'react-native'
 import { PINK, BLUE, BG } from '../../constants'
@@ -13,6 +14,7 @@ type Props = {
   uri: string,
   onPress: Function
 }
+
 const IconCircle = memo <Props >(({ uri, onPress }) => {
     const { pink, blue, iconBg, icon,  } = styles
     return (
@@ -49,4 +51,5 @@ const styles = StyleSheet.create({
     height: 20
   }
 })
+
 export { IconCircle }
