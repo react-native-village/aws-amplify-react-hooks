@@ -40,7 +40,6 @@ const App = () => {
   return (
     <>
       <ScrollView style={styles.scrollView}>
-        <Cost title={5000} />
         <View style={{ alignItems: 'center' }}>
           <Button title="Buttons" />
           <Space height={30} />
@@ -60,14 +59,16 @@ const App = () => {
           <Space height={90} />
         </View>
 
-        <Button title="Avatar" />
-        <Space height={30} />
-        <Avatar uri="https://pbs.twimg.com/profile_images/1054434556156162054/1H_7AxP0.jpg" size="large" />
-        <Space height={20} />
-        <Avatar uri="https://pbs.twimg.com/profile_images/1054434556156162054/1H_7AxP0.jpg" size="medium" />
-        <Space height={20} />
-        <Avatar uri="https://pbs.twimg.com/profile_images/1054434556156162054/1H_7AxP0.jpg" size="small" />
-        <Space height={90} />
+        <View style={{ alignItems: 'center' }}>
+          <Button title="Avatar" />
+          <Space height={30} />
+          <Avatar uri="https://pbs.twimg.com/profile_images/1054434556156162054/1H_7AxP0.jpg" size="large" />
+          <Space height={20} />
+          <Avatar uri="https://pbs.twimg.com/profile_images/1054434556156162054/1H_7AxP0.jpg" size="medium" />
+          <Space height={20} />
+          <Avatar uri="https://pbs.twimg.com/profile_images/1054434556156162054/1H_7AxP0.jpg" size="small" />
+          <Space height={90} />
+        </View>
 
         <View style={{ alignItems: 'center' }}>
           <Button title="Text" />
@@ -89,25 +90,34 @@ const App = () => {
         </View>
 
         <View style={{ alignItems: 'center' }}>
-          <Button title="Button" />
+          <Button title="Cards" />
+          <Space height={30} />
+          <CardResume obj={cardresume} obj2={cardinfo} />
+          <Space height={30} />
+          <CardCareer obj={cardcareer} />
+          <Space height={30} />
+          <CardVacancies obj={cardvacancies} />
+          <Space height={30} />
+          <CardContacts obj={cardcontacts} />
+          <Space height={30} />
+          <CardAbout title={cardabout} />
+          <Space height={30} />
+          <CardInfo obj={cardinfo} />
+          <Space height={90} />
         </View>
 
-        <Dollar />
-        <Line />
-        <IconCircle />
-        <Space height={30} />
-        <CardResume obj={cardresume} obj2={cardinfo} />
-        <Space height={20} />
-        <CardCareer obj={cardcareer} />
-        <Space height={30} />
-        <CardVacancies obj={cardvacancies} />
-        <Space height={30} />
-        <CardContacts obj={cardcontacts} />
-        <Space height={30} />
-        <CardAbout title={cardabout} />
-        <Space height={30} />
-        <CardInfo obj={cardinfo} />
-        <Space height={100} />
+        <View style={{ alignItems: 'center' }}>
+          <Button title="Items" />
+          <Space height={30} />
+          <Cost title={5000} />
+          <Space height={30} />
+          <Dollar />
+          <Space height={30} />
+          <Line />
+          <Space height={30} />
+          <IconCircle />
+          <Space height={90} />
+        </View>
       </ScrollView>
     </>
   )
