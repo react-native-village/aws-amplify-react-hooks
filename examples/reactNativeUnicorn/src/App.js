@@ -2,6 +2,7 @@
 import React from 'react'
 import { StyleSheet, ScrollView, View } from 'react-native'
 import {
+  ButtonMarkDecision,
   Comments,
   Background,
   H1,
@@ -45,6 +46,8 @@ const App = () => {
       <ScrollView style={styles.scrollView}>
         <View style={{ alignItems: 'center' }}>
           <Button title="Buttons" />
+          <Space height={30} />
+          <ButtonMarkDecision />
           <Space height={30} />
           <IconCircle name=":thought_balloon:" />
           <Space height={10} />
