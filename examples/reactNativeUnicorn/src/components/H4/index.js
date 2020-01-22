@@ -1,7 +1,7 @@
 // @flow
 import React, { memo } from 'react'
 import { StyleSheet, Text, View } from 'react-native'
-import type { TextStyleProp } from 'react-native/Libraries/StyleSheet/StyleSheet'
+import type { TextStyleProp, ViewStyleProp } from 'react-native/Libraries/StyleSheet/StyleSheet'
 import { GREY } from '../../constants'
 
 const styles = StyleSheet.create({
@@ -18,14 +18,15 @@ const styles = StyleSheet.create({
 
 type Props = {
   title: string,
-  style: TextStyleProp
+  textStyle: TextStyleProp,
+  viewStyle: ViewStyleProp
 }
 
-const H4 = memo<Props>(({ title, style }) => {
+const H4 = memo<Props>(({ title, viewStyle, textStyle }) => {
   const { container, h4 } = styles
   return (
-    <View style={container}>
-      <Text style={[h4, style]}>{title}</Text>
+    <View style={[container, viewStyle]}>
+      <Text style={[h4, textStyle]}>{title}</Text>
     </View>
   )
 })

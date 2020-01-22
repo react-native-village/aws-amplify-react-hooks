@@ -9,11 +9,11 @@ const styles = StyleSheet.create({
     flexDirection: 'row'
   },
   emoji: {
-    fontSize: 18
+    fontSize: 18,
+    marginBottom: 4
   },
   h4: {
-    left: 8,
-    top: 2.5
+    paddingLeft: 10
   }
 })
 
@@ -28,7 +28,7 @@ const Rate = memo<Props>(({ title, onPress }) => {
     <TouchableOpacity onPress={onPress} style={{ alignSelf: 'center' }}>
       <View style={container}>
         <Emoji name=":unicorn_face:" style={emoji} />
-        <H4 title={title} style={h4} />
+        <H4 title={title} textStyle={h4} />
       </View>
     </TouchableOpacity>
   )

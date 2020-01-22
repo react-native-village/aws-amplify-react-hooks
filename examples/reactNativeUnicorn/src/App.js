@@ -16,13 +16,14 @@ import {
   CardCareer,
   CardResume,
   Space,
-  //Star,
+  Star,
   Avatar,
   Dollar,
   Line,
   IconCircle,
   Button,
   ButtonStatusIssue,
+  ButtonDeveloperSub,
   Cost
 } from './components'
 import { BG, PINK, BLUE } from './constants'
@@ -43,9 +44,15 @@ const App = () => {
         <View style={{ alignItems: 'center' }}>
           <Button title="Buttons" />
           <Space height={30} />
+          <ButtonDeveloperSub title="Ivan Ivanov" color={BLUE} />
+          <Space height={30} />
           <ButtonStatusIssue title={`Open ${34}`} color={PINK} />
           <Space height={20} />
           <ButtonStatusIssue title={`Closed ${34}`} color={BLUE} />
+          <Space height={30} />
+          <Star />
+          <Space height={30} />
+          <IconCircle />
           <Space height={30} />
           <Button title="Done" titleStyle={{ fontSize: 30 }} />
           <Space height={20} />
@@ -109,7 +116,6 @@ const App = () => {
           <Space height={30} />
           <Line />
           <Space height={30} />
-          <IconCircle />
           <Space height={90} />
         </View>
       </ScrollView>
