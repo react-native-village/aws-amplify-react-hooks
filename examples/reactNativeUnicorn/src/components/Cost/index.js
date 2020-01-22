@@ -1,6 +1,7 @@
 // @flow
 import React, { memo } from 'react'
 import { StyleSheet, Text, View } from 'react-native'
+import {Dollar} from '../Dollar'
 import type { TextStyleProp } from 'react-native/Libraries/StyleSheet/StyleSheet'
 import { GREY } from '../../constants'
 
@@ -11,6 +12,7 @@ type Props = {
 
 const styles = StyleSheet.create({
   container: {
+    flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'flex-start'
   },
@@ -25,7 +27,8 @@ const Cost = memo<Props>(({ cost, style }) => {
   const { container, h4 } = styles
   return (
     <View style={container}>
-      <Text style={[h4, style]}>{`$ ${cost}`}</Text>
+      <Text style={[h4, style]}>{cost}</Text>
+      <Dollar/>
     </View>
   )
 })
