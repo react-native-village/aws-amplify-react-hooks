@@ -17,7 +17,10 @@ import {
   CardResume,
   Space,
   Star,
-  Avatar
+  Avatar,
+  Dollar,
+  Line,
+  IconCircle
 } from './components'
 import { BG } from './constants'
 import { cardinfo, cardabout, cardcontacts, cardvacancies, cardcareer, cardresume } from './data'
@@ -34,6 +37,10 @@ const App = () => {
   return (
     <>
       <ScrollView style={styles.scrollView}>
+        <Dollar />
+        <Line />
+        <IconCircle />
+        <Space height={30} />
         <CardResume obj={cardresume} obj2={cardinfo} />
         <Space height={30} />
         <Avatar uri="https://pbs.twimg.com/profile_images/1054434556156162054/1H_7AxP0.jpg" size="large" />
