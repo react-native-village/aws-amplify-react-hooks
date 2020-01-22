@@ -20,4 +20,4 @@ export * from './Rate'
 export * from './Dollar'
 export * from './IconCircle'
 export * from './Line'
-
+export * from './Button'

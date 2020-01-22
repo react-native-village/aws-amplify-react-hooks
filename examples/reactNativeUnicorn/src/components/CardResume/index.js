@@ -1,7 +1,7 @@
 // @flow
 import React, { memo, useState } from 'react'
 import { View, StyleSheet } from 'react-native'
-import { Avatar, CardBorder, CardInfo, H2, Space, Star, Rate, Cost } from '..'
+import { Avatar, CardBorder, CardInfo, H2, Space, Star, Rate } from '..'
 
 type Props = {
   obj: {
