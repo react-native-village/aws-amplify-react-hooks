@@ -23,11 +23,11 @@ const styles = StyleSheet.create({
   }
 })
 
-const Cost = memo<Props>(({ cost, style }) => {
+const Cost = memo<Props>(({ cost }) => {
   const { container, h4 } = styles
   return (
     <View style={container}>
-      <Text style={[h4, style]}>{cost}</Text>
+      <Text style={h4}>{cost}</Text>
       <Dollar/>
     </View>
   )
