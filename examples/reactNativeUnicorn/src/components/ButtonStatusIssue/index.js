@@ -27,16 +27,17 @@ const styles = StyleSheet.create({
 
 type Props = {
   title: string,
+  color: string,
   textStyle: TextStyleProp,
   viewStyle: ViewStyleProp
 }
 
-const ButtonStatusIssue = memo<Props>(({ title, textStyle, viewStyle }) => {
+const ButtonStatusIssue = memo<Props>(({ title, color, textStyle, viewStyle }) => {
   const { h7, container } = styles
   return (
     <>
-      <View style={[container, viewStyle]}>
-        <Text style={[h7, textStyle]}>{title}</Text>
+      <View style={[container, viewStyle, { borderColor: color }]}>
+        <Text style={[h7, textStyle, { color }]}>{title}</Text>
       </View>
     </>
   )

@@ -43,15 +43,9 @@ const App = () => {
         <View style={{ alignItems: 'center' }}>
           <Button title="Buttons" />
           <Space height={30} />
-          <ButtonStatusIssue title={`Open ${34}`} textStyle={{ color: PINK }} />
+          <ButtonStatusIssue title={`Open ${34}`} color={PINK} />
           <Space height={20} />
-          <ButtonStatusIssue title={`Closed ${34}`} textStyle={{ color: BLUE }} />
-          <Space height={90} />
-        </View>
-
-        <View style={{ alignItems: 'center' }}>
-          <Space height={30} />
-          <Button title="Buttons" />
+          <ButtonStatusIssue title={`Closed ${34}`} color={BLUE} />
           <Space height={30} />
           <Button title="Done" titleStyle={{ fontSize: 30 }} />
           <Space height={20} />
