@@ -46,6 +46,14 @@ const App = () => {
         <View style={{ alignItems: 'center' }}>
           <Button title="Buttons" />
           <Space height={30} />
+          <IconCircle name=":thought_balloon:" />
+          <Space height={10} />
+          <IconCircle name=":telephone_receiver:" />
+          <Space height={10} />
+          <IconCircle name=":loud_sound:" />
+          <Space height={10} />
+          <IconCircle name=":thought_balloon:" />
+          <Space height={30} />
           <Comments title={3} />
           <Space height={30} />
           <ButtonDeveloperSub title="Ivan Ivanov" color={BLUE} />
@@ -55,8 +63,6 @@ const App = () => {
           <ButtonStatusIssue title={`Closed ${34}`} color={BLUE} />
           <Space height={30} />
           <Star />
-          <Space height={30} />
-          <IconCircle />
           <Space height={30} />
           <Button title="Done" textStyle={{ fontSize: 30 }} />
           <Space height={20} />
