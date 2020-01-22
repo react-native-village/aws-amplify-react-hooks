@@ -23,7 +23,7 @@ import {
   IconCircle,
   Button
 } from './components'
-import { BG } from './constants'
+import { BG, PINK } from './constants'
 import { cardinfo, cardabout, cardcontacts, cardvacancies, cardcareer, cardresume } from './data'
 
 const styles = StyleSheet.create({
@@ -38,6 +38,13 @@ const App = () => {
   return (
     <>
       <ScrollView style={styles.scrollView}>
+        <Button title="Buttons" />
+        <Space height={30} />
+        <Button title="Done" titleStyle={{ fontSize: 30 }} />
+        <Space height={20} />
+        <Button title="Cancel" titleStyle={{ fontSize: 30 }} color={PINK} />
+        <Space height={90} />
+
         <Button title="Avatar" />
         <Space height={30} />
         <Avatar uri="https://pbs.twimg.com/profile_images/1054434556156162054/1H_7AxP0.jpg" size="large" />
