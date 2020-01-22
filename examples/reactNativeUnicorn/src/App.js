@@ -16,15 +16,16 @@ import {
   CardCareer,
   CardResume,
   Space,
-  Star,
+  //Star,
   Avatar,
   Dollar,
-  Cost,
   Line,
   IconCircle,
-  Button
+  Button,
+  ButtonStatusIssue,
+  Cost
 } from './components'
-import { BG, PINK } from './constants'
+import { BG, PINK, BLUE } from './constants'
 import { cardinfo, cardabout, cardcontacts, cardvacancies, cardcareer, cardresume } from './data'
 
 const styles = StyleSheet.create({
@@ -39,12 +40,25 @@ const App = () => {
   return (
     <>
       <ScrollView style={styles.scrollView}>
-        <Button title="Buttons" />
-        <Space height={30} />
-        <Button title="Done" titleStyle={{ fontSize: 30 }} />
-        <Space height={20} />
-        <Button title="Cancel" titleStyle={{ fontSize: 30 }} color={PINK} />
-        <Space height={90} />
+        <Cost title={5000} />
+        <View style={{ alignItems: 'center' }}>
+          <Button title="Buttons" />
+          <Space height={30} />
+          <ButtonStatusIssue title={`Open ${34}`} textStyle={{ color: PINK }} />
+          <Space height={20} />
+          <ButtonStatusIssue title={`Closed ${34}`} textStyle={{ color: BLUE }} />
+          <Space height={90} />
+        </View>
+
+        <View style={{ alignItems: 'center' }}>
+          <Space height={30} />
+          <Button title="Buttons" />
+          <Space height={30} />
+          <Button title="Done" titleStyle={{ fontSize: 30 }} />
+          <Space height={20} />
+          <Button title="Cancel" titleStyle={{ fontSize: 30 }} color={PINK} />
+          <Space height={90} />
+        </View>
 
         <Button title="Avatar" />
         <Space height={30} />
@@ -79,13 +93,11 @@ const App = () => {
         </View>
 
         <Dollar />
-        <Cost cost="5600" />
         <Line />
         <IconCircle />
         <Space height={30} />
         <CardResume obj={cardresume} obj2={cardinfo} />
         <Space height={20} />
-        <Star bool={false} />
         <CardCareer obj={cardcareer} />
         <Space height={30} />
         <CardVacancies obj={cardvacancies} />

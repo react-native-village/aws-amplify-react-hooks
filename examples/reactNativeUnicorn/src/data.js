@@ -19,7 +19,8 @@ const cardvacancies = {
   title: 'React Native Developer',
   description:
     'Our product is an international trading platform for the exchange of virtual items. (CS: GO, Dota 2) which is shared by more than 5 million users.',
-  company: 'CS.Money'
+  company: 'CS.Money',
+  cost: 5600
 }
 
 const cardresume = {

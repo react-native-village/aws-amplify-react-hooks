@@ -4,10 +4,6 @@ import { StyleSheet, View, Text } from 'react-native'
 import type { TextStyleProp } from 'react-native/Libraries/StyleSheet/StyleSheet'
 import { GREY } from '../../constants'
 
-type Props = {
-  style: TextStyleProp
-}
-
 const styles = StyleSheet.create({
   container: {
     justifyContent: 'center',
@@ -20,6 +16,11 @@ const styles = StyleSheet.create({
     fontWeight: '500'
   }
 })
+
+type Props = {
+  style: TextStyleProp
+}
+
 
 const Dollar = memo<Props>(({ style }) => {
   const { container, dollar } = styles
