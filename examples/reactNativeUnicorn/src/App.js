@@ -19,6 +19,7 @@ import {
   Star,
   Avatar,
   Dollar,
+  Cost,
   Line,
   IconCircle,
   Button
@@ -78,6 +79,7 @@ const App = () => {
         </View>
 
         <Dollar />
+        <Cost cost="5600" />
         <Line />
         <IconCircle />
         <Space height={30} />
