@@ -29,7 +29,8 @@ import {
   Button,
   ButtonStatusIssue,
   ButtonDeveloperSub,
-  Cost
+  Cost,
+  Plus
 } from './components'
 import { BG, PINK, BLUE } from './constants'
 import { cardinfo, cardabout, cardcontacts, cardvacancies, cardcareer, cardresume } from './data'
@@ -48,6 +49,8 @@ const App = () => {
       <ScrollView style={styles.scrollView}>
         <View style={{ alignItems: 'center' }}>
           <Button title="Items" />
+          <Space height={30} />
+          <Plus />
           <Space height={30} />
           <Developer title="Reactnative Dmitriy" />
           <Space height={30} />
