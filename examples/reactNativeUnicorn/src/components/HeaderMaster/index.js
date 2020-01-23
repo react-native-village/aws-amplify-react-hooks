@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
   }
 })
 
-type Props = {
+type HeaderMasterT = {
   user: {
     name: string,
     age: string,
@@ -48,7 +48,7 @@ type Props = {
   }
 }
 
-const HeaderMaster = memo<Props>(({ user }) => {
+const HeaderMaster = memo<HeaderMasterT>(({ user }) => {
   const { container, starStyle, avatarStyle, balloon, telephone, sound, h1, info } = styles
   const { name, age, uri, star, location } = user
   return (

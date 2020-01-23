@@ -3,15 +3,6 @@ import React, { memo, useState } from 'react'
 import { View, StyleSheet } from 'react-native'
 import { CardBorder, H2, H4, Space, Star, Cost } from '..'
 
-type Props = {
-  obj: {
-    title: string,
-    description: string,
-    company: string,
-    cost: number
-  }
-}
-
 const styles = StyleSheet.create({
   container: {
     width: '100%',
@@ -20,7 +11,16 @@ const styles = StyleSheet.create({
   }
 })
 
-const CardVacancies = memo<Props>(({ obj }) => {
+type CardVacanciesT = {
+  obj: {
+    title: string,
+    description: string,
+    company: string,
+    cost: number
+  }
+}
+
+const CardVacancies = memo<CardVacanciesT>(({ obj }) => {
   const { title, description, company, cost } = obj
   const { container } = styles
   const [star, setStar] = useState(false)

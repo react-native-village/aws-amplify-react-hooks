@@ -3,7 +3,15 @@ import React, { memo, useState } from 'react'
 import { View, StyleSheet } from 'react-native'
 import { Avatar, CardBorder, CardInfo, H2, Space, Star, Rate } from '..'
 
-type Props = {
+const styles = StyleSheet.create({
+  container: {
+    width: '100%',
+    flexDirection: 'row',
+    justifyContent: 'space-between'
+  }
+})
+
+type CardResumeT = {
   obj: {
     title: string,
     avatar: string,
@@ -18,15 +26,7 @@ type Props = {
   }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    width: '100%',
-    flexDirection: 'row',
-    justifyContent: 'space-between'
-  }
-})
-
-const CardResume = memo<Props>(({ obj, obj2 }) => {
+const CardResume = memo<CardResumeT>(({ obj, obj2 }) => {
   const { title, rate, avatar } = obj
   const { container } = styles
   const [star, setStar] = useState(false)

@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
   }
 })
 
-type Props = {
+type ButtonStatusIssueT = {
   title: string,
   color: string,
   textStyle: TextStyleProp,
@@ -32,7 +32,7 @@ type Props = {
   onPress: Function
 }
 
-const ButtonStatusIssue = memo<Props>(({ title, color, textStyle, viewStyle, onPress }) => {
+const ButtonStatusIssue = memo<ButtonStatusIssueT>(({ title, color, textStyle, viewStyle, onPress }) => {
   const { h7, container } = styles
   return (
     <View style={[container, viewStyle, { borderColor: color }]}>

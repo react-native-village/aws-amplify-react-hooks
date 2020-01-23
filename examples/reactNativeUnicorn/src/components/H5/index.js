@@ -18,13 +18,13 @@ const styles = StyleSheet.create({
   }
 })
 
-type Props = {
+type H5T = {
   title: string,
   textStyle: TextStyleProp,
   viewStyle: ViewStyleProp
 }
 
-const H5 = memo<Props>(({ title, viewStyle, textStyle }) => {
+const H5 = memo<H5T>(({ title, viewStyle, textStyle }) => {
   const { container, h5 } = styles
   return (
     <View style={[container, viewStyle]}>

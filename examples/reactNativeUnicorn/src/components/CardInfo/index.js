@@ -2,7 +2,7 @@
 import React, { memo } from 'react'
 import { CardBorder, H4, H5, Space, Cost } from '..'
 
-type Props = {
+type CardInfoT = {
   obj: {
     position: string,
     language: string,
@@ -13,7 +13,7 @@ type Props = {
   bool: boolean
 }
 
-const CardInfo = memo<Props>(({ obj, bool = true }) => {
+const CardInfo = memo<CardInfoT>(({ obj, bool = true }) => {
   const { position, language, stack, experience, salary } = obj
   const info = (
     <>

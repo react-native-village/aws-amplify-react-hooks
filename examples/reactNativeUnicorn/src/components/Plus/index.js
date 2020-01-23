@@ -10,12 +10,12 @@ const styles = StyleSheet.create({
   }
 })
 
-type Props = {
+type PlusT = {
   onPress: Function,
   imageStyle: ImageStyleProp
 }
 
-const Plus = memo<Props>(({ onPress, imageStyle }) => {
+const Plus = memo<PlusT>(({ onPress, imageStyle }) => {
   const { starStyle } = styles
   return (
     <TouchableOpacity onPress={onPress}>

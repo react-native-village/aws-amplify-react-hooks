@@ -67,14 +67,14 @@ const styles = StyleSheet.create({
   }
 })
 
-type Props = {
+export type AvatarT = {
   uri: string,
   onPress: Function,
   size: 'large' | 'medium' | 'small',
   viewStyle: ViewStyleProp
 }
 
-const Avatar = memo<Props>(({ uri, size = 'large', onPress, viewStyle }) => {
+const Avatar = memo<AvatarT>(({ uri, size = 'large', onPress, viewStyle }) => {
   const { container, small, medium, large, pinkSmall, pinkMedium, pinkLarge, blueSmall, blueMedium, blueLarge } = styles
 
   const ava = status =>

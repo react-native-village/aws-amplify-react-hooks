@@ -2,11 +2,11 @@
 import React, { memo } from 'react'
 import { CardBorder, H4 } from '..'
 
-type Props = {
+type CardT = {
   title: string
 }
 
-const CardAbout = memo<Props>(({ title }) => {
+const CardAbout = memo<CardT>(({ title }) => {
   return (
     <>
       <CardBorder>

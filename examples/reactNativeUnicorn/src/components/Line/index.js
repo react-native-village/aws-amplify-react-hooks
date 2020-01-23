@@ -1,6 +1,7 @@
+// @flow
 import React from 'react'
 import { StyleSheet, View } from 'react-native'
-import {WHITE, PINK, BLUE} from '../../constants'
+import { WHITE, PINK, BLUE } from '../../constants'
 
 const line = {
   width: 1,
@@ -8,32 +9,32 @@ const line = {
   backgroundColor: WHITE
 }
 
-const Line = () => {
-  const {container, blue, white, pink} = styles
-  return (
-    <View style={container}>
-      <View style={blue}/>
-      <View style={white}/>
-      <View style={pink}/>
-    </View>
-  )
-}
-
 const styles = StyleSheet.create({
   container: {
-    flexDirection: 'row',
+    flexDirection: 'row'
   },
-  blue:{
+  blue: {
     ...line,
     backgroundColor: BLUE
   },
-  white:{
-    ...line,
+  white: {
+    ...line
   },
-  pink:{
+  pink: {
     ...line,
     backgroundColor: PINK
-  },
+  }
 })
+
+const Line = () => {
+  const { container, blue, white, pink } = styles
+  return (
+    <View style={container}>
+      <View style={blue} />
+      <View style={white} />
+      <View style={pink} />
+    </View>
+  )
+}
 
 export { Line }

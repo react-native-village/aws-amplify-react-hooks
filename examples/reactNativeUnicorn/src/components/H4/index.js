@@ -16,13 +16,13 @@ const styles = StyleSheet.create({
   }
 })
 
-type Props = {
+type H4T = {
   title: string,
   textStyle?: TextStyleProp,
   viewStyle?: ViewStyleProp
 }
 
-const H4 = memo<Props>(({ title, viewStyle, textStyle }) => {
+const H4 = memo<H4T>(({ title, viewStyle, textStyle }) => {
   const { container, h4 } = styles
   return (
     <View style={[container, viewStyle]}>

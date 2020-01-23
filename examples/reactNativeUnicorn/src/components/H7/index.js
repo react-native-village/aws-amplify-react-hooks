@@ -16,11 +16,11 @@ const styles = StyleSheet.create({
   }
 })
 
-type Props = {
+type H7T = {
   title: string
 }
 
-const H7 = memo<Props>(({ title }) => {
+const H7 = memo<H7T>(({ title }) => {
   const { container, h7 } = styles
   return (
     <View style={container}>

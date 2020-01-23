@@ -17,11 +17,11 @@ const styles = StyleSheet.create({
   }
 })
 
-type Props = {
+type ButtonMarkDecisionT = {
   onPress: Function
 }
 
-const ButtonMarkDecision = memo<Props>(({ onPress }) => {
+const ButtonMarkDecision = memo<ButtonMarkDecisionT>(({ onPress }) => {
   const { container, emoji } = styles
   return (
     <TouchableOpacity onPress={onPress} style={container}>

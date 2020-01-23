@@ -20,12 +20,12 @@ const styles = StyleSheet.create({
   }
 })
 
-type Props = {
+type CommentsT = {
   title: string,
   onPress: Function
 }
 
-const Comments = memo<Props>(({ title, onPress }) => {
+const Comments = memo<CommentsT>(({ title, onPress }) => {
   const { container, sub, emoji, h4 } = styles
   return (
     <TouchableOpacity onPress={onPress} style={container}>

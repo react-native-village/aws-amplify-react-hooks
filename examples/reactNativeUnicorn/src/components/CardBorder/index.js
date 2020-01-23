@@ -35,11 +35,11 @@ const styles = StyleSheet.create({
   }
 })
 
-type Props = {
+type CardBorderT = {
   children?: Node
 }
 
-const CardBorder = memo<Props>(({ children }) => {
+const CardBorder = memo<CardBorderT>(({ children }) => {
   const { containerWhite, containerBlue, containerPink } = styles
   return (
     <>

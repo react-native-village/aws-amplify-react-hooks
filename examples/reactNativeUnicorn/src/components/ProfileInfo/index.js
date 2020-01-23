@@ -19,14 +19,14 @@ const styles = StyleSheet.create({
   }
 })
 
-type Props = {
+type ProfileInfoT = {
   location: string,
   age: string,
   textStyle: TextStyleProp,
   viewStyle: ViewStyleProp
 }
 
-const ProfileInfo = memo<Props>(({ location, age, textStyle, viewStyle }) => {
+const ProfileInfo = memo<ProfileInfoT>(({ location, age, textStyle, viewStyle }) => {
   const { container, row, upperCase, capitalize } = styles
   return (
     <View style={[container, viewStyle]}>

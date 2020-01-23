@@ -14,13 +14,13 @@ const styles = StyleSheet.create({
   }
 })
 
-type Props = {
+type BackgroundT = {
   uri: string,
   onPress: Function,
   children?: Node
 }
 
-const Background = memo<Props>(({ children, uri, onPress }) => {
+const Background = memo<BackgroundT>(({ children, uri, onPress }) => {
   const { container, img } = styles
   return (
     <TouchableOpacity onPress={onPress} style={container}>

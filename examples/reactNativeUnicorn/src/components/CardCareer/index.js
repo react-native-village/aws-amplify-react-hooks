@@ -2,7 +2,7 @@
 import React, { memo } from 'react'
 import { CardBorder, H4, H6, H3, H7, Space } from '..'
 
-type Props = {
+type CardCareerT = {
   obj: {
     institution: string,
     start: string,
@@ -12,7 +12,7 @@ type Props = {
   }
 }
 
-const CardCareer = memo<Props>(({ obj }) => {
+const CardCareer = memo<CardCareerT>(({ obj }) => {
   const { institution, start, finish, description, link } = obj
   return (
     <>

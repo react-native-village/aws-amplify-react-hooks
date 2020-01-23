@@ -15,12 +15,12 @@ const styles = StyleSheet.create({
   }
 })
 
-type Props = {
+type DeveloperT = {
   title: string,
   viewStyle: ViewStyleProp
 }
 
-const Developer = memo<Props>(({ title, viewStyle }) => {
+const Developer = memo<DeveloperT>(({ title, viewStyle }) => {
   const { container, h2 } = styles
   return (
     <View style={[container, viewStyle]}>

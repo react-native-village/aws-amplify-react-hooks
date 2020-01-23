@@ -39,14 +39,14 @@ const styles = StyleSheet.create({
   }
 })
 
-type Props = {
+type IconCircleT = {
   uri: string,
   name: string,
   onPress: Function,
   viewStyle: ViewStyleProp
 }
 
-const IconCircle = memo<Props>(({ name, onPress, viewStyle }) => {
+const IconCircle = memo<IconCircleT>(({ name, onPress, viewStyle }) => {
   const { container, pink, blue, iconBg, emoji } = styles
   return (
     <TouchableOpacity onPress={onPress} style={[container, viewStyle]}>

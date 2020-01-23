@@ -2,7 +2,7 @@
 import React, { memo } from 'react'
 import { CardBorder, H4, H5, H6, Space } from '..'
 
-type Props = {
+type CardContactsT = {
   obj: {
     location: string,
     web: string,
@@ -10,7 +10,7 @@ type Props = {
   }
 }
 
-const CardContacts = memo<Props>(({ obj }) => {
+const CardContacts = memo<CardContactsT>(({ obj }) => {
   const { location, web, phone } = obj
   return (
     <>

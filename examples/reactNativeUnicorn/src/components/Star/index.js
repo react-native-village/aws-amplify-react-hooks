@@ -10,14 +10,14 @@ const styles = StyleSheet.create({
   }
 })
 
-type Props = {
+type StarT = {
   star: boolean,
   imageStyle: ImageStyleProp,
   onPress: Function,
   viewStyle: ViewStyleProp
 }
 
-const Star = memo<Props>(({ star = false, onPress, imageStyle, viewStyle }) => {
+const Star = memo<StarT>(({ star = false, onPress, imageStyle, viewStyle }) => {
   const { starStyle } = styles
   return (
     <TouchableOpacity onPress={onPress} style={viewStyle}>

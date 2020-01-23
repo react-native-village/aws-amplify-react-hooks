@@ -17,12 +17,11 @@ const styles = StyleSheet.create({
   }
 })
 
-type Props = {
+type DollarT = {
   style: TextStyleProp
 }
 
-
-const Dollar = memo<Props>(({ style }) => {
+const Dollar = memo<DollarT>(({ style }) => {
   const { container, dollar } = styles
   return (
     <View style={container}>

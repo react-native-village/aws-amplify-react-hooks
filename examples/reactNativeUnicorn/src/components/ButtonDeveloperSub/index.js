@@ -16,14 +16,14 @@ const styles = StyleSheet.create({
   }
 })
 
-type Props = {
+type ButtonDeveloperSubT = {
   title: string,
   textStyle: TextStyleProp,
   viewStyle: ViewStyleProp,
   onPress: Function
 }
 
-const ButtonDeveloperSub = memo<Props>(({ title, viewStyle, onPress }) => {
+const ButtonDeveloperSub = memo<ButtonDeveloperSubT>(({ title, viewStyle, onPress }) => {
   const { container, h4 } = styles
   return (
     <TouchableOpacity onPress={onPress} style={[container, viewStyle]}>

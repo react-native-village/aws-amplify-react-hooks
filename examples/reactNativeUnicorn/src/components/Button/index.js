@@ -12,14 +12,14 @@ const styles = StyleSheet.create({
   }
 })
 
-type Props = {
+type ButtonT = {
   color: string,
   title: string,
   onPress: Function,
   textStyle: TextStyleProp
 }
 
-const Button = memo<Props>(({ color = BLUE, title, onPress, textStyle }) => {
+const Button = memo<ButtonT>(({ color = BLUE, title, onPress, textStyle }) => {
   const [bg, setBg] = useState(color)
   const { img } = styles
 
