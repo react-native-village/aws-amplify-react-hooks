@@ -2,7 +2,7 @@
 import React, { memo } from 'react'
 import { StyleSheet, Image, TouchableOpacity, View } from 'react-native'
 import type { ViewStyleProp } from 'react-native/Libraries/StyleSheet/StyleSheet'
-import { PINK, BLUE } from '../../constants'
+import { PINK, BLUE } from '../constants'
 
 const styles = StyleSheet.create({
   container: {

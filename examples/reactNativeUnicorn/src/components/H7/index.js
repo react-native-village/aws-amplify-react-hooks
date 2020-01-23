@@ -1,7 +1,7 @@
 // @flow
 import React, { memo } from 'react'
 import { StyleSheet, Text, View } from 'react-native'
-import { BLUE } from '../../constants'
+import { BLUE } from '../constants'
 
 const styles = StyleSheet.create({
   container: {

@@ -33,7 +33,7 @@ import {
   Cost,
   Plus
 } from './components'
-import { BG, PINK, BLUE } from './constants'
+import { BG, PINK, BLUE } from './components/constants'
 import { user, cardinfo, cardabout, cardcontacts, cardvacancies, cardcareer, cardresume } from './data'
 
 const styles = StyleSheet.create({

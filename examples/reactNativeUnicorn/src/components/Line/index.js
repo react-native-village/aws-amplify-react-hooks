@@ -1,7 +1,7 @@
 // @flow
 import React from 'react'
 import { StyleSheet, View } from 'react-native'
-import { WHITE, PINK, BLUE } from '../../constants'
+import { WHITE, PINK, BLUE } from '../constants'
 
 const line = {
   width: 1,

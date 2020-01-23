@@ -3,7 +3,7 @@ import React, { memo } from 'react'
 import { View, StyleSheet, TouchableOpacity } from 'react-native'
 import Emoji from 'react-native-emoji'
 import type { ViewStyleProp } from 'react-native/Libraries/StyleSheet/StyleSheet'
-import { PINK, BLUE, BG } from '../../constants'
+import { PINK, BLUE, BG } from '../constants'
 
 const circle = {
   width: 35,

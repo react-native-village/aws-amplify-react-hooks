@@ -2,7 +2,7 @@
 import React, { memo, useState } from 'react'
 import { StyleSheet, TouchableWithoutFeedback, Text } from 'react-native'
 import type { TextStyleProp } from 'react-native/Libraries/StyleSheet/StyleSheet'
-import { BLUE, PINK } from '../../constants'
+import { BLUE, PINK } from '../constants'
 
 const styles = StyleSheet.create({
   img: {

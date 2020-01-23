@@ -2,7 +2,7 @@
 import React, { memo } from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 import type { TextStyleProp, ViewStyleProp } from 'react-native/Libraries/StyleSheet/StyleSheet'
-import { GREY } from '../../constants'
+import { GREY } from '../constants'
 
 const styles = StyleSheet.create({
   container: {

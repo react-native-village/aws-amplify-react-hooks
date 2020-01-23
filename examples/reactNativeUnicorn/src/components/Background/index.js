@@ -2,7 +2,7 @@
 import React, { memo } from 'react'
 import type { Node } from 'react'
 import { StyleSheet, ImageBackground, TouchableOpacity } from 'react-native'
-import { W } from '../../constants'
+import { W } from '../constants'
 
 const styles = StyleSheet.create({
   container: {

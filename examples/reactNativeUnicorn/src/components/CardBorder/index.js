@@ -2,7 +2,7 @@
 import React, { memo } from 'react'
 import type { Node } from 'react'
 import { StyleSheet, View } from 'react-native'
-import { WHITE, PINK, BLUE } from '../../constants'
+import { WHITE, PINK, BLUE } from '../constants'
 
 const container = {
   flex: 1,

@@ -2,7 +2,7 @@
 import React, { memo } from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 import type { TextStyleProp, ViewStyleProp } from 'react-native/Libraries/StyleSheet/StyleSheet'
-import { WHITE, PINK, BLUE } from '../../constants'
+import { WHITE, PINK, BLUE } from '../constants'
 
 const h2 = {
   fontFamily: '3270Narrow',
