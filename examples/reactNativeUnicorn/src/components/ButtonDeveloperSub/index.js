@@ -18,7 +18,6 @@ const styles = StyleSheet.create({
 
 type Props = {
   title: string,
-  color: string,
   textStyle: TextStyleProp,
   viewStyle: ViewStyleProp,
   onPress: Function
