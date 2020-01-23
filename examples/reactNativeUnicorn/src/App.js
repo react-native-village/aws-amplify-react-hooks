@@ -47,6 +47,23 @@ const App = () => {
     <>
       <ScrollView style={styles.scrollView}>
         <View style={{ alignItems: 'center' }}>
+          <Button title="Items" />
+          <Space height={30} />
+          <Developer title="Reactnative Dmitriy" />
+          <Space height={30} />
+          <Dollar />
+          <Space height={30} />
+          <Cost title={5000} />
+          <Space height={30} />
+          <ProfileInfo location="Russia, Moscow" age={39} />
+          <Space height={30} />
+          <Line />
+          <Space height={30} />
+          <Background />
+          <Space height={90} />
+        </View>
+
+        <View style={{ alignItems: 'center' }}>
           <Button title="Buttons" />
           <Space height={30} />
           <ButtonMarkDecision />
@@ -119,23 +136,6 @@ const App = () => {
           <CardAbout title={cardabout} />
           <Space height={30} />
           <CardInfo obj={cardinfo} />
-          <Space height={90} />
-        </View>
-
-        <View style={{ alignItems: 'center' }}>
-          <Button title="Items" />
-          <Space height={30} />
-          <Developer title="Reactnative Dmitriy" />
-          <Space height={30} />
-          <Dollar />
-          <Space height={30} />
-          <Cost title={5000} />
-          <Space height={30} />
-          <ProfileInfo location="Russia, Moscow" age={39} />
-          <Space height={30} />
-          <Line />
-          <Space height={30} />
-          <Background />
           <Space height={90} />
         </View>
       </ScrollView>

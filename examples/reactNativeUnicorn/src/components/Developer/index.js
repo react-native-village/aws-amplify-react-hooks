@@ -1,8 +1,8 @@
 // @flow
 import React, { memo } from 'react'
 import { View, StyleSheet } from 'react-native'
+import type { ViewStyleProp } from 'react-native/Libraries/StyleSheet/StyleSheet'
 import { Avatar, H2, H4 } from '..'
-import type {ViewStyleProp } from 'react-native/Libraries/StyleSheet/StyleSheet'
 
 const styles = StyleSheet.create({
   container: {
@@ -20,13 +20,13 @@ type Props = {
   viewStyle: ViewStyleProp
 }
 
-const Developer = memo<Props>(({ title, viewStyle}) => {
+const Developer = memo<Props>(({ title, viewStyle }) => {
   const { container, h2 } = styles
   return (
-    <View styles={[container, viewStyle]}>
-      <Avatar uri={'https://i.picsum.photos/id/180/200/200.jpg'} size="medium"/>
-      <H2 title={title} textStyle={h2}/>
-      <H4 title="1/123"/>
+    <View style={[container, viewStyle]}>
+      <Avatar uri="https://pbs.twimg.com/profile_images/1054434556156162054/1H_7AxP0.jpg" size="medium" />
+      <H2 title={title} textStyle={h2} />
+      <H4 title="1/123" />
     </View>
   )
 })
