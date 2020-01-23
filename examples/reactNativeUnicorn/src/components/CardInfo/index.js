@@ -30,7 +30,7 @@ const CardInfo = memo<Props>(({ obj, bool = true }) => {
       <H4 title={experience} />
       <Space height={10} />
       <H5 title="salary" />
-      <Cost cost={salary} />
+      <Cost title={salary} />
     </>
   )
 

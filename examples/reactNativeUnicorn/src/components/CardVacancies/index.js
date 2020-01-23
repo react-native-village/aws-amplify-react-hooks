@@ -36,7 +36,7 @@ const CardVacancies = memo<Props>(({ obj }) => {
         <Space height={20} />
         <View style={container}>
           <H4 title={company} />
-          <Cost cost={cost} />
+          <Cost title={cost} />
         </View>
       </CardBorder>
     </>

@@ -125,7 +125,7 @@ const App = () => {
         <View style={{ alignItems: 'center' }}>
           <Button title="Items" />
           <Space height={30} />
-          <Developer title="Reactnative Dmitriy"/>
+          <Developer title="Reactnative Dmitriy" />
           <Space height={30} />
           <Dollar />
           <Space height={30} />
