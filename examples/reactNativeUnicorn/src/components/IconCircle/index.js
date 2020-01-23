@@ -1,6 +1,7 @@
 // @flow
 import React, { memo } from 'react'
-import { View, Image, StyleSheet, TouchableOpacity } from 'react-native'
+import { View, StyleSheet, TouchableOpacity } from 'react-native'
+import Emoji from 'react-native-emoji'
 import { PINK, BLUE, BG } from '../../constants'
 
 const circle = {
@@ -10,41 +11,44 @@ const circle = {
   backgroundColor: BG
 }
 
-type Props = {
-  uri: string,
-  onPress: Function
-}
-
 const styles = StyleSheet.create({
   blue: {
     ...circle,
+    height: 36,
+    width: 36,
     backgroundColor: BLUE
   },
   pink: {
     ...circle,
-    backgroundColor: PINK,
-    top: 2
+    top: 1,
+    height: 36.4,
+    backgroundColor: PINK
   },
   iconBg: {
     ...circle,
-    right: 2,
     justifyContent: 'center',
     alignItems: 'center'
   },
-  icon: {
-    width: 20,
-    height: 20
+  emoji: {
+    left: 3,
+    fontSize: 20
   }
 })
 
-const IconCircle = memo<Props>(({ uri, onPress }) => {
-  const { pink, blue, iconBg, icon } = styles
+type Props = {
+  uri: string,
+  name: string,
+  onPress: Function
+}
+
+const IconCircle = memo<Props>(({ name, onPress }) => {
+  const { pink, blue, iconBg, emoji } = styles
   return (
     <TouchableOpacity onPress={onPress} style={{ alignSelf: 'center' }}>
       <View style={blue}>
         <View style={pink}>
           <View style={iconBg}>
-            <Image source={{ uri }} style={icon} />
+            <Emoji name={name} style={emoji} />
           </View>
         </View>
       </View>

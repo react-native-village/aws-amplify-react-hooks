@@ -16,16 +16,16 @@ type Props = {
   color: string,
   title: string,
   onPress: Function,
-  titleStyle: TextStyleProp
+  textStyle: TextStyleProp
 }
 
-const Button = memo<Props>(({ color = BLUE, title, onPress, titleStyle }) => {
+const Button = memo<Props>(({ color = BLUE, title, onPress, textStyle }) => {
   const [bg, setBg] = useState(color)
   const { img } = styles
 
   return (
     <TouchableWithoutFeedback onPress={onPress} onPressIn={() => setBg(PINK)} onPressOut={() => setBg(BLUE)}>
-      <Text style={[img, titleStyle, { color: bg }]}>{title}</Text>
+      <Text style={[img, textStyle, { color: bg }]}>{title}</Text>
     </TouchableWithoutFeedback>
   )
 })

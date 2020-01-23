@@ -25,16 +25,16 @@ type Props = {
   onPress: Function
 }
 
-const Rate = memo<Props>(({ title, onPress }) => {
+const Comments = memo<Props>(({ title, onPress }) => {
   const { container, sub, emoji, h4 } = styles
   return (
     <TouchableOpacity onPress={onPress} style={container}>
       <View style={sub}>
-        <Emoji name=":unicorn_face:" style={emoji} />
+        <Emoji name=":thought_balloon:" style={emoji} />
         <H4 title={title} textStyle={h4} />
       </View>
     </TouchableOpacity>
   )
 })
 
-export { Rate }
+export { Comments }
