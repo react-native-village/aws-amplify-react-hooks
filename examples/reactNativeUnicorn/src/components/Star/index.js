@@ -1,6 +1,7 @@
 // @flow
 import React, { memo } from 'react'
 import { StyleSheet, Image, TouchableOpacity } from 'react-native'
+import type { ViewStyleProp, ImageStyleProp } from 'react-native/Libraries/StyleSheet/StyleSheet'
 
 const styles = StyleSheet.create({
   starStyle: {
@@ -10,15 +11,20 @@ const styles = StyleSheet.create({
 })
 
 type Props = {
-  bool: boolean,
-  onPress: Function
+  star: boolean,
+  imageStyle: ImageStyleProp,
+  onPress: Function,
+  viewStyle: ViewStyleProp
 }
 
-const Star = memo<Props>(({ bool = false, onPress }) => {
+const Star = memo<Props>(({ star = false, onPress, imageStyle, viewStyle }) => {
   const { starStyle } = styles
   return (
-    <TouchableOpacity onPress={onPress}>
-      <Image style={starStyle} source={bool ? require('./StarActive.png') : require('./StarDisable.png')} />
+    <TouchableOpacity onPress={onPress} style={viewStyle}>
+      <Image
+        style={[starStyle, imageStyle]}
+        source={star ? require('./StarActive.png') : require('./StarDisable.png')}
+      />
     </TouchableOpacity>
   )
 })

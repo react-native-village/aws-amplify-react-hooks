@@ -1,9 +1,13 @@
 // @flow
 import React, { memo } from 'react'
 import { StyleSheet, Image, TouchableOpacity, View } from 'react-native'
+import type { ViewStyleProp } from 'react-native/Libraries/StyleSheet/StyleSheet'
 import { PINK, BLUE } from '../../constants'
 
 const styles = StyleSheet.create({
+  container: {
+    alignSelf: 'center'
+  },
   large: {
     marginLeft: 1,
     width: 130,
@@ -66,11 +70,12 @@ const styles = StyleSheet.create({
 type Props = {
   uri: string,
   onPress: Function,
-  size: 'large' | 'medium' | 'small'
+  size: 'large' | 'medium' | 'small',
+  viewStyle: ViewStyleProp
 }
 
-const Avatar = memo<Props>(({ uri, size, onPress }) => {
-  const { small, medium, large, pinkSmall, pinkMedium, pinkLarge, blueSmall, blueMedium, blueLarge } = styles
+const Avatar = memo<Props>(({ uri, size = 'large', onPress, viewStyle }) => {
+  const { container, small, medium, large, pinkSmall, pinkMedium, pinkLarge, blueSmall, blueMedium, blueLarge } = styles
 
   const ava = status =>
     ({
@@ -94,10 +99,14 @@ const Avatar = memo<Props>(({ uri, size, onPress }) => {
     }[status])
 
   return (
-    <TouchableOpacity onPress={onPress} style={{ alignSelf: 'center' }}>
+    <TouchableOpacity onPress={onPress} style={[container, viewStyle]}>
       <View style={pink(size)}>
         <View style={blue(size)}>
-          <Image style={ava(size)} source={{ uri }} />
+          {uri ? (
+            <Image style={ava(size)} source={{ uri }} />
+          ) : (
+            <Image style={ava(size)} source={require('./DefaultAvatar.png')} />
+          )}
         </View>
       </View>
     </TouchableOpacity>

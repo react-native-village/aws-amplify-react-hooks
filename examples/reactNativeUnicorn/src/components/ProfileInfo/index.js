@@ -20,24 +20,23 @@ const styles = StyleSheet.create({
 })
 
 type Props = {
-  title: string,
   location: string,
   age: string,
   textStyle: TextStyleProp,
   viewStyle: ViewStyleProp
 }
 
-const ProfileInfo = memo<Props>(({ location, age }) => {
+const ProfileInfo = memo<Props>(({ location, age, textStyle, viewStyle }) => {
   const { container, row, upperCase, capitalize } = styles
   return (
-    <View style={container}>
+    <View style={[container, viewStyle]}>
       <View style={row}>
-        <H4 title="location:" textStyle={upperCase} />
-        <H4 title={location} textStyle={capitalize} />
+        <H4 title="location:" textStyle={[upperCase, textStyle]} />
+        <H4 title={location} textStyle={[capitalize, textStyle]} />
       </View>
       <View style={row}>
-        <H4 title="age:" textStyle={upperCase} />
-        <H4 title={age} />
+        <H4 title="age:" textStyle={[upperCase, textStyle]} />
+        <H4 title={age} textStyle={textStyle} />
       </View>
     </View>
   )

@@ -1,6 +1,7 @@
 // @flow
 import React, { memo } from 'react'
-import { StyleSheet, Image, TouchableOpacity } from 'react-native'
+import type { Node } from 'react'
+import { StyleSheet, ImageBackground, TouchableOpacity } from 'react-native'
 import { W } from '../../constants'
 
 const styles = StyleSheet.create({
@@ -8,20 +9,24 @@ const styles = StyleSheet.create({
     alignSelf: 'center'
   },
   img: {
-    width: W
+    width: W,
+    height: W / 1.8
   }
 })
 
 type Props = {
   uri: string,
-  onPress: Function
+  onPress: Function,
+  children?: Node
 }
 
-const Background = memo<Props>(({ uri, onPress }) => {
+const Background = memo<Props>(({ children, uri, onPress }) => {
   const { container, img } = styles
   return (
     <TouchableOpacity onPress={onPress} style={container}>
-      {uri ? <Image style={img} source={{ uri }} /> : <Image style={img} source={require('./background.png')} />}
+      <ImageBackground style={img} source={uri ? { uri } : require('./background.png')}>
+        {children}
+      </ImageBackground>
     </TouchableOpacity>
   )
 })

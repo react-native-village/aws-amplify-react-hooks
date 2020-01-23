@@ -30,6 +30,14 @@ const cardresume = {
   cost: 5600
 }
 
+const user = {
+  name: 'Dimka Reactnative',
+  age: '39',
+  uri: 'https://pbs.twimg.com/profile_images/1054434556156162054/1H_7AxP0.jpg',
+  star: true,
+  location: 'Russia, Moscow'
+}
+
 const cardcareer = {
   institution: 'MIT',
   start: '2011',
@@ -38,4 +46,4 @@ const cardcareer = {
   link: 'Sertifikat'
 }
 
-export { cardinfo, cardabout, cardcontacts, cardvacancies, cardcareer, cardresume }
+export { cardinfo, cardabout, cardcontacts, cardvacancies, cardcareer, cardresume, user }

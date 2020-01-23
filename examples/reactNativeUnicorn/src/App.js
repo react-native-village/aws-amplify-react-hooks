@@ -2,6 +2,7 @@
 import React from 'react'
 import { StyleSheet, ScrollView, View } from 'react-native'
 import {
+  HeaderMaster,
   ButtonMarkDecision,
   Comments,
   Background,
@@ -33,7 +34,7 @@ import {
   Plus
 } from './components'
 import { BG, PINK, BLUE } from './constants'
-import { cardinfo, cardabout, cardcontacts, cardvacancies, cardcareer, cardresume } from './data'
+import { user, cardinfo, cardabout, cardcontacts, cardvacancies, cardcareer, cardresume } from './data'
 
 const styles = StyleSheet.create({
   scrollView: {
@@ -47,8 +48,10 @@ const App = () => {
   return (
     <>
       <ScrollView style={styles.scrollView}>
+        <HeaderMaster user={user} />
         <View style={{ alignItems: 'center' }}>
           <Button title="Items" />
+          <Space height={30} />
           <Space height={30} />
           <Plus />
           <Space height={30} />
