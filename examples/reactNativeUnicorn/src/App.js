@@ -21,6 +21,7 @@ import {
   Space,
   Star,
   Avatar,
+  ProfileInfo,
   Dollar,
   Line,
   IconCircle,
@@ -123,9 +124,11 @@ const App = () => {
         <View style={{ alignItems: 'center' }}>
           <Button title="Items" />
           <Space height={30} />
+          <Dollar />
+          <Space height={30} />
           <Cost title={5000} />
           <Space height={30} />
-          <Dollar />
+          <ProfileInfo location="Russia, Moscow" age={39} />
           <Space height={30} />
           <Line />
           <Space height={30} />
