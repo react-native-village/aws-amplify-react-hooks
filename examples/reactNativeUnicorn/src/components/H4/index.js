@@ -18,8 +18,8 @@ const styles = StyleSheet.create({
 
 type Props = {
   title: string,
-  textStyle: TextStyleProp,
-  viewStyle: ViewStyleProp
+  textStyle?: TextStyleProp,
+  viewStyle?: ViewStyleProp
 }
 
 const H4 = memo<Props>(({ title, viewStyle, textStyle }) => {
