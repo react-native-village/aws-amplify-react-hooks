@@ -15,6 +15,10 @@ const cardcontacts = {
   phone: '+7 (499) 899-11-22'
 }
 
+const cardissueresponcesub = {
+  name: 'Ivan Ivanov',
+  description: 'Our product is an international trading platform for the exchange of virtual items. (CS: GO, Dota 2) which is shared by more than 5 million users. '
+}
 const cardvacancies = {
   title: 'React Native Developer',
   description:
@@ -46,4 +50,4 @@ const cardcareer = {
   link: 'Sertifikat'
 }
 
-export { cardinfo, cardabout, cardcontacts, cardvacancies, cardcareer, cardresume, user }
+export { cardinfo, cardabout, cardcontacts, cardvacancies, cardcareer, cardresume, user,cardissueresponcesub }
