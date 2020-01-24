@@ -32,10 +32,11 @@ import {
   ButtonDeveloperSub,
   Cost,
   Plus,
-  CardIssueResponceSub
+  CardIssueResponceSub,
+  CardIssue
 } from './components'
 import { BG, PINK, BLUE } from './components/constants'
-import { user, cardinfo, cardabout, cardcontacts, cardvacancies, cardcareer, cardresume,cardissueresponcesub } from './data'
+import { user, cardinfo, cardabout, cardcontacts, cardvacancies, cardcareer, cardresume, cardissueresponcesub, cardissue} from './data'
 
 const styles = StyleSheet.create({
   scrollView: {
@@ -143,6 +144,8 @@ const App = () => {
           <CardAbout title={cardabout} />
           <Space height={30} />
           <CardInfo obj={cardinfo} />
+          <Space height={30} />
+          <CardIssue obj={cardissue}/>
           <CardIssueResponceSub obj={cardissueresponcesub}/>
           <Space height={90} />
         </View>
