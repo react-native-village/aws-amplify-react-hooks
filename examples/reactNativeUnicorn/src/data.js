@@ -26,6 +26,12 @@ const cardissueresponcesub = {
   name: 'Ivan Ivanov',
   description: 'Our product is an international trading platform for the exchange of virtual items. (CS: GO, Dota 2) which is shared by more than 5 million users. '
 }
+
+const cardissueresponce = {
+  name: 'Ivan Ivanov',
+  description: 'Our product is an international trading platform for the exchange of virtual items. (CS: GO, Dota 2) which is shared by more than 5 million users. ',
+  comments: 0
+}
 const cardvacancies = {
   title: 'React Native Developer',
   description:
@@ -57,4 +63,4 @@ const cardcareer = {
   link: 'Sertifikat'
 }
 
-export { cardinfo, cardabout, cardcontacts, cardvacancies, cardcareer, cardresume, user,cardissueresponcesub, cardissue }
+export { cardinfo, cardabout, cardcontacts, cardissueresponce, cardvacancies, cardcareer, cardresume, user,cardissueresponcesub, cardissue }

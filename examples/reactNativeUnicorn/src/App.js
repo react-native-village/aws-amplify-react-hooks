@@ -33,10 +33,11 @@ import {
   Cost,
   Plus,
   CardIssueResponceSub,
-  CardIssue
+  CardIssue,
+  CardIssueResponce
 } from './components'
 import { BG, PINK, BLUE } from './components/constants'
-import { user, cardinfo, cardabout, cardcontacts, cardvacancies, cardcareer, cardresume, cardissueresponcesub, cardissue} from './data'
+import { user, cardinfo, cardabout, cardcontacts, cardvacancies, cardcareer, cardresume, cardissueresponcesub, cardissue, cardissueresponce} from './data'
 
 const styles = StyleSheet.create({
   scrollView: {
@@ -146,6 +147,7 @@ const App = () => {
           <CardInfo obj={cardinfo} />
           <Space height={30} />
           <CardIssue obj={cardissue}/>
+          <CardIssueResponce obj={cardissueresponce}/>
           <CardIssueResponceSub obj={cardissueresponcesub}/>
           <Space height={90} />
         </View>
