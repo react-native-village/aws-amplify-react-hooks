@@ -12,6 +12,7 @@
   },
   "precommit": "lint",
   "dependencies": {
+    "@react-native-community/masked-view": "^0.1.6",
     "amazon-cognito-identity-js": "^3.2.2",
     "react": "16.9.0",
     "react-native": "0.61.5",
@@ -22,6 +23,7 @@
     "react-native-iphone-x-helper": "^1.2.1",
     "react-native-keychain": "^4.0.5",
     "react-native-reanimated": "^1.7.0",
+    "react-native-safe-area-context": "^0.6.4",
     "react-native-screens": "1.0.0-alpha.23",
     "react-native-spinkit": "^1.5.0",
     "react-native-statusbar-alert": "^0.4.0",
