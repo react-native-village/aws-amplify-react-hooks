@@ -34,7 +34,9 @@ import {
   Plus,
   CardIssueResponceSub,
   CardIssue,
-  CardIssueResponce
+  CardIssueResponce,
+  TabCompany,
+  TabDeveloper
 } from './components'
 import { BG, PINK, BLUE } from './components/constants'
 import { user, cardinfo, cardabout, cardcontacts, cardvacancies, cardcareer, cardresume, cardissueresponcesub, cardissue, cardissueresponce} from './data'
@@ -150,6 +152,12 @@ const App = () => {
           <CardIssueResponce obj={cardissueresponce}/>
           <CardIssueResponceSub obj={cardissueresponcesub}/>
           <Space height={90} />
+        </View>
+
+        <View style={{ alignItems: 'center' }}>
+          <TabCompany />
+           <Space height={30} />
+          <TabDeveloper />
         </View>
       </ScrollView>
     </>
