@@ -13,11 +13,11 @@ const CardIssueResponceSub = memo<Props>(({ obj }) => {
   const { name, description } = obj
   return (
     <>
-      <Line/>
+      <Line />
       <CardBorder>
-        <H4 title={description}/>
-        <Space height={30}/>
-        <ButtonDeveloperSub title={name}/>
+        <H4 title={description} />
+        <Space height={30} />
+        <ButtonDeveloperSub title={name} viewStyle={{ alignSelf: 'flex-start' }} />
       </CardBorder>
     </>
   )
