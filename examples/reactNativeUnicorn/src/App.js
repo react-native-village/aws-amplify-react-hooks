@@ -25,6 +25,7 @@ import {
   ProfileInfo,
   Dollar,
   Line,
+  Tabs,
   Developer,
   IconCircle,
   Button,
@@ -155,6 +156,8 @@ const App = () => {
         </View>
 
         <View style={{ alignItems: 'center' }}>
+          <Tabs />
+          <Space height={30} />
           <TabCompany />
            <Space height={30} />
           <TabDeveloper />
