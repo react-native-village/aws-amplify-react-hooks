@@ -1,6 +1,6 @@
 //@flow
 import React,{ memo, useState } from 'react'
-import { StyleSheet, View, TouchableOpacity } from 'react-native'
+import { StyleSheet, View, Text, Button, Modal, TouchableOpacity, Image } from 'react-native'
 import Emoji from "react-native-emoji"
 import { CardBorder } from ".."
 import { win } from "../constants"
@@ -43,10 +43,14 @@ const emoji = {
     //backgroundColor: 'rgba(52, 52, 52, 0.4)'
 }
 const styles = StyleSheet.create({
+    cardBorder:{
+        padding: 10
+    },
     container: {
         width: win.width/1.5,
         flexDirection: 'row',
-        justifyContent: 'space-between'
+        justifyContent: 'space-between',
+        alignItems: 'center'
     },
     page: {
         ...emoji
@@ -67,10 +71,14 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         fontWeight: 'bold',
         fontSize: 20
+    },
+    plus:{
+        width: 50,
+        height:50
     }
 })
 
-const Tabs = memo<Props>(({  }) => {
+const Tabs = memo<Props>(() => {
     const [value, setValue] = useState({
         one: true,
         two: false,
@@ -79,24 +87,45 @@ const Tabs = memo<Props>(({  }) => {
         five: false
     })
 
-    const _onChangeState = number => () => {
+    const [modal, setModal] = useState(false)
+
+    const _onState = number => () => {
         const defaultObject = numbers.reduce((acc, el) => ({ ...acc, [el]: false }), {})
         setValue({ ...defaultObject, [numbers[number - 1]]: true })
     }
-    const { container } = styles
+    const { container, cardBorder, plus } = styles
     return(
-      <CardBorder>
-        <View style={container}>
-          {emojiList.map(({ id, title,name })=>{
+      <>
+        <CardBorder style={cardBorder}>
+          <View style={container}>
+            {emojiList.map(({ id, title,name })=>{
                 const check = value[numbers[id-1]]
                 return (
-                  <TouchableOpacity key={id} onPress={_onChangeState(id)}>
-                    <Emoji name={name} style={check ? styles[title] : styles.default} />
-                  </TouchableOpacity>
+                 id === 3 ?
+                   <TouchableOpacity onPress={()=>setModal(true)}>
+                     <Image style={plus} source={require('./plus.png')} />
+                   </TouchableOpacity>
+                     :
+                   <TouchableOpacity key={id} onPress={_onState(id)}>
+                     <Emoji name={name} style={check ? styles[title] : styles.default} />
+                   </TouchableOpacity>
                 )
             })}
-        </View>
-      </CardBorder>
+          </View>
+        </CardBorder>
+        <Modal
+          animationType="down"
+          transparent={false}
+          visible={modal}
+          onRequestClose={() => {alert('Modal has been closed.')}}>
+          <View style={{ marginTop: 22 }}>
+            <View>
+              <Text>Hello World!</Text>
+              <Button title="Close Modal" onPress={()=>setModal(false)} />
+            </View>
+          </View>
+        </Modal>
+      </>
     )
 })
 

@@ -5,30 +5,25 @@ import { StyleSheet, View } from 'react-native'
 import { WHITE, PINK, BLUE } from '../constants'
 
 const container = {
-  flex: 1,
-  justifyContent: 'center',
-  alignItems: 'flex-start',
   borderWidth: 1,
   borderRadius: 17,
-  borderColor: WHITE,
-  padding: 25,
-  width: '100%'
+  borderColor: WHITE
 }
 
 const styles = StyleSheet.create({
   containerWhite: {
     ...container,
     marginTop: 2,
-    marginLeft: 5
+    marginLeft: 5,
+    padding: 20
   },
   containerBlue: {
     ...container,
-    padding: 0,
-    borderColor: BLUE
+    borderColor: BLUE,
+    flexDirection: 'row'
   },
   containerPink: {
     ...container,
-    padding: 0,
     borderColor: PINK,
     marginLeft: -5,
     marginTop: 1
@@ -39,16 +34,14 @@ type CardBorderT = {
   children?: Node
 }
 
-const CardBorder = memo<CardBorderT>(({ children }) => {
+const CardBorder = memo<CardBorderT>(({ children, style }) => {
   const { containerWhite, containerBlue, containerPink } = styles
   return (
-    <>
-      <View style={containerBlue}>
-        <View style={containerPink}>
-          <View style={containerWhite}>{children}</View>
-        </View>
+    <View style={containerBlue}>
+      <View style={containerPink}>
+        <View style={[containerWhite, style]}>{children}</View>
       </View>
-    </>
+    </View>
   )
 })
 

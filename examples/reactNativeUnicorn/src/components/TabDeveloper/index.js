@@ -38,6 +38,9 @@ const emoji = {
     //backgroundColor: 'rgba(52, 52, 52, 0.4)'
 }
 const styles = StyleSheet.create({
+    cardBorder:{
+        padding: 10
+    },
     container: {
         width: win.width/1.5,
         flexDirection: 'row',
@@ -74,9 +77,9 @@ const TabDeveloper = (()=>{
         const defaultObject = numbers.reduce((acc, el) => ({ ...acc, [el]: false }), {})
         setValue({ ...defaultObject, [numbers[number - 1]]: true })
     }
-    const { container } = styles
+    const { container, cardBorder } = styles
     return (
-      <CardBorder>
+      <CardBorder style={cardBorder}>
         <View style={container}>
           {emojiList.map(({ id, title,name })=>{
                     const check = value[numbers[id-1]]
