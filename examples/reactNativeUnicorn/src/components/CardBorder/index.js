@@ -34,12 +34,12 @@ type CardBorderT = {
   children?: Node
 }
 
-const CardBorder = memo<CardBorderT>(({ children, style }) => {
+const CardBorder = memo<CardBorderT>(({ children }) => {
   const { containerWhite, containerBlue, containerPink } = styles
   return (
     <View style={containerBlue}>
       <View style={containerPink}>
-        <View style={[containerWhite, style]}>{children}</View>
+        <View style={[containerWhite]}>{children}</View>
       </View>
     </View>
   )

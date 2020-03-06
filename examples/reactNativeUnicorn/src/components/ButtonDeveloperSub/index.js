@@ -2,7 +2,7 @@
 import React, { memo } from 'react'
 import { StyleSheet, TouchableOpacity } from 'react-native'
 import type { ViewStyleProp, TextStyleProp } from 'react-native/Libraries/StyleSheet/StyleSheet'
-import { H4, Avatar, Rate } from '..'
+import { H7, Avatar, Rate } from '..'
 
 const styles = StyleSheet.create({
   container: {
@@ -10,7 +10,9 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     flexDirection: 'row'
   },
-  h4: {
+  h: {
+    width: 100,
+    marginTop: 8,
     marginLeft: 15,
     marginRight: 15
   }
@@ -18,18 +20,19 @@ const styles = StyleSheet.create({
 
 type ButtonDeveloperSubT = {
   title: string,
+  uri: string,
   textStyle: TextStyleProp,
   viewStyle: ViewStyleProp,
   onPress: Function
 }
 
-const ButtonDeveloperSub = memo<ButtonDeveloperSubT>(({ title, viewStyle, onPress }) => {
-  const { container, h4 } = styles
+const ButtonDeveloperSub = memo<ButtonDeveloperSubT>(({ title, viewStyle, uri, onPress }) => {
+  const { container, h } = styles
   return (
     <TouchableOpacity onPress={onPress} style={[container, viewStyle]}>
-      <Avatar uri="https://pbs.twimg.com/profile_images/1054434556156162054/1H_7AxP0.jpg" size="small" />
-      <H4 title={title} textStyle={h4} />
-      <Rate title="2/433" />
+      <Avatar uri={uri} size="small" />
+      <H7 title={title} textStyle={h} numberOfLines={1} ellipsizeMode="tail" />
+      <Rate title="2/433" viewStyle={{ marginTop: 3 }} />
     </TouchableOpacity>
   )
 })

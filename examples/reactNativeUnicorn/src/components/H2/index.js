@@ -1,48 +1,38 @@
 // @flow
 import React, { memo } from 'react'
-import { StyleSheet, Text, View } from 'react-native'
-import type { TextStyleProp, ViewStyleProp } from 'react-native/Libraries/StyleSheet/StyleSheet'
-import { WHITE, PINK, BLUE } from '../constants'
-
-const h2 = {
-  fontFamily: '3270Narrow',
-  fontSize: 21,
-  color: BLUE
-}
+import { Platform, StyleSheet, Text } from 'react-native'
+import type { TextStyleProp } from 'react-native/Libraries/StyleSheet/StyleSheet'
+import { ifIphoneX } from 'react-native-iphone-x-helper'
+import { useTheme } from '@react-navigation/native'
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'flex-start'
-  },
-  h2pink: {
-    ...h2,
-    color: PINK,
-    marginTop: -24,
-    marginLeft: -1
-  },
-  h2white: {
-    ...h2,
-    color: WHITE,
-    marginTop: -23
+  h: {
+    textShadowOffset: { width: 2, height: 1 },
+    textShadowRadius: 1,
+    ...ifIphoneX(
+      {
+        fontSize: Platform.OS === 'ios' ? 45 : 36
+      },
+      {
+        fontSize: Platform.OS === 'ios' ? 36 : 36
+      }
+    )
   }
 })
 
 type H2T = {
   title: string,
-  textStyle: TextStyleProp,
-  viewStyle: ViewStyleProp
+  textStyle: TextStyleProp
 }
 
-const H2 = memo<H2T>(({ title, viewStyle, textStyle }) => {
-  const { container, h2pink, h2white } = styles
+const H2 = memo<H2T>(({ title, textStyle }) => {
+  const { h } = styles
+  const {
+    fonts: { fontFamilyH2 },
+    colors: { secondary, text }
+  } = useTheme()
   return (
-    <View style={[container, viewStyle]}>
-      <Text style={[h2, textStyle]}>{title}</Text>
-      <Text style={[h2pink, textStyle]}>{title}</Text>
-      <Text style={[h2white, textStyle]}>{title}</Text>
-    </View>
+    <Text style={[h, textStyle, { fontFamily: fontFamilyH2, color: text, textShadowColor: secondary }]}>{title}</Text>
   )
 })
 

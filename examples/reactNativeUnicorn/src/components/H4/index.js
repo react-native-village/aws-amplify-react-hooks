@@ -1,34 +1,28 @@
 // @flow
 import React, { memo } from 'react'
-import { StyleSheet, Text, View } from 'react-native'
-import type { TextStyleProp, ViewStyleProp } from 'react-native/Libraries/StyleSheet/StyleSheet'
-import { GREY } from '../constants'
+import { StyleSheet, Text } from 'react-native'
+import type { TextStyleProp } from 'react-native/Libraries/StyleSheet/StyleSheet'
+import { useTheme } from '@react-navigation/native'
 
 const styles = StyleSheet.create({
-  container: {
-    justifyContent: 'center',
-    alignItems: 'flex-start'
-  },
-  h4: {
-    fontFamily: '3270Narrow',
-    fontSize: 18,
-    color: GREY
+  h: {
+    fontWeight: 'bold',
+    fontSize: 22
   }
 })
 
 type H4T = {
   title: string,
-  textStyle?: TextStyleProp,
-  viewStyle?: ViewStyleProp
+  textStyle: TextStyleProp
 }
 
-const H4 = memo<H4T>(({ title, viewStyle, textStyle }) => {
-  const { container, h4 } = styles
-  return (
-    <View style={[container, viewStyle]}>
-      <Text style={[h4, textStyle]}>{title}</Text>
-    </View>
-  )
+const H4 = memo<H4T>(({ title, textStyle }) => {
+  const { h } = styles
+  const {
+    fonts: { fontFamilyH4 },
+    colors: { h4 }
+  } = useTheme()
+  return <Text style={[h, textStyle, { fontFamily: fontFamilyH4, color: h4 }]}>{title}</Text>
 })
 
 export { H4 }

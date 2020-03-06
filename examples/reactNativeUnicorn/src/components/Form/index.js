@@ -14,7 +14,7 @@ import {
 
 const FONT_SIZE = 17
 const FONT_WEIGHT = '500'
-
+const inputFontFamily = '3270Narrow'
 const Form = t.form.Form // eslint-disable-line
 
 const formValidation = {
@@ -65,12 +65,13 @@ export const links = t.struct({
   facebook: t.String
 })
 
+
 export const stylesheet = {
   ...Form.stylesheet,
   controlLabel: {
     normal: {
       color: LABEL_COLOR,
-      fontFamily: '3270Narrow',
+      fontFamily: inputFontFamily,
       fontSize: FONT_SIZE,
       fontWeight: FONT_WEIGHT
     },
@@ -78,7 +79,7 @@ export const stylesheet = {
       marginLeft: 18,
       bottom: 26,
       color: ERROR_COLOR,
-      fontFamily: '3270Narrow',
+      fontFamily: inputFontFamily,
       fontSize: FONT_SIZE,
       marginBottom: 7
     }
@@ -87,7 +88,7 @@ export const stylesheet = {
     normal: {
       height: 25,
       width: W - 40,
-      fontFamily: '3270Narrow',
+      fontFamily: inputFontFamily,
       fontSize: FONT_SIZE,
       color: PINK,
       borderBottomColor: BLUE,
@@ -100,7 +101,7 @@ export const stylesheet = {
       width: W - 40,
       bottom: 23,
       paddingLeft: 20,
-      fontFamily: '3270Narrow',
+      fontFamily: inputFontFamily,
       fontSize: FONT_SIZE,
       color: INPUT_COLOR,
       borderRadius: 15,
@@ -112,7 +113,7 @@ export const stylesheet = {
     notEditable: {
       height: 50,
       width: W - 40,
-      fontFamily: '3270Narrow',
+      fontFamily: inputFontFamily,
       fontSize: FONT_SIZE,
       borderRadius: 15,
       borderWidth: 0.5,
@@ -123,7 +124,7 @@ export const stylesheet = {
     }
   },
   errorBlock: {
-    fontFamily: '3270Narrow',
+    fontFamily: inputFontFamily,
     fontSize: 14,
     marginBottom: 2,
     marginLeft: 18,

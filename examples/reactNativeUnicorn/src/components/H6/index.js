@@ -1,36 +1,40 @@
 // @flow
 import React, { memo } from 'react'
-import { StyleSheet, Text, View } from 'react-native'
-import type { TextStyleProp, ViewStyleProp } from 'react-native/Libraries/StyleSheet/StyleSheet'
-import { BLUE } from '../constants'
+import { Platform, StyleSheet, Text } from 'react-native'
+import type { TextStyleProp } from 'react-native/Libraries/StyleSheet/StyleSheet'
+import { ifIphoneX } from 'react-native-iphone-x-helper'
+import { useTheme } from '@react-navigation/native'
+import { W } from '../constants'
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'flex-start'
-  },
-  h6: {
-    fontFamily: '3270Narrow',
-    fontSize: 15,
-    color: BLUE,
-    textDecorationLine: 'underline'
+  h: {
+    width: W - 90,
+    textAlign: 'center',
+    textShadowOffset: { width: 1, height: 1 },
+    textShadowRadius: 1,
+    ...ifIphoneX(
+      {
+        fontSize: Platform.OS === 'ios' ? 19 : 17
+      },
+      {
+        fontSize: Platform.OS === 'ios' ? 10 : 17
+      }
+    )
   }
 })
 
 type H6T = {
   title: string,
-  textStyle: TextStyleProp,
-  viewStyle: ViewStyleProp
+  textStyle: TextStyleProp
 }
 
-const H6 = memo<H6T>(({ title, textStyle, viewStyle }) => {
-  const { container, h6 } = styles
-  return (
-    <View style={[container, viewStyle]}>
-      <Text style={[h6, textStyle]}>{title}</Text>
-    </View>
-  )
+const H6 = memo<H6T>(({ title, textStyle }) => {
+  const { h } = styles
+  const {
+    fonts: { fontFamilyH6 },
+    colors: { secondary, text }
+  } = useTheme()
+  return <Text style={[h, textStyle, { fontFamily: fontFamilyH6, color: text, textShadowColor: secondary }]}>{title}</Text>
 })
 
 export { H6 }

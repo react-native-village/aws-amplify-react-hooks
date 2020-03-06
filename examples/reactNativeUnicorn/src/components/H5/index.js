@@ -1,36 +1,36 @@
 // @flow
 import React, { memo } from 'react'
-import { StyleSheet, Text, View } from 'react-native'
-import type { TextStyleProp, ViewStyleProp } from 'react-native/Libraries/StyleSheet/StyleSheet'
-import { WHITE } from '../constants'
+import { StyleSheet, Text } from 'react-native'
+import type { TextStyleProp } from 'react-native/Libraries/StyleSheet/StyleSheet'
+import { ifIphoneX } from 'react-native-iphone-x-helper'
+import { useTheme } from '@react-navigation/native'
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'flex-start'
-  },
-  h5: {
-    fontFamily: '3270Narrow',
-    fontSize: 14,
-    color: WHITE,
-    textTransform: 'uppercase'
+  h: {
+    fontWeight: 'bold',
+    ...ifIphoneX(
+      {
+        fontSize: 25
+      },
+      {
+        fontSize: 18
+      }
+    )
   }
 })
 
 type H5T = {
   title: string,
-  textStyle: TextStyleProp,
-  viewStyle: ViewStyleProp
+  textStyle: TextStyleProp
 }
 
-const H5 = memo<H5T>(({ title, viewStyle, textStyle }) => {
-  const { container, h5 } = styles
-  return (
-    <View style={[container, viewStyle]}>
-      <Text style={[h5, textStyle]}>{title}</Text>
-    </View>
-  )
+const H5 = memo<H5T>(({ title, textStyle }) => {
+  const { h } = styles
+  const {
+    fonts: { fontFamilyH5 },
+    colors: { h5 }
+  } = useTheme()
+  return <Text style={[h, textStyle, { fontFamily: fontFamilyH5, color: h5 }]}>{title}</Text>
 })
 
 export { H5 }

@@ -1,31 +1,45 @@
 // @flow
 import React, { memo } from 'react'
-import { StyleSheet, Text, View } from 'react-native'
-import { BLUE } from '../constants'
+import { Platform, StyleSheet, Text } from 'react-native'
+import type { TextStyleProp } from 'react-native/Libraries/StyleSheet/StyleSheet'
+import { ifIphoneX } from 'react-native-iphone-x-helper'
+import { useTheme } from '@react-navigation/native'
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'flex-start'
-  },
-  h7: {
-    fontFamily: '3270Narrow',
-    fontSize: 17,
-    color: BLUE
+  h: {
+    textAlign: 'center',
+    ...ifIphoneX(
+      {
+        fontSize: Platform.OS === 'ios' ? 19 : 17
+      },
+      {
+        fontSize: Platform.OS === 'ios' ? 12 : 17
+      }
+    )
   }
 })
 
 type H7T = {
-  title: string
+  title: string,
+  numberOfLines: number,
+  ellipsizeMode: 'head' | 'middle' | 'tail' | 'clip',
+  textStyle: TextStyleProp
 }
 
-const H7 = memo<H7T>(({ title }) => {
-  const { container, h7 } = styles
+const H7 = memo<H7T>(({ title, textStyle, numberOfLines, ellipsizeMode }) => {
+  const { h } = styles
+  const {
+    fonts: { fontFamilyH7 },
+    colors: { secondary, h7 }
+  } = useTheme()
   return (
-    <View style={container}>
-      <Text style={h7}>{title}</Text>
-    </View>
+    <Text
+      style={[h, textStyle, { fontFamily: fontFamilyH7, color: h7, textShadowColor: secondary }]}
+      numberOfLines={numberOfLines}
+      ellipsizeMode={ellipsizeMode}
+    >
+      {title}
+    </Text>
   )
 })
 

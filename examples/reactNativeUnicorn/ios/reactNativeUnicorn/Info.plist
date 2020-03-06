@@ -59,6 +59,9 @@
 		<string>Fontisto.ttf</string>
 		<string>3270Narrow.ttf</string>
 		<string>IBM-Logo.ttf</string>
+		<string>etna-free-font.otf</string>
+		<string>KLMN_Flash_Pix.ttf</string>
+		<string>TheDolbak-Brush.ttf</string>
 	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>

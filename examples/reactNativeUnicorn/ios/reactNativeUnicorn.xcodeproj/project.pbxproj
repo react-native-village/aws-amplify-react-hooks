@@ -5,7 +5,6 @@
 	};
 	objectVersion = 46;
 	objects = {
-
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* reactNativeUnicornTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* reactNativeUnicornTests.m */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
@@ -22,6 +21,9 @@
 		CB8BA0C3EA2E1C351ACE15D1 /* libPods-reactNativeUnicorn-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DC63A24540EAC19999CB7FC /* libPods-reactNativeUnicorn-tvOS.a */; };
 		D3B0FCE2E2BFD052DC358DCA /* libPods-reactNativeUnicorn-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B50DD91493A5F4B324586799 /* libPods-reactNativeUnicorn-tvOSTests.a */; };
 		E8AEE7EE22B5A2B266C92048 /* libPods-reactNativeUnicornTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CDFB973115B0AAD2A526D24 /* libPods-reactNativeUnicornTests.a */; };
+		BCAFCC7749F846C7A95CAD10 /* etna-free-font.otf in Resources */ = {isa = PBXBuildFile; fileRef = B2ED5B81AD3C432DA1ACC6CF /* etna-free-font.otf */; };
+		43D0D7212AAC4F4ABD30415C /* KLMN_Flash_Pix.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6412B18934F9494AA8CBFF84 /* KLMN_Flash_Pix.ttf */; };
+		D968B0119B854C07852452DC /* TheDolbak-Brush.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5AB8F5BF42CF4C36A00D978D /* TheDolbak-Brush.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +89,9 @@
 		F58330F42B9E45059B6C7213 /* FontAwesome.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; };
 		FC4196CB69F3E51E03918048 /* Pods-reactNativeUnicornTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-reactNativeUnicornTests.debug.xcconfig"; path = "Target Support Files/Pods-reactNativeUnicornTests/Pods-reactNativeUnicornTests.debug.xcconfig"; sourceTree = "<group>"; };
 		FC4231F4CA674A3CAD474D54 /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialCommunityIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf"; sourceTree = "<group>"; };
+		B2ED5B81AD3C432DA1ACC6CF /* etna-free-font.otf */ = {isa = PBXFileReference; name = "etna-free-font.otf"; path = "../assets/fonts/etna-free-font.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		6412B18934F9494AA8CBFF84 /* KLMN_Flash_Pix.ttf */ = {isa = PBXFileReference; name = "KLMN_Flash_Pix.ttf"; path = "../assets/fonts/KLMN_Flash_Pix.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		5AB8F5BF42CF4C36A00D978D /* TheDolbak-Brush.ttf */ = {isa = PBXFileReference; name = "TheDolbak-Brush.ttf"; path = "../assets/fonts/TheDolbak-Brush.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -239,6 +244,9 @@
 				BF0B08A9C390424895C6C840 /* Zocial.ttf */,
 				0F60C396073642C6816C2FC8 /* 3270Narrow.ttf */,
 				94D3701C1F974BDA8FFC45BD /* IBM-Logo.ttf */,
+				B2ED5B81AD3C432DA1ACC6CF /* etna-free-font.otf */,
+				6412B18934F9494AA8CBFF84 /* KLMN_Flash_Pix.ttf */,
+				5AB8F5BF42CF4C36A00D978D /* TheDolbak-Brush.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -387,6 +395,9 @@
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
 				65436AFA348344249BA50F1A /* 3270Narrow.ttf in Resources */,
 				749D31A1518A4D5A8EA20A77 /* IBM-Logo.ttf in Resources */,
+				BCAFCC7749F846C7A95CAD10 /* etna-free-font.otf in Resources */,
+				43D0D7212AAC4F4ABD30415C /* KLMN_Flash_Pix.ttf in Resources */,
+				D968B0119B854C07852452DC /* TheDolbak-Brush.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
