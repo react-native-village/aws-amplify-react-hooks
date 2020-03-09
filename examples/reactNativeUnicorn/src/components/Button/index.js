@@ -1,5 +1,5 @@
 // @flow
-import React, { memo, useState } from 'react'
+import React, { memo, useState, useEffect } from 'react'
 import { Platform, StyleSheet, TouchableWithoutFeedback, Text, View } from 'react-native'
 import type { TextStyleProp } from 'react-native/Libraries/StyleSheet/StyleSheet'
 import { ifIphoneX } from 'react-native-iphone-x-helper'
@@ -50,7 +50,13 @@ const Button = memo<ButtonT>(({ title, onPress, textStyle, cancel }) => {
   const {
     colors: { primary, secondary, buttonColor }
   } = useTheme()
-  const [bg, setBg] = useState(cancel ? secondary : buttonColor)
+
+  const [bg, setBg] = useState(buttonColor)
+
+  useEffect(() => {
+    setBg(cancel ? secondary : buttonColor)
+  }, [])
+
   return (
     <View style={[container, { borderColor: secondary }]}>
       <View style={[sub, { borderColor: primary }]}>
