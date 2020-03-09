@@ -2,45 +2,36 @@
 import React, { memo } from 'react'
 import type { Node } from 'react'
 import { StyleSheet, View } from 'react-native'
-import { WHITE, PINK, BLUE } from '../constants'
-
-const container = {
-  borderWidth: 1,
-  borderRadius: 17,
-  borderColor: WHITE
-}
+import type { ViewStyleProp } from 'react-native/Libraries/StyleSheet/StyleSheet'
+import { useTheme } from '@react-navigation/native'
 
 const styles = StyleSheet.create({
-  containerWhite: {
-    ...container,
-    marginTop: 2,
-    marginLeft: 5,
-    padding: 20
-  },
   containerBlue: {
-    ...container,
-    borderColor: BLUE,
+    borderWidth: 1,
+    paddingRight: 3,
+    paddingBottom: 3,
     flexDirection: 'row'
   },
   containerPink: {
-    ...container,
-    borderColor: PINK,
+    borderWidth: 1,
     marginLeft: -5,
-    marginTop: 1
+    marginTop: 2
   }
 })
 
 type CardBorderT = {
-  children?: Node
+  children?: Node,
+  viewStyle: ViewStyleProp
 }
 
-const CardBorder = memo<CardBorderT>(({ children }) => {
-  const { containerWhite, containerBlue, containerPink } = styles
+const CardBorder = memo<CardBorderT>(({ children, viewStyle }) => {
+  const { containerBlue, containerPink } = styles
+  const {
+    colors: { primary, secondary }
+  } = useTheme()
   return (
-    <View style={containerBlue}>
-      <View style={containerPink}>
-        <View style={[containerWhite]}>{children}</View>
-      </View>
+    <View style={[containerBlue, { borderColor: primary }]}>
+      <View style={[containerPink, viewStyle, { borderColor: secondary }]}>{children}</View>
     </View>
   )
 })

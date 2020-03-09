@@ -32,7 +32,6 @@ import {
   ProfileInfo,
   Dollar,
   Line,
-  Tabs,
   Developer,
   IconCircle,
   Button,
@@ -103,6 +102,15 @@ const UIKit = () => {
   return (
     <>
       <ScrollView style={[scrollView, { backgroundColor }]}>
+        <View style={{ alignItems: 'center' }}>
+          <H0 title="Tabs" />
+          <Space height={30} />
+          <TabDeveloper />
+          <Space height={30} />
+          <TabCompany />
+          <Space height={60} />
+        </View>
+
         <View style={{ alignItems: 'center' }}>
           <H0 title="Inputs" />
           <Space height={30} />
