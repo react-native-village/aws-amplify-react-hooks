@@ -7,7 +7,7 @@ import { useTheme } from '@react-navigation/native'
 
 const styles = StyleSheet.create({
   h: {
-    textAlign: 'center',
+    textAlign: 'left',
     ...ifIphoneX(
       {
         fontSize: Platform.OS === 'ios' ? 19 : 17

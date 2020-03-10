@@ -43,9 +43,10 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20
   },
   container: {
-    width: win.width / 1.5,
+    flex: 1,
     flexDirection: 'row',
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
+    alignItems: 'flex-start'
   },
   page: {
     ...emoji

@@ -2,7 +2,7 @@
 import React, { memo } from 'react'
 import { StyleSheet, Text, TouchableOpacity } from 'react-native'
 import type { TextStyleProp, ViewStyleProp } from 'react-native/Libraries/StyleSheet/StyleSheet'
-import { BLUE } from '../constants'
+import { useTheme } from '@react-navigation/native'
 
 const styles = StyleSheet.create({
   container: {
@@ -11,9 +11,7 @@ const styles = StyleSheet.create({
     alignItems: 'flex-start'
   },
   h6: {
-    fontFamily: '3270Narrow',
     fontSize: 15,
-    color: BLUE,
     textDecorationLine: 'underline'
   }
 })
@@ -27,9 +25,14 @@ type ButtonLinkT = {
 
 const ButtonLink = memo<ButtonLinkT>(({ title, textStyle, viewStyle, onPress }) => {
   const { container, h6 } = styles
+  const {
+    dark,
+    fonts: { fontFamilyH8 },
+    colors: { primary, secondary }
+  } = useTheme()
   return (
     <TouchableOpacity onPress={onPress} style={[container, viewStyle]}>
-      <Text style={[h6, textStyle]}>{title}</Text>
+      <Text style={[h6, textStyle, { color: dark ? primary : secondary, fontFamily: fontFamilyH8 }]}>{title}</Text>
     </TouchableOpacity>
   )
 })

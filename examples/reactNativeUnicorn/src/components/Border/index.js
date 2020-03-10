@@ -14,10 +14,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row'
   },
   containerPink: {
-    flex: 1,
-    justifyContent: 'flex-start',
-    paddingHorizontal: 20,
-    paddingVertical: 15,
     width: W - 30,
     borderWidth: 1,
     marginLeft: -5,
@@ -25,12 +21,12 @@ const styles = StyleSheet.create({
   }
 })
 
-type CardBorderT = {
+type BorderT = {
   children?: Node,
   viewStyle: ViewStyleProp
 }
 
-const CardBorder = memo<CardBorderT>(({ children, viewStyle }) => {
+const Border = memo<BorderT>(({ children, viewStyle }) => {
   const { containerBlue, containerPink } = styles
   const {
     colors: { primary, secondary }
@@ -42,4 +38,4 @@ const CardBorder = memo<CardBorderT>(({ children, viewStyle }) => {
   )
 })
 
-export { CardBorder }
+export { Border }

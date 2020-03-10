@@ -1,23 +1,24 @@
 // @flow
 import React, { memo } from 'react'
-import { H4, CardBorder, Line, ButtonDeveloperSub, Space } from '..'
+import { CardBorder, Line, ButtonDeveloperSub, Space, Body } from '..'
 
 type Props = {
   obj: {
     name: string,
-    description: string
+    description: string,
+    uri: string
   }
 }
 
 const CardIssueResponceSub = memo<Props>(({ obj }) => {
-  const { name, description } = obj
+  const { name, description, uri } = obj
   return (
     <>
       <Line />
       <CardBorder>
-        <H4 title={description} />
+        <Body title={description} />
         <Space height={30} />
-        <ButtonDeveloperSub title={name} viewStyle={{ alignSelf: 'flex-start' }} />
+        <ButtonDeveloperSub title={name} uri={uri} />
       </CardBorder>
     </>
   )

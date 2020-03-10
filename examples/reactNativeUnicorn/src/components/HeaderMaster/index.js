@@ -1,7 +1,7 @@
 // @flow
 import React, { memo } from 'react'
 import { StyleSheet, View } from 'react-native'
-import { Background, Avatar, Star, H1, ProfileInfo, IconCircle, Space } from '..'
+import { Background, Avatar, Star, H1, IconCircle, Space } from '..'
 
 const styles = StyleSheet.create({
   container: {
@@ -15,7 +15,7 @@ const styles = StyleSheet.create({
   },
   avatarStyle: {
     position: 'absolute',
-    top: 160,
+    top: 110,
     zIndex: 0
   },
   telephone: {
@@ -30,33 +30,28 @@ const styles = StyleSheet.create({
     bottom: 70
   },
   h1: {
-    alignSelf: 'center',
-    bottom: 50
-  },
-  info: {
-    bottom: 40
+    textAlign: 'center',
+    bottom: 65
   }
 })
 
 type HeaderMasterT = {
   user: {
     name: string,
-    age: string,
     uri: string,
-    location: string,
     star: boolean
   }
 }
 
 const HeaderMaster = memo<HeaderMasterT>(({ user }) => {
-  const { container, starStyle, avatarStyle, balloon, telephone, sound, h1, info } = styles
-  const { name, age, uri, star, location } = user
+  const { container, starStyle, avatarStyle, balloon, telephone, sound, h1 } = styles
+  const { name, uri, star } = user
   return (
     <>
       <View style={container}>
         <Background>
           <Star star={star} viewStyle={starStyle} />
-          <Avatar uri={uri} viewStyle={avatarStyle} />
+          <Avatar uri={uri} viewStyle={avatarStyle} size="xLarge" />
         </Background>
       </View>
       <Space height={40} />
@@ -64,7 +59,6 @@ const HeaderMaster = memo<HeaderMasterT>(({ user }) => {
       <IconCircle name=":thought_balloon:" viewStyle={balloon} />
       <IconCircle name=":loud_sound:" viewStyle={sound} />
       <H1 title={name} textStyle={h1} />
-      <ProfileInfo location={location} age={age} viewStyle={info} />
     </>
   )
 })

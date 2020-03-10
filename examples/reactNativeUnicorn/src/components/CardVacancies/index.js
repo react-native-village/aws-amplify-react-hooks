@@ -1,7 +1,8 @@
 // @flow
 import React, { memo, useState } from 'react'
 import { View, StyleSheet } from 'react-native'
-import { CardBorder, H2, H4, Space, Star, Cost } from '..'
+import { CardBorder, H1, H7, Space, Star, Body } from '..'
+import { W } from '../constants'
 
 const styles = StyleSheet.create({
   container: {
@@ -28,15 +29,15 @@ const CardVacancies = memo<CardVacanciesT>(({ obj }) => {
     <>
       <CardBorder>
         <View style={container}>
-          <H2 title={title} />
+          <H1 title={title} textStyle={{ width: W - 110 }} numberOfLines={1} />
           <Star bool={star} onPress={() => setStar(!star)} />
         </View>
         <Space height={20} />
-        <H4 title={description} />
+        <Body title={description} />
         <Space height={20} />
         <View style={container}>
-          <H4 title={company} />
-          <Cost title={cost} />
+          <H7 title={company} />
+          <H7 title={`$ ${cost}`} />
         </View>
       </CardBorder>
     </>

@@ -1,13 +1,14 @@
 // @flow
-import React, { memo, useState } from 'react'
+import React, { memo } from 'react'
 import { View, StyleSheet } from 'react-native'
-import { Avatar, CardBorder, CardInfo, H2, Space, Star, Rate } from '..'
+import { Avatar, CardBorder, CardInfo, H1, Space, Star, Rate } from '..'
 
 const styles = StyleSheet.create({
-  container: {
-    width: '100%',
-    flexDirection: 'row',
-    justifyContent: 'space-between'
+  starStyle: {
+    position: 'absolute',
+    top: 10,
+    right: 10,
+    justifyContent: 'flex-end'
   }
 })
 
@@ -23,25 +24,30 @@ type CardResumeT = {
     language: string,
     stack: string,
     experience: string
-  }
+  },
+  bool: boolean
 }
 
-const CardResume = memo<CardResumeT>(({ obj, obj2 }) => {
+const CardResume = memo<CardResumeT>(({ obj, obj2, bool = false }) => {
   const { title, rate, avatar } = obj
-  const { container } = styles
-  const [star, setStar] = useState(false)
+  const { starStyle } = styles
+  const user = (
+    <>
+      <View style={starStyle}>
+        <Star />
+      </View>
+      <Avatar uri={avatar} size="large" />
+      <Space height={10} />
+      <H1 title={title} textStyle={{ textAlign: 'center' }} />
+      <Space height={20} />
+      <Rate title={rate} />
+      <Space height={20} />
+    </>
+  )
   return (
     <>
       <CardBorder>
-        <View style={container}>
-          <H2 title={title} />
-          <Star bool={star} onPress={() => setStar(!star)} />
-        </View>
-        <Space height={20} />
-        <Avatar uri={avatar} size="large" />
-        <Space height={20} />
-        <Rate title={rate} />
-        <Space height={20} />
+        {bool && user}
         <CardInfo obj={obj2} bool={false} />
       </CardBorder>
     </>

@@ -21,7 +21,8 @@ const fontFamily = {
   fontFamilyH5: 'Avenir Next',
   fontFamilyH6: Platform.OS === 'ios' ? 'KLMN-Flash-Pix' : 'KLMN_Flash_Pix',
   fontFamilyH7: Platform.OS === 'ios' ? 'KLMN-Flash-Pix' : 'KLMN_Flash_Pix',
-  fontFamilyH8: '3270Narrow'
+  fontFamilyH8: '3270Narrow',
+  fontFamilyBody: Platform.OS === 'ios' ? 'KLMN-Flash-Pix' : 'KLMN_Flash_Pix'
 }
 
 const mainColor = {
@@ -40,6 +41,7 @@ const DarkTheme = {
     h4: '#707070',
     h5: '#D1CDCD',
     h7: '#ffffff',
+    body: '#949494',
     placeholderTextColor: '#707070'
   },
   fonts: {
@@ -58,6 +60,7 @@ const LightTheme = {
     h4: '#707070',
     h5: '#D1CDCD',
     h7: '#1D1E1F',
+    body: '#949494',
     placeholderTextColor: '#707070'
   },
   fonts: {

@@ -19,12 +19,10 @@ type StarT = {
 
 const Star = memo<StarT>(({ star = false, onPress, imageStyle, viewStyle }) => {
   const { starStyle } = styles
+  const source = star ? require('./StarActive.png') : require('./StarDisable.png')
   return (
     <TouchableOpacity onPress={onPress} style={viewStyle}>
-      <Image
-        style={[starStyle, imageStyle]}
-        source={star ? require('./StarActive.png') : require('./StarDisable.png')}
-      />
+      <Image style={[starStyle, imageStyle]} source={source} />
     </TouchableOpacity>
   )
 })

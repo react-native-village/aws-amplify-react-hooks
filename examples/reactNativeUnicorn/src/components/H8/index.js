@@ -5,6 +5,7 @@ import { useTheme } from '@react-navigation/native'
 
 const styles = StyleSheet.create({
   h: {
+    textAlign: 'left',
     fontSize: 17
   }
 })
@@ -16,10 +17,11 @@ type H8T = {
 const H8 = memo<H8T>(({ title }) => {
   const { h } = styles
   const {
+    dark,
     fonts: { fontFamilyH8 },
-    colors: { primary }
+    colors: { primary, secondary }
   } = useTheme()
-  return <Text style={[h, { fontFamily: fontFamilyH8, color: primary }]}>{title}</Text>
+  return <Text style={[h, { fontFamily: fontFamilyH8, color: dark ? primary : secondary }]}>{title}</Text>
 })
 
 export { H8 }

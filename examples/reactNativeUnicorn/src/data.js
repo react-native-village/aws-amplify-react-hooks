@@ -1,4 +1,22 @@
-const cardinfo = {
+import faker from 'faker'
+
+const { image, name, random, company, lorem } = faker
+
+const userData = {
+  name: name.findName(),
+  uri: image.avatar(),
+  star: random.boolean()
+}
+
+const cardAbout =
+  'For 3 years our company has been engaged in financial technologies in online games, in particular in CS:GO and Dota 2. A significant number of users from all over the world use our platform to quickly and safely exchange, buy or sell their in-game items.'
+
+const cardContacts = {
+  location: 'Russia, St. Petersburg, Uprising Square',
+  web: 'https://job.cs.money',
+  phone: '+7 (499) 899-11-22'
+}
+const cardInfo = {
   position: 'React-Native Developer, Front-end Developer',
   language: 'Java Script, Python',
   stack: 'React-Native, Apollo, GraphQL, AWS Amplify',
@@ -6,61 +24,65 @@ const cardinfo = {
   salary: 5000
 }
 
-const cardabout =
-  'For 3 years our company has been engaged in financial technologies in online games, in particular in CS:GO and Dota 2. A significant number of users from all over the world use our platform to quickly and safely exchange, buy or sell their in-game items.'
-
-const cardcontacts = {
-  location: 'Russia, St. Petersburg, Uprising Square',
-  web: 'https://job.cs.money',
-  phone: '+7 (499) 899-11-22'
+const cardResume = {
+  title: name.findName(),
+  avatar: image.avatar(),
+  cost: random.number(),
+  rate: random.number()
 }
 
-const cardissue = {
+const cardIssue = {
   title: 'How to make setState update',
-  description: 'Our product is an international trading platform for the exchange of virtual items. (CS: GO, Dota 2) which is shared by more than 5 million users.',
-  name:'Ivan Ivanov',
-  comments: 0
+  description: lorem.paragraph(),
+  name: name.findName(),
+  comments: random.number(),
+  uri: image.avatar()
 }
 
-const cardissueresponcesub = {
-  name: 'Ivan Ivanov',
-  description: 'Our product is an international trading platform for the exchange of virtual items. (CS: GO, Dota 2) which is shared by more than 5 million users. '
+const cardIssueResponceSub = {
+  name: name.findName(),
+  description: lorem.paragraph()
 }
 
-const cardissueresponce = {
-  name: 'Ivan Ivanov',
-  description: 'Our product is an international trading platform for the exchange of virtual items. (CS: GO, Dota 2) which is shared by more than 5 million users. ',
-  comments: 0
+const cardIssueResponce = {
+  name: name.findName(),
+  uri: image.avatar(),
+  description: lorem.paragraph(),
+  comments: random.number()
 }
-const cardvacancies = {
+const cardVacancies = {
   title: 'React Native Developer',
-  description:
-    'Our product is an international trading platform for the exchange of virtual items. (CS: GO, Dota 2) which is shared by more than 5 million users.',
-  company: 'CS.Money',
-  cost: 5600
+  description: lorem.paragraph(),
+  company: company.companyName(),
+  cost: random.number()
 }
 
-const cardresume = {
-  rate: 123,
-  avatar: 'https://pbs.twimg.com/profile_images/1054434556156162054/1H_7AxP0.jpg',
-  title: 'Dimka Reactnative',
-  cost: 5600
-}
-
-const user = {
-  name: 'Dimka Reactnative',
-  age: '39',
-  uri: 'https://pbs.twimg.com/profile_images/1054434556156162054/1H_7AxP0.jpg',
-  star: true,
-  location: 'Russia, Moscow'
-}
-
-const cardcareer = {
-  institution: 'MIT',
-  start: '2011',
-  finish: '2016',
-  description: 'Faculty of computer science and artificial intelligence. Thesis - data protection in mobile devices.',
+const cardCareer = {
+  institution: company.companyName(),
+  start: '2018',
+  finish: '2019',
+  description: lorem.paragraph(),
   link: 'Sertifikat'
 }
 
-export { cardinfo, cardabout, cardcontacts, cardissueresponce, cardvacancies, cardcareer, cardresume, user,cardissueresponcesub, cardissue }
+const cardEducation = {
+  institution: company.companyName(),
+  start: '2018',
+  finish: '2019',
+  description: lorem.paragraph(),
+  link: 'Sertifikat'
+}
+
+export {
+  userData,
+  cardInfo,
+  cardAbout,
+  cardContacts,
+  cardIssueResponce,
+  cardVacancies,
+  cardCareer,
+  cardEducation,
+  cardResume,
+  cardIssueResponceSub,
+  cardIssue
+}

@@ -1,9 +1,10 @@
 // @flow
 import React, { useState } from 'react'
-import { StyleSheet, ScrollView, View, Alert, TextInput, Text } from 'react-native'
+import { StyleSheet, ScrollView, View, Alert } from 'react-native'
 import { useTheme } from '@react-navigation/native'
 import faker from 'faker'
 import {
+  Header,
   HeaderMaster,
   Rate,
   ButtonMarkDecision,
@@ -26,6 +27,7 @@ import {
   CardInfo,
   CardCareer,
   CardResume,
+  CardEducation,
   Space,
   Star,
   Avatar,
@@ -47,25 +49,20 @@ import {
   TabCompany,
   TabDeveloper
 } from './components'
-import { TextField } from 'react-native-material-textfield'
-import { compose } from 'recompose'
 import { Formik } from 'formik'
 import * as Yup from 'yup'
-import { handleTextInput, withNextInputAutoFocusForm, withNextInputAutoFocusInput } from 'react-native-formik'
-import { PINK, BLUE } from './components/constants'
 import {
-  user,
-  cardinfo,
-  cardabout,
-  cardcontacts,
-  cardvacancies,
-  cardcareer,
-  cardresume,
-  cardissueresponcesub,
-  cardissue,
-  cardissueresponce
+  userData,
+  cardCareer,
+  cardContacts,
+  cardEducation,
+  cardIssueResponce,
+  cardVacancies,
+  cardIssue,
+  cardResume,
+  cardInfo
 } from './data'
-import { options } from './components/Form'
+import { PINK, BLUE } from './components/constants'
 
 const styles = StyleSheet.create({
   scrollView: {
@@ -92,16 +89,50 @@ const UIKit = () => {
     colors: { backgroundColor }
   } = useTheme()
   const { scrollView } = styles
-  const { image, name } = faker
   const [bool, setBool] = useState(false)
   const _onPress = () => console.log('click')
   const [userInfo, setInfo] = useState({
     email: ''
   })
 
+  const { image, name, lorem } = faker
   return (
     <>
       <ScrollView style={[scrollView, { backgroundColor }]}>
+        <View style={{ alignItems: 'center' }}>
+          <H0 title="Cards" />
+          <Space height={30} />
+          <CardVacancies obj={cardVacancies} />
+          <Space height={30} />
+          <CardResume obj={cardResume} obj2={cardInfo} />
+          <Space height={30} />
+          <CardResume obj={cardResume} obj2={cardInfo} bool />
+          <Space height={30} />
+          <CardIssue obj={cardIssue} />
+          <Space height={30} />
+          <CardIssueResponceSub obj={cardIssueResponce} />
+          <Space height={30} />
+          <CardIssueResponce obj={cardIssueResponce} />
+          <Space height={30} />
+          <CardContacts obj={cardContacts} />
+          <Space height={30} />
+          <CardCareer obj={cardCareer} />
+          <Space height={30} />
+          <CardEducation obj={cardEducation} />
+          <Space height={30} />
+          <CardAbout title={lorem.paragraph()} />
+          <Space height={60} />
+        </View>
+
+        <View style={{ alignItems: 'center' }}>
+          <H0 title="Headers" />
+          <Space height={30} />
+          <Header iconLeft="angle-dobule-left" />
+          <Space height={30} />
+          <HeaderMaster user={userData} />
+          <Space height={60} />
+        </View>
+
         <View style={{ alignItems: 'center' }}>
           <H0 title="Tabs" />
           <Space height={30} />
@@ -213,7 +244,7 @@ const UIKit = () => {
           <Space height={1} />
           <H2 title="H2" />
           <Space height={5} />
-          <H3 title="H3" />
+          <H3 title="H3" textStyle={{ width: 25 }} />
           <Space height={5} />
           <H4 title="H4" />
           <Space height={1} />

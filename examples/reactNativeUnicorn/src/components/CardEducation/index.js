@@ -1,8 +1,8 @@
 // @flow
 import React, { memo } from 'react'
-import { CardBorder, H8, H7, Body, Space } from '..'
+import { CardBorder, ButtonLink, H8, H7, Body, Space } from '..'
 
-type CardCareerT = {
+type CardEducationT = {
   obj: {
     institution: string,
     start: string,
@@ -12,8 +12,8 @@ type CardCareerT = {
   }
 }
 
-const CardCareer = memo<CardCareerT>(({ obj }) => {
-  const { institution, start, finish, description } = obj
+const CardEducation = memo<CardEducationT>(({ obj }) => {
+  const { institution, start, finish, description, link } = obj
   return (
     <>
       <CardBorder>
@@ -22,9 +22,11 @@ const CardCareer = memo<CardCareerT>(({ obj }) => {
         <H8 title={`[${start} - ${finish}]`} />
         <Space height={5} />
         <Body title={description} />
+        <Space height={10} />
+        <ButtonLink title={link} />
       </CardBorder>
     </>
   )
 })
 
-export { CardCareer }
+export { CardEducation }

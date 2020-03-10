@@ -2,6 +2,7 @@
 import React, { memo } from 'react'
 import { StyleSheet, TouchableOpacity, View } from 'react-native'
 import Emoji from 'react-native-emoji'
+import type { ViewStyleProp } from 'react-native/Libraries/StyleSheet/StyleSheet'
 import { H7 } from '..'
 
 const styles = StyleSheet.create({
@@ -22,14 +23,15 @@ const styles = StyleSheet.create({
 
 type ButtonCommentsT = {
   title: string,
-  onPress: Function
+  onPress: Function,
+  viewStyle: ViewStyleProp
 }
 
-const ButtonComments = memo<ButtonCommentsT>(({ title, onPress }) => {
+const ButtonComments = memo<ButtonCommentsT>(({ title, onPress, viewStyle }) => {
   const { container, sub, emoji, h4 } = styles
   return (
     <TouchableOpacity onPress={onPress} style={container}>
-      <View style={sub}>
+      <View style={[sub, viewStyle]}>
         <Emoji name=":thought_balloon:" style={emoji} />
         <H7 title={title} textStyle={h4} />
       </View>

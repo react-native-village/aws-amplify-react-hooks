@@ -4,38 +4,43 @@ import { Platform, StyleSheet, Text } from 'react-native'
 import type { TextStyleProp } from 'react-native/Libraries/StyleSheet/StyleSheet'
 import { ifIphoneX } from 'react-native-iphone-x-helper'
 import { useTheme } from '@react-navigation/native'
-import { W } from '../constants'
 
 const styles = StyleSheet.create({
   h: {
-    width: W - 90,
-    textShadowOffset: { width: 1, height: 1 },
-    textShadowRadius: 1,
+    textAlign: 'left',
     ...ifIphoneX(
       {
         fontSize: Platform.OS === 'ios' ? 19 : 17
       },
       {
-        fontSize: Platform.OS === 'ios' ? 14 : 17
+        fontSize: Platform.OS === 'ios' ? 12 : 17
       }
     )
   }
 })
 
-type H3T = {
+type BodyT = {
   title: string,
+  numberOfLines: number,
+  ellipsizeMode: 'head' | 'middle' | 'tail' | 'clip',
   textStyle: TextStyleProp
 }
 
-const H3 = memo<H3T>(({ title, textStyle }) => {
+const Body = memo<BodyT>(({ title, textStyle, numberOfLines, ellipsizeMode }) => {
   const { h } = styles
   const {
-    fonts: { fontFamilyH3 },
-    colors: { secondary, text }
+    fonts: { fontFamilyBody },
+    colors: { secondary, body }
   } = useTheme()
   return (
-    <Text style={[h, textStyle, { fontFamily: fontFamilyH3, color: text, textShadowColor: secondary }]}>{title}</Text>
+    <Text
+      style={[h, textStyle, { fontFamily: fontFamilyBody, color: body, textShadowColor: secondary }]}
+      numberOfLines={numberOfLines}
+      ellipsizeMode={ellipsizeMode}
+    >
+      {title}
+    </Text>
   )
 })
 
-export { H3 }
+export { Body }

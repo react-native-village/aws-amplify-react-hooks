@@ -1,6 +1,6 @@
 // @flow
 import React, { memo } from 'react'
-import { CardBorder, H4, H5, Space, Cost } from '..'
+import { CardBorder, Body, H7, Space, Cost } from '..'
 
 type CardInfoT = {
   obj: {
@@ -17,20 +17,20 @@ const CardInfo = memo<CardInfoT>(({ obj, bool = true }) => {
   const { position, language, stack, experience, salary } = obj
   const info = (
     <>
-      <H5 title="position" />
-      <H4 title={position} />
+      <H7 title="Position" />
+      <Body title={position} />
       <Space height={10} />
-      <H5 title="languages" />
-      <H4 title={language} />
+      <H7 title="Languages" />
+      <Body title={language} />
       <Space height={10} />
-      <H5 title="stack" />
-      <H4 title={stack} />
+      <H7 title="Stack" />
+      <Body title={stack} />
       <Space height={10} />
-      <H5 title="experience" />
-      <H4 title={experience} />
+      <H7 title="Experience" />
+      <Body title={experience} />
       <Space height={10} />
-      <H5 title="salary" />
-      <Cost title={salary} />
+      <H7 title="Salary" />
+      <Body title={`$ ${salary}`} />
     </>
   )
 

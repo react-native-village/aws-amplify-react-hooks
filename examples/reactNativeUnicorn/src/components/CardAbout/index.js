@@ -1,6 +1,6 @@
 // @flow
 import React, { memo } from 'react'
-import { CardBorder, H4 } from '..'
+import { CardBorder, Body } from '..'
 
 type CardT = {
   title: string
@@ -10,7 +10,7 @@ const CardAbout = memo<CardT>(({ title }) => {
   return (
     <>
       <CardBorder>
-        <H4 title={title} />
+        <Body title={title} />
       </CardBorder>
     </>
   )

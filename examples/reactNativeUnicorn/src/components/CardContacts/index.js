@@ -1,6 +1,6 @@
 // @flow
 import React, { memo } from 'react'
-import { CardBorder, H4, H5, H6, Space } from '..'
+import { CardBorder, Body, H7, Space, ButtonLink } from '..'
 
 type CardContactsT = {
   obj: {
@@ -15,14 +15,17 @@ const CardContacts = memo<CardContactsT>(({ obj }) => {
   return (
     <>
       <CardBorder>
-        <H5 title="location" />
-        <H4 title={location} />
+        <H7 title="Location" />
+        <Space height={5} />
+        <Body title={location} />
         <Space height={10} />
-        <H5 title="web" />
-        <H6 title={web} />
+        <H7 title="Web" />
+        <Space height={5} />
+        <ButtonLink title={web} />
         <Space height={10} />
-        <H5 title="phone" />
-        <H4 title={phone} />
+        <H7 title="Phone" />
+        <Space height={2} />
+        <Body title={phone} />
       </CardBorder>
     </>
   )

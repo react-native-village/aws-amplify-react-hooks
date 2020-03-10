@@ -3,6 +3,7 @@ import React, { memo } from 'react'
 import { StyleSheet, TouchableOpacity } from 'react-native'
 import type { ViewStyleProp, TextStyleProp } from 'react-native/Libraries/StyleSheet/StyleSheet'
 import { H7, Avatar, Rate } from '..'
+import { W } from '../constants'
 
 const styles = StyleSheet.create({
   container: {
@@ -11,10 +12,10 @@ const styles = StyleSheet.create({
     flexDirection: 'row'
   },
   h: {
-    width: 100,
+    width: W - 200,
     marginTop: 8,
     marginLeft: 15,
-    marginRight: 15
+    marginRight: 5
   }
 })
 

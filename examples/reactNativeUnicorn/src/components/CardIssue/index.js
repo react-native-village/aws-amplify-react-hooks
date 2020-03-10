@@ -1,7 +1,7 @@
 //@flow
 import React, { memo } from 'react'
 import { StyleSheet, View } from 'react-native'
-import { ButtonDeveloperSub, CardBorder, Comments, H2, H4, Space } from '..'
+import { ButtonDeveloperSub, CardBorder, ButtonComments, H1, Body, Space } from '..'
 
 const styles = StyleSheet.create({
   container: {
@@ -14,6 +14,7 @@ type Props = {
   obj: {
     title: string,
     description: string,
+    uri: string,
     name: string,
     comments: number
   }
@@ -21,17 +22,17 @@ type Props = {
 
 const CardIssue = memo<Props>(({ obj }) => {
   const { container } = styles
-  const { title, description, name, comments } = obj
+  const { title, description, name, comments, uri } = obj
   return (
     <>
       <CardBorder>
-        <H2 title={title} viewStyle={{ marginTop: 25 }} />
-        <Space height={20} />
-        <H4 title={description} />
-        <Space height={30} />
+        <H1 title={title} viewStyle={{ marginTop: 25 }} numberOfLines={1} ellipsizeMode="tail" />
+        <Space height={10} />
+        <Body title={description} numberOfLines={4} ellipsizeMode="tail" />
+        <Space height={15} />
+        <ButtonComments title={comments} viewStyle={{ paddingLeft: 5 }} />
         <View style={container}>
-          <ButtonDeveloperSub title={name} />
-          <Comments title={comments} viewStyle={{ paddingLeft: 5 }} />
+          <ButtonDeveloperSub title={name} uri={uri} />
         </View>
       </CardBorder>
     </>

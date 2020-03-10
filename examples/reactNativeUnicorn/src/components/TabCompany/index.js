@@ -3,7 +3,6 @@ import React, { useState } from 'react'
 import { StyleSheet, View, TouchableOpacity } from 'react-native'
 import Emoji from 'react-native-emoji'
 import { CardBorder } from '../CardBorder'
-import { win } from '../constants'
 
 const emojiList = [
   {
@@ -43,9 +42,10 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20
   },
   container: {
-    width: win.width / 1.5,
+    flex: 1,
     flexDirection: 'row',
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
+    alignItems: 'flex-start'
   },
   page: {
     ...emoji

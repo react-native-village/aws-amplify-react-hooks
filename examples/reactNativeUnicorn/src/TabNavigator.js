@@ -39,7 +39,7 @@ const TabNavigator = ({ initialRouteName, children, screenOptions, tabBarStyle, 
   const { index, routes } = state
 
   const {
-    colors: { backgroundColor }
+    colors: { backgroundColor2 }
   } = useTheme()
 
   const { container } = styles
@@ -47,7 +47,7 @@ const TabNavigator = ({ initialRouteName, children, screenOptions, tabBarStyle, 
   return (
     <>
       <View style={[{ flex: 1 }, contentStyle]}>{descriptors[routes[index].key].render()}</View>
-      <View style={[{ backgroundColor }, container, tabBarStyle]}>
+      <View style={[{ backgroundColor: backgroundColor2 }, container, tabBarStyle]}>
         {routes.map(({ name, key }) => {
           return (
             <TouchableOpacity
