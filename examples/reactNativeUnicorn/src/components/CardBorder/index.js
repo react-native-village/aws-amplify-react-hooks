@@ -10,6 +10,7 @@ const styles = StyleSheet.create({
   containerBlue: {
     borderWidth: 1,
     paddingRight: 3,
+    marginLeft: 5,
     paddingBottom: 3,
     flexDirection: 'row'
   },
@@ -27,17 +28,19 @@ const styles = StyleSheet.create({
 
 type CardBorderT = {
   children?: Node,
-  viewStyle: ViewStyleProp
+  viewStyle: ViewStyleProp,
+  border: boolean
 }
 
-const CardBorder = memo<CardBorderT>(({ children, viewStyle }) => {
+const CardBorder = memo<CardBorderT>(({ children, viewStyle, border }) => {
   const { containerBlue, containerPink } = styles
   const {
     colors: { primary, secondary }
   } = useTheme()
+  const borderColor = border ? 'transparent' : primary
   return (
-    <View style={[containerBlue, { borderColor: primary }]}>
-      <View style={[containerPink, viewStyle, { borderColor: secondary }]}>{children}</View>
+    <View style={[containerBlue, { borderColor: secondary }]}>
+      <View style={[containerPink, viewStyle, { borderColor }]}>{children}</View>
     </View>
   )
 })

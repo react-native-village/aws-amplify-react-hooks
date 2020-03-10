@@ -1,7 +1,7 @@
 //@flow
 import React, { memo } from 'react'
-import { View, StyleSheet } from 'react-native'
-import { CardBorder, Line, ButtonMarkDecision, Body, ButtonDeveloperSub, ButtonComments, Space } from '..'
+import { View, StyleSheet, TouchableOpacity } from 'react-native'
+import { CardBorder, ButtonMarkDecision, Body, ButtonDeveloperSub, ButtonComments, Space } from '..'
 
 const styles = StyleSheet.create({
   row: {
@@ -23,26 +23,29 @@ type Props = {
     uri: string,
     description: string,
     name: string,
-    comments: number
-  }
+    comments: number,
+    rate: number
+  },
+  onPress: Function
 }
 
-const CardIssueResponce = memo<Props>(({ obj }) => {
+const CardIssueResponce = memo<Props>(({ obj, onPress }) => {
   const { row, align, commentStyle } = styles
-  const { description, name, comments, uri } = obj
+  const { description, name, comments, uri, rate } = obj
   return (
     <>
-      <Line />
-      <CardBorder>
+      <CardBorder border>
         <View style={align}>
           <ButtonComments title={comments} viewStyle={commentStyle} />
           <ButtonMarkDecision />
         </View>
-        <Space height={30} />
-        <Body title={description} />
-        <Space height={20} />
+        <TouchableOpacity onPress={onPress}>
+          <Space height={30} />
+          <Body title={description} />
+          <Space height={20} />
+        </TouchableOpacity>
         <View style={row}>
-          <ButtonDeveloperSub title={name} uri={uri} />
+          <ButtonDeveloperSub title={name} uri={uri} rate={rate} />
         </View>
       </CardBorder>
     </>

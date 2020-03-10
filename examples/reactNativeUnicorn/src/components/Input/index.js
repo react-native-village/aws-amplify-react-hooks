@@ -15,8 +15,7 @@ const styles = StyleSheet.create({
   errorStyle: {
     fontSize: 14,
     color: 'red',
-    paddingTop: 10,
-    paddingBottom: 15
+    paddingTop: 10
   }
 })
 

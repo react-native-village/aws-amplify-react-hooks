@@ -32,6 +32,7 @@ const cardResume = {
 }
 
 const cardIssue = {
+  id: random.uuid(),
   title: 'How to make setState update',
   description: lorem.paragraph(),
   name: name.findName(),
@@ -39,17 +40,21 @@ const cardIssue = {
   uri: image.avatar()
 }
 
+const cardIssueResponce = {
+  id: random.uuid(),
+  name: name.findName(),
+  uri: image.avatar(),
+  description: lorem.paragraph(),
+  comments: random.number(),
+  rate: random.number()
+}
+
 const cardIssueResponceSub = {
+  id: random.uuid(),
   name: name.findName(),
   description: lorem.paragraph()
 }
 
-const cardIssueResponce = {
-  name: name.findName(),
-  uri: image.avatar(),
-  description: lorem.paragraph(),
-  comments: random.number()
-}
 const cardVacancies = {
   title: 'React Native Developer',
   description: lorem.paragraph(),
