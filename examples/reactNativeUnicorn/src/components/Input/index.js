@@ -62,18 +62,18 @@ const Input = memo<InputT>(
 
     const {
       dark,
-      fonts: { fontFamilyH1 },
+      body: { fontFamily, fontSize },
       colors: { secondary, primary, placeholderTextColor }
     } = useTheme()
 
     const input = [
       inputStyle,
-      { color: dark ? primary : secondary, borderBottomColor: dark ? primary : secondary, fontFamily: fontFamilyH1 }
+      { color: dark ? primary : secondary, borderBottomColor: dark ? primary : secondary, fontFamily, fontSize }
     ]
 
     const placeholderStyle = [
       inputStyle,
-      { color: placeholderTextColor, borderBottomColor: dark ? primary : secondary, fontFamily: fontFamilyH1 }
+      { color: placeholderTextColor, borderBottomColor: dark ? primary : secondary, fontFamily, fontSize }
     ]
 
     return (

@@ -27,12 +27,12 @@ const ButtonLink = memo<ButtonLinkT>(({ title, textStyle, viewStyle, onPress }) 
   const { container, h6 } = styles
   const {
     dark,
-    fonts: { fontFamilyH8 },
+    body: { fontFamily, fontSize },
     colors: { primary, secondary }
   } = useTheme()
   return (
     <TouchableOpacity onPress={onPress} style={[container, viewStyle]}>
-      <Text style={[h6, textStyle, { color: dark ? primary : secondary, fontFamily: fontFamilyH8 }]}>{title}</Text>
+      <Text style={[h6, textStyle, { color: dark ? primary : secondary, fontFamily, fontSize }]}>{title}</Text>
     </TouchableOpacity>
   )
 })

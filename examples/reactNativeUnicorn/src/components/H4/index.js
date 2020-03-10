@@ -6,8 +6,7 @@ import { useTheme } from '@react-navigation/native'
 
 const styles = StyleSheet.create({
   h: {
-    fontWeight: 'bold',
-    fontSize: 22
+    fontWeight: 'bold'
   }
 })
 
@@ -19,10 +18,9 @@ type H4T = {
 const H4 = memo<H4T>(({ title, textStyle }) => {
   const { h } = styles
   const {
-    fonts: { fontFamilyH4 },
-    colors: { h4 }
+    h4: { fontFamily, fontSize, color }
   } = useTheme()
-  return <Text style={[h, textStyle, { fontFamily: fontFamilyH4, color: h4 }]}>{title}</Text>
+  return <Text style={[h, textStyle, { fontFamily, fontSize, color }]}>{title}</Text>
 })
 
 export { H4 }

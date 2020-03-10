@@ -2,6 +2,7 @@
 import React, { memo } from 'react'
 import { StyleSheet, View } from 'react-native'
 import { Background, Avatar, Star, H1, IconCircle, Space } from '..'
+import { Device } from '../constants'
 
 const styles = StyleSheet.create({
   container: {
@@ -15,7 +16,35 @@ const styles = StyleSheet.create({
   },
   avatarStyle: {
     position: 'absolute',
-    top: 110,
+    ...Device.select({
+      mobile300: {
+        top: 110
+      },
+      mobile315: {
+        top: 110
+      },
+      mobile342: {
+        top: 110
+      },
+      mobile360: {
+        top: 110
+      },
+      mobile375: {
+        top: 140
+      },
+      mobile400: {
+        top: 140
+      },
+      mobile410: {
+        top: 160
+      },
+      mobile415: {
+        top: 160
+      },
+      mobile480: {
+        top: 160
+      }
+    }),
     zIndex: 0
   },
   telephone: {

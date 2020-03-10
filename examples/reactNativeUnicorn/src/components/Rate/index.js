@@ -4,6 +4,7 @@ import { StyleSheet, TouchableOpacity, View } from 'react-native'
 import Emoji from 'react-native-emoji'
 import type { ViewStyleProp } from 'react-native/Libraries/StyleSheet/StyleSheet'
 import { H7 } from '..'
+import { W } from '../constants'
 
 const styles = StyleSheet.create({
   container: {
@@ -16,7 +17,8 @@ const styles = StyleSheet.create({
     fontSize: 18,
     marginBottom: 4
   },
-  h4: {
+  h: {
+    width: 50,
     paddingLeft: 6
   }
 })
@@ -28,12 +30,12 @@ type RateT = {
 }
 
 const Rate = memo<RateT>(({ title, onPress, viewStyle }) => {
-  const { container, sub, emoji, h4 } = styles
+  const { container, sub, emoji, h } = styles
   return (
     <TouchableOpacity onPress={onPress} style={[container, viewStyle]}>
       <View style={sub}>
         <Emoji name=":unicorn_face:" style={emoji} />
-        <H7 title={title} textStyle={h4} />
+        <H7 title={title} textStyle={h} numberOfLines={1} ellipsizeMode="tail" />
       </View>
     </TouchableOpacity>
   )

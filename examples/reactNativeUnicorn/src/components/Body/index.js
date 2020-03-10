@@ -29,12 +29,12 @@ type BodyT = {
 const Body = memo<BodyT>(({ title, textStyle, numberOfLines, ellipsizeMode }) => {
   const { h } = styles
   const {
-    fonts: { fontFamilyBody },
-    colors: { secondary, body }
+    body: { fontFamily, fontSize, color },
+    colors: { secondary }
   } = useTheme()
   return (
     <Text
-      style={[h, textStyle, { fontFamily: fontFamilyBody, color: body, textShadowColor: secondary }]}
+      style={[h, textStyle, { fontFamily, color, fontSize, textShadowColor: secondary }]}
       numberOfLines={numberOfLines}
       ellipsizeMode={ellipsizeMode}
     >

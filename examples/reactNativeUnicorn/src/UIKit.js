@@ -100,6 +100,42 @@ const UIKit = () => {
     <>
       <ScrollView style={[scrollView, { backgroundColor }]}>
         <View style={{ alignItems: 'center' }}>
+          <H0 title="Avatars" />
+          <Space height={30} />
+          <Avatar uri={image.avatar()} size="xLarge" />
+          <Space height={20} />
+          <Avatar uri={image.avatar()} size="large" />
+          <Space height={20} />
+          <Avatar uri={image.avatar()} size="medium" />
+          <Space height={20} />
+          <Avatar uri={image.avatar()} size="small" />
+          <Space height={90} />
+        </View>
+
+        <View style={{ alignItems: 'center' }}>
+          <H0 title="FONTS" />
+          <Space height={10} />
+          <H0 title="H0" />
+          <Space height={1} />
+          <H1 title="H1" textStyle={{ textAlign: 'center' }} />
+          <Space height={1} />
+          <H2 title="H2" />
+          <Space height={5} />
+          <H3 title="H3" textStyle={{ width: 35 }} />
+          <Space height={5} />
+          <H4 title="H4" />
+          <Space height={1} />
+          <H5 title="H5" />
+          <Space height={5} />
+          <H6 title="H6" />
+          <Space height={5} />
+          <H7 title="H7" />
+          <Space height={5} />
+          <H8 title="H8" />
+          <Space height={90} />
+        </View>
+
+        <View style={{ alignItems: 'center' }}>
           <H0 title="Cards" />
           <Space height={30} />
           <Developer title={name.findName()} uri={image.avatar()} />
@@ -221,42 +257,6 @@ const UIKit = () => {
           <Rate title="2/433" />
           <Space height={30} />
           <Star star={bool} onPress={() => setBool(!bool)} />
-          <Space height={90} />
-        </View>
-
-        <View style={{ alignItems: 'center' }}>
-          <H0 title="Avatars" />
-          <Space height={30} />
-          <Avatar uri={image.avatar()} size="xLarge" />
-          <Space height={20} />
-          <Avatar uri={image.avatar()} size="large" />
-          <Space height={20} />
-          <Avatar uri={image.avatar()} size="medium" />
-          <Space height={20} />
-          <Avatar uri={image.avatar()} size="small" />
-          <Space height={90} />
-        </View>
-
-        <View style={{ alignItems: 'center' }}>
-          <H0 title="FONTS" />
-          <Space height={10} />
-          <H0 title="H0" />
-          <Space height={1} />
-          <H1 title="H1" />
-          <Space height={1} />
-          <H2 title="H2" />
-          <Space height={5} />
-          <H3 title="H3" textStyle={{ width: 25 }} />
-          <Space height={5} />
-          <H4 title="H4" />
-          <Space height={1} />
-          <H5 title="H5" />
-          <Space height={5} />
-          <H6 title="H6" />
-          <Space height={5} />
-          <H7 title="H7" />
-          <Space height={5} />
-          <H8 title="H8" />
           <Space height={90} />
         </View>
       </ScrollView>

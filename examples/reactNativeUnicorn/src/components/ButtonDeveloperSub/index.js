@@ -8,11 +8,11 @@ import { W } from '../constants'
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
+    justifyContent: 'space-between',
     flexDirection: 'row'
   },
   h: {
-    width: W - 200,
+    width: W - 180,
     marginTop: 8,
     marginLeft: 15,
     marginRight: 5
@@ -33,7 +33,7 @@ const ButtonDeveloperSub = memo<ButtonDeveloperSubT>(({ title, viewStyle, uri, o
     <TouchableOpacity onPress={onPress} style={[container, viewStyle]}>
       <Avatar uri={uri} size="small" />
       <H7 title={title} textStyle={h} numberOfLines={1} ellipsizeMode="tail" />
-      <Rate title="2/433" viewStyle={{ marginTop: 3 }} />
+      <Rate title="24" viewStyle={{ marginTop: 3 }} />
     </TouchableOpacity>
   )
 })

@@ -1,27 +1,21 @@
 // @flow
 import React, { memo } from 'react'
-import { StyleSheet, Text } from 'react-native'
+import { Text } from 'react-native'
 import { useTheme } from '@react-navigation/native'
-
-const styles = StyleSheet.create({
-  h: {
-    textAlign: 'left',
-    fontSize: 17
-  }
-})
+import type { TextStyleProp } from 'react-native/Libraries/StyleSheet/StyleSheet'
 
 type H8T = {
-  title: string
+  title: string,
+  textStyle: TextStyleProp
 }
 
-const H8 = memo<H8T>(({ title }) => {
-  const { h } = styles
+const H8 = memo<H8T>(({ title, textStyle }) => {
   const {
     dark,
-    fonts: { fontFamilyH8 },
+    h8: { fontFamily, fontSize },
     colors: { primary, secondary }
   } = useTheme()
-  return <Text style={[h, { fontFamily: fontFamilyH8, color: dark ? primary : secondary }]}>{title}</Text>
+  return <Text style={[textStyle, { fontFamily, fontSize, color: dark ? primary : secondary }]}>{title}</Text>
 })
 
 export { H8 }

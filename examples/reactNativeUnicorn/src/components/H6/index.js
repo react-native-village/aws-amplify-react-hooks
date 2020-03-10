@@ -1,8 +1,7 @@
 // @flow
 import React, { memo } from 'react'
-import { Platform, StyleSheet, Text } from 'react-native'
+import { StyleSheet, Text } from 'react-native'
 import type { TextStyleProp } from 'react-native/Libraries/StyleSheet/StyleSheet'
-import { ifIphoneX } from 'react-native-iphone-x-helper'
 import { useTheme } from '@react-navigation/native'
 import { W } from '../constants'
 
@@ -11,15 +10,7 @@ const styles = StyleSheet.create({
     width: W - 90,
     textAlign: 'center',
     textShadowOffset: { width: 1, height: 1 },
-    textShadowRadius: 1,
-    ...ifIphoneX(
-      {
-        fontSize: Platform.OS === 'ios' ? 19 : 17
-      },
-      {
-        fontSize: Platform.OS === 'ios' ? 10 : 17
-      }
-    )
+    textShadowRadius: 1
   }
 })
 
@@ -31,10 +22,10 @@ type H6T = {
 const H6 = memo<H6T>(({ title, textStyle }) => {
   const { h } = styles
   const {
-    fonts: { fontFamilyH6 },
-    colors: { secondary, text }
+    h6: { fontFamily, fontSize, color },
+    colors: { secondary }
   } = useTheme()
-  return <Text style={[h, textStyle, { fontFamily: fontFamilyH6, color: text, textShadowColor: secondary }]}>{title}</Text>
+  return <Text style={[h, textStyle, { fontFamily, color, fontSize, textShadowColor: secondary }]}>{title}</Text>
 })
 
 export { H6 }

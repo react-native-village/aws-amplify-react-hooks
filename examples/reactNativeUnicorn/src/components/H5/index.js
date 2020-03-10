@@ -2,20 +2,11 @@
 import React, { memo } from 'react'
 import { StyleSheet, Text } from 'react-native'
 import type { TextStyleProp } from 'react-native/Libraries/StyleSheet/StyleSheet'
-import { ifIphoneX } from 'react-native-iphone-x-helper'
 import { useTheme } from '@react-navigation/native'
 
 const styles = StyleSheet.create({
   h: {
-    fontWeight: 'bold',
-    ...ifIphoneX(
-      {
-        fontSize: 25
-      },
-      {
-        fontSize: 18
-      }
-    )
+    fontWeight: 'bold'
   }
 })
 
@@ -27,10 +18,9 @@ type H5T = {
 const H5 = memo<H5T>(({ title, textStyle }) => {
   const { h } = styles
   const {
-    fonts: { fontFamilyH5 },
-    colors: { h5 }
+    h5: { fontFamily, fontSize, color }
   } = useTheme()
-  return <Text style={[h, textStyle, { fontFamily: fontFamilyH5, color: h5 }]}>{title}</Text>
+  return <Text style={[h, textStyle, { fontFamily, fontSize, color }]}>{title}</Text>
 })
 
 export { H5 }
