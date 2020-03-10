@@ -7,7 +7,8 @@ import { W } from '../constants'
 const styles = StyleSheet.create({
   inputStyle: {
     fontSize: 14,
-    width: W - 60,
+    alignSelf: 'center',
+    width: W - 30,
     height: 40,
     borderBottomWidth: 2
   },

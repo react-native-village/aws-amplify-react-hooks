@@ -29,7 +29,7 @@ const Tab = memo<TabT>(({ title }) => {
           name={source()}
           style={{
             padding: 13,
-            opacity: search ? 0.7 : 1,
+            opacity: search ? 0.5 : 1,
             ...ifIphoneX(
               {
                 fontSize: 24

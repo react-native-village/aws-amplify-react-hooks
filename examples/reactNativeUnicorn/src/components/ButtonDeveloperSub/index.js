@@ -22,18 +22,19 @@ const styles = StyleSheet.create({
 type ButtonDeveloperSubT = {
   title: string,
   uri: string,
+  rate: number,
   textStyle: TextStyleProp,
   viewStyle: ViewStyleProp,
   onPress: Function
 }
 
-const ButtonDeveloperSub = memo<ButtonDeveloperSubT>(({ title, viewStyle, uri, onPress }) => {
+const ButtonDeveloperSub = memo<ButtonDeveloperSubT>(({ title, viewStyle, uri, onPress, rate }) => {
   const { container, h } = styles
   return (
     <TouchableOpacity onPress={onPress} style={[container, viewStyle]}>
       <Avatar uri={uri} size="small" />
       <H7 title={title} textStyle={h} numberOfLines={1} ellipsizeMode="tail" />
-      <Rate title="24" viewStyle={{ marginTop: 3 }} />
+      <Rate title={rate} viewStyle={{ marginTop: 3 }} />
     </TouchableOpacity>
   )
 })

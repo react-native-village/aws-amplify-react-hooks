@@ -1,29 +1,19 @@
 // @flow
 import React, { memo } from 'react'
-import { StyleSheet, View } from 'react-native'
 import type { ViewStyleProp } from 'react-native/Libraries/StyleSheet/StyleSheet'
 import { CardBorder, ButtonDeveloperSub } from '..'
-
-const styles = StyleSheet.create({
-  container: {
-    flexDirection: 'row',
-    justifyContent: 'space-between'
-  }
-})
 
 type DeveloperT = {
   title: string,
   uri: string,
+  rate: number,
   viewStyle: ViewStyleProp
 }
 
-const Developer = memo<DeveloperT>(({ title, uri, viewStyle }) => {
-  const { container } = styles
+const Developer = memo<DeveloperT>(({ title, uri, viewStyle, rate }) => {
   return (
     <CardBorder viewStyle={viewStyle}>
-      <View style={container}>
-        <ButtonDeveloperSub title={title} uri={uri} />
-      </View>
+      <ButtonDeveloperSub title={title} uri={uri} rate={rate} />
     </CardBorder>
   )
 })

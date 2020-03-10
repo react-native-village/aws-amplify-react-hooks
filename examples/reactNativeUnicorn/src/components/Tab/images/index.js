@@ -24,19 +24,19 @@ export const ICONS = [
     title: 'TabBottom2Disable'
   },
   {
-    path: ':gear:',
+    path: ':unicorn_face:',
     title: 'TabBottom3'
   },
   {
-    path: ':gear:',
+    path: ':unicorn_face:',
     title: 'TabBottom3Disable'
   },
   {
-    path: ':unicorn_face:',
+    path: ':gear:',
     title: 'TabBottom4'
   },
   {
-    path: ':unicorn_face:',
+    path: ':gear:',
     title: 'TabBottom4Disable'
   }
 ]
