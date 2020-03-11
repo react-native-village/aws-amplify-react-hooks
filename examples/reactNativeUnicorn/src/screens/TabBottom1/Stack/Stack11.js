@@ -32,7 +32,7 @@ const res = n =>
 const array = res(10)
 
 const Stack11 = memo<Stack11T>(({ navigation }) => {
-  const [loading, setLoading] = useState(false)
+  //const [loading, setLoading] = useState(false)
   const _onPress = params => navigation.navigate('Stack12', params)
 
   const renderItem = ({ item }) => {
@@ -61,6 +61,7 @@ const Stack11 = memo<Stack11T>(({ navigation }) => {
             >
               {({ values, handleChange, errors, setFieldTouched, touched }) => (
                 <>
+                  <Space height={30} />
                   <Input
                     name="search"
                     value={values.search}

@@ -37,15 +37,15 @@ const emoji = {
 }
 
 const styles = StyleSheet.create({
-  cardBorder: {
-    paddingVertical: 5,
-    paddingHorizontal: 20
-  },
   container: {
     flex: 1,
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'flex-start'
+  },
+  cardBorder: {
+    paddingVertical: 5,
+    paddingHorizontal: 20
   },
   page: {
     ...emoji
@@ -88,9 +88,11 @@ const TabCompany = ({ children, setTab }) => {
           {emojiList.map(({ id, title, name }) => {
             const check = value[numbers[id - 1]]
             return (
-              <TouchableOpacity key={id} onPress={_onChangeState(id)}>
-                <Emoji name={name} style={check ? styles[title] : styles.default} />
-              </TouchableOpacity>
+              <View style={{ opacity: check ? 1 : 0.5 }} key={id}>
+                <TouchableOpacity onPress={_onChangeState(id)}>
+                  <Emoji name={name} style={check ? styles[title] : styles.default} />
+                </TouchableOpacity>
+              </View>
             )
           })}
         </View>

@@ -56,6 +56,7 @@ const TabBottom2 = memo<TabBottom2T>(({ navigation }) => {
           >
             {({ values, handleChange, errors, setFieldTouched, touched }) => (
               <>
+                <Space height={30} />
                 <Input
                   name="search"
                   value={values.search}

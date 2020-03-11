@@ -22,10 +22,10 @@ type TabBottom3T = {
 }
 
 const TabBottom3 = memo<TabBottom3T>(({ navigation }) => {
-  const [loading, setLoading] = useState(false)
+  //const [loading, setLoading] = useState(false)
   const [tab, setTab] = useState('0')
-  const _onPress = () => navigation.navigate('Stack2')
-  const { image, name, lorem } = faker
+  //const _onPress = () => navigation.navigate('Stack2')
+  const { lorem } = faker
   return (
     <AppContainer>
       <HeaderMaster user={userData} />
