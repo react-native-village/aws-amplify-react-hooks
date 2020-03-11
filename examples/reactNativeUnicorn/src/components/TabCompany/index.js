@@ -66,7 +66,7 @@ const styles = StyleSheet.create({
   }
 })
 
-const TabCompany = () => {
+const TabCompany = ({ children, setTab }) => {
   const [value, setValue] = useState({
     one: true,
     two: false,
@@ -76,22 +76,27 @@ const TabCompany = () => {
 
   const _onChangeState = number => () => {
     const defaultObject = numbers.reduce((acc, el) => ({ ...acc, [el]: false }), {})
+    setTab(number - 1)
     setValue({ ...defaultObject, [numbers[number - 1]]: true })
   }
   const { container, cardBorder } = styles
+
   return (
-    <CardBorder viewStyle={cardBorder}>
-      <View style={container}>
-        {emojiList.map(({ id, title, name }) => {
-          const check = value[numbers[id - 1]]
-          return (
-            <TouchableOpacity key={id} onPress={_onChangeState(id)}>
-              <Emoji name={name} style={check ? styles[title] : styles.default} />
-            </TouchableOpacity>
-          )
-        })}
-      </View>
-    </CardBorder>
+    <>
+      <CardBorder viewStyle={cardBorder}>
+        <View style={container}>
+          {emojiList.map(({ id, title, name }) => {
+            const check = value[numbers[id - 1]]
+            return (
+              <TouchableOpacity key={id} onPress={_onChangeState(id)}>
+                <Emoji name={name} style={check ? styles[title] : styles.default} />
+              </TouchableOpacity>
+            )
+          })}
+        </View>
+      </CardBorder>
+      {children}
+    </>
   )
 }
 

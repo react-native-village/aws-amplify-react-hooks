@@ -6,7 +6,9 @@ import { Device } from '../constants'
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1
+    flex: 1,
+    top: 12,
+    height: 310
   },
   starStyle: {
     position: 'absolute',
@@ -76,19 +78,19 @@ const HeaderMaster = memo<HeaderMasterT>(({ user }) => {
   const { container, starStyle, avatarStyle, balloon, telephone, sound, h1 } = styles
   const { name, uri, star } = user
   return (
-    <>
-      <View style={container}>
+    <View style={container}>
+      <>
         <Background>
           <Star star={star} viewStyle={starStyle} />
           <Avatar uri={uri} viewStyle={avatarStyle} size="xLarge" />
         </Background>
-      </View>
+      </>
       <Space height={40} />
       <IconCircle name=":telephone_receiver:" viewStyle={telephone} />
       <IconCircle name=":thought_balloon:" viewStyle={balloon} />
       <IconCircle name=":loud_sound:" viewStyle={sound} />
       <H1 title={name} textStyle={h1} />
-    </>
+    </View>
   )
 })
 

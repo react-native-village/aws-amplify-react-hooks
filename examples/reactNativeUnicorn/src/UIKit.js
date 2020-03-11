@@ -134,7 +134,7 @@ const UIKit = () => {
         <View style={{ alignItems: 'center' }}>
           <H0 title="Cards" />
           <Space height={30} />
-          <Developer title={name.findName()} uri={image.avatar()} />
+          <Developer title={name.findName()} uri={image.avatar()} rate={1} />
           <Space height={30} />
           <CardVacancies obj={cardVacancies} />
           <Space height={30} />

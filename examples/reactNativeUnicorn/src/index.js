@@ -16,19 +16,22 @@ import { DarkTheme, LightTheme } from './APIComponents'
 //window.LOG_LEVEL = 'DEBUG'
 
 const App: () => React$Node = () => {
-  const [value, setValue] = useState(false)
+  const [value, setValue] = useState(!false)
   //const scheme = useColorScheme()
   const {
     colors: { backgroundColor }
   } = useTheme()
+  const dev = !true
   return (
     <>
       <AppearanceProvider>
         <NavigationContainer theme={value ? DarkTheme : LightTheme}>
           <StatusBar barStyle={value ? 'light-content' : 'dark-content'} backgroundColor={backgroundColor} />
-          <View style={{ backgroundColor: value ? '#1D1E1F' : '#fff', height: 90 }}>
-            <Switch onValueChange={setValue} value={value} style={{ alignSelf: 'center', marginTop: 50 }} />
-          </View>
+          {dev && (
+            <View style={{ backgroundColor: value ? '#1D1E1F' : '#fff', height: 90 }}>
+              <Switch onValueChange={setValue} value={value} style={{ alignSelf: 'center', marginTop: 50 }} />
+            </View>
+          )}
           <AppNavigator />
         </NavigationContainer>
       </AppearanceProvider>

@@ -3,11 +3,9 @@ import React, { memo } from 'react'
 import { StyleSheet, Text } from 'react-native'
 import type { TextStyleProp } from 'react-native/Libraries/StyleSheet/StyleSheet'
 import { useTheme } from '@react-navigation/native'
-import { W } from '../constants'
 
 const styles = StyleSheet.create({
   h: {
-    width: W - 60,
     textShadowOffset: { width: 1, height: 1 },
     textShadowRadius: 1
   }

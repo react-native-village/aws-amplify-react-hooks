@@ -26,11 +26,11 @@ const styles = StyleSheet.create({
   }
 })
 
-type CardBorderT = {
+type CardBorderT = {|
   children?: Node,
-  viewStyle: ViewStyleProp,
-  border: boolean
-}
+  viewStyle?: ViewStyleProp,
+  border?: boolean
+|}
 
 const CardBorder = memo<CardBorderT>(({ children, viewStyle, border }) => {
   const { containerBlue, containerPink } = styles

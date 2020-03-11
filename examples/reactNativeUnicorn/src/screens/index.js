@@ -1,2 +1,4 @@
+export * from './TabBottom0'
+export * from './TabBottom1'
 export * from './TabBottom2'
-//hello
+export * from './TabBottom3'
