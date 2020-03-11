@@ -2,11 +2,12 @@
 import React, { memo } from 'react'
 import { FlatList } from 'react-native'
 import type { TextStyleProp, ViewStyleProp } from 'react-native/Libraries/StyleSheet/StyleSheet'
-import { NavigationState, NavigationScreenProp } from '@react-navigation/native'
+import { NavigationState, NavigationScreenProp, NavigationRoute } from '@react-navigation/native'
 import faker from 'faker'
 import { Space, CardIssue, CardIssueResponce, AppContainer } from '../../../components'
 
 type Stack02T = {
+  route: NavigationRoute,
   navigation: NavigationScreenProp<NavigationState>,
   textStyle?: TextStyleProp,
   viewStyle?: ViewStyleProp
