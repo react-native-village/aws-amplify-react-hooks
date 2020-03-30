@@ -34,7 +34,7 @@ react-native run-android
 ## AmplifyProvider
 
 Similar to
-[ApolloProvider from react-apollo](https://www.apollographql.com/docs/react/essentials/get-started.html#creating-provider).
+[ApolloProvider from react-apollo](https://www.apollographql.com/docs/react/get-started/#connect-your-client-to-react).
 In order for this package to work, you need to wrap your component tree with
 `AmplifyProvider` at an appropriate level, encapsulating all components which
 will use hooks.

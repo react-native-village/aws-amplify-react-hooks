@@ -1,6 +1,6 @@
-![CRUD](https://res.cloudinary.com/practicaldev/image/fetch/s--kn4qnY-k--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://res.cloudinary.com/practicaldev/image/fetch/s--edS2IST9--/c_imagga_scale%2Cf_auto%2Cfl_progressive%2Ch_420%2Cq_auto%2Cw_1000/https://thepracticaldev.s3.amazonaws.com/i/9ycncydh8czhwfk9k5kb.png)
+![Unicorn](https://miro.medium.com/max/7680/1*b_3Q8VfNQKk3x88EqjqGvQ.png)
 
-# CRUD
+# Unicorn
 
 
 
@@ -12,7 +12,7 @@
  
 Let's go to the example folder
 
-`cd aws-amplify-react-hooks/examples/reactNativeCRUD`
+`cd aws-amplify-react-hooks/examples/reactNativeUnicorn`
 
 Install dependencies
 
@@ -39,7 +39,9 @@ There we look and put the Amplify Command Line Interface (CLI)
 ## Step 4 - Connecting Authentication Plugin — Auth 🔐
 Now that the application is in the cloud, you can add some features, such as allowing users to register with our application and log in.
 We connect the authentication plugin.
-amplify add auth
+
+`amplify add auth`
+
 Select the default configuration. This adds auth resource configurations locally to your amplify/backend/auth directory.
 Select the profile we want to use. default. Enter and how users will log in. Email (write off money for SMS).
 
@@ -93,6 +95,10 @@ It's time to test it in practice! Therefore, we write the command in the console
 With this team, you can quickly test your achievements of change without the need to allocate or update the cloud resources that you use at each stage. In this way, you can configure unit and integration tests that can be performed quickly without affecting your cloud backend.
 
  [Details](https://dev.to/playra/crud-create-read-update-delete-aws-amplify-graphql-react-native-4m2b)
+ 
+ `amplify push`
+
+✔ All resources are updated in the cloud
  
 ## Step 6 - We start the project 🚀
 iOS
