@@ -1,0 +1,10 @@
+{
+	"auth": {
+		"reactnativecrudv231342331": {
+			"service": "Cognito",
+			"providerPlugin": "awscloudformation",
+			"dependsOn": [],
+			"customAuth": false
+		}
+	}
+}
