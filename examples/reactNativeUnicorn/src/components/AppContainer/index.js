@@ -1,8 +1,14 @@
 import React, { memo } from 'react'
 import { StyleSheet, View, ScrollView, ImageBackground } from 'react-native'
 import StatusBarAlert from 'react-native-statusbar-alert'
+<<<<<<< HEAD
 import { Header, Space, Loading } from '..'
 import { RED, BLUE } from '../../constants'
+=======
+import { useTheme } from '@react-navigation/native'
+import { Header, Space, Loading } from '..'
+import { RED } from '../constants'
+>>>>>>> ui-kit
 
 const styles = StyleSheet.create({
   container: {
@@ -22,17 +28,31 @@ const AppContainer = memo(
     iconLeft = 'angle-dobule-left',
     onPress = null,
     onPressRight = null,
+<<<<<<< HEAD
     colorLeft = BLUE,
     iconRight,
     colorRight = BLUE,
+=======
+    iconRight,
+>>>>>>> ui-kit
     children,
     message = '',
     title,
     loading = false
   }) => {
     const { container, sub } = styles
+<<<<<<< HEAD
     return (
       <ImageBackground source={require('./bg.png')} style={container}>
+=======
+    const {
+      dark,
+      colors: { primary, secondary }
+    } = useTheme()
+    const bg = dark ? require('./bgB.png') : require('./bgW.png')
+    return (
+      <ImageBackground source={bg} style={container}>
+>>>>>>> ui-kit
         <StatusBarAlert
           visible={message !== ''}
           message={message}
@@ -48,8 +68,13 @@ const AppContainer = memo(
             onPress={onPress}
             onPressRight={onPressRight}
             iconLeft={iconLeft}
+<<<<<<< HEAD
             colorLeft={colorLeft}
             colorRight={colorRight}
+=======
+            colorLeft={primary}
+            colorRight={primary}
+>>>>>>> ui-kit
             iconRight={iconRight}
           />
         )}

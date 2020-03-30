@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
+<<<<<<< HEAD
    "ios": "react-native run-ios --simulator='iPhone SE'",
    "android": "react-native run-android",
    "lint": "esw src/**",
@@ -10,6 +11,49 @@
     "postinstall":"cd ./ios && pod install && cd .."
   },
   "precommit": "lint",
+=======
+    "android": "react-native run-android",
+    "ios": "react-native run-ios --simulator='iPhone SE'",
+    "iosx": "react-native run-ios --simulator='iPhone X'",
+    "start": "react-native start",
+    "test": "jest",
+    "lint": "esw src/**",
+    "lint-watch": "esw -w --changed src/**"
+  },
+  "precommit": "lint",
+  "dependencies": {
+    "@react-native-community/masked-view": "^0.1.6",
+    "@react-navigation/native": "^5.0.9",
+    "@react-navigation/native-stack": "^5.0.5",
+    "@react-navigation/routers": "^5.1.0",
+    "amazon-cognito-identity-js": "^3.2.2",
+    "faker": "^4.1.0",
+    "formik": "^2.1.4",
+    "lodash": "^4.17.15",
+    "react": "16.9.0",
+    "react-native": "0.61.5",
+    "react-native-appearance": "^0.3.2",
+    "react-native-emoji": "^1.8.0",
+    "react-native-floating-label": "^0.2.3",
+    "react-native-formik": "^1.7.8",
+    "react-native-gesture-handler": "^1.5.3",
+    "react-native-iphone-x-helper": "^1.2.1",
+    "react-native-keychain": "^4.0.5",
+    "react-native-material-textfield": "^0.16.1",
+    "react-native-reanimated": "^1.7.0",
+    "react-native-safe-area-context": "^0.6.4",
+    "react-native-screens": "^2.2.0",
+    "react-native-spinkit": "^1.5.0",
+    "react-native-statusbar-alert": "^0.4.0",
+    "react-native-vector-icons": "^6.6.0",
+    "react-navigation": "^4.1.0",
+    "react-navigation-stack": "^2.0.16",
+    "recompose": "^0.30.0",
+    "tcomb-form-native": "^0.6.20",
+    "tcomb-validation": "^3.4.1",
+    "yup": "^0.28.2"
+  },
+>>>>>>> ui-kit
   "prettier": {
     "singleQuote": true,
     "printWidth": 120,
@@ -74,5 +118,12 @@
   },
   "jest": {
     "preset": "react-native"
+  },
+  "bit": {
+    "env": {
+      "compiler": "bit.envs/compilers/flow@7.0.3"
+    },
+    "componentsDefaultDirectory": "components/{name}",
+    "packageManager": "npm"
   }
 }

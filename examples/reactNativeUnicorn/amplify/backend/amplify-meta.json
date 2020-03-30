@@ -1,0 +1,77 @@
+{
+	"providers": {
+		"awscloudformation": {
+			"AuthRoleName": "amplify-reactnativeunicorn-dev-140220-authRole",
+			"UnauthRoleArn": "arn:aws:iam::123118798050:role/amplify-reactnativeunicorn-dev-140220-unauthRole",
+			"AuthRoleArn": "arn:aws:iam::123118798050:role/amplify-reactnativeunicorn-dev-140220-authRole",
+			"Region": "eu-west-1",
+			"DeploymentBucketName": "amplify-reactnativeunicorn-dev-140220-deployment",
+			"UnauthRoleName": "amplify-reactnativeunicorn-dev-140220-unauthRole",
+			"StackName": "amplify-reactnativeunicorn-dev-140220",
+			"StackId": "arn:aws:cloudformation:eu-west-1:123118798050:stack/amplify-reactnativeunicorn-dev-140220/5b0d74d0-2898-11ea-985f-0a7e2e210ed2"
+		}
+	},
+	"auth": {
+		"reactnativeunicorn96d3b0c8": {
+			"service": "Cognito",
+			"providerPlugin": "awscloudformation",
+			"dependsOn": [],
+			"providerMetadata": {
+				"s3TemplateURL": "https://s3.amazonaws.com/amplify-reactnativeunicorn-dev-140220-deployment/amplify-cfn-templates/auth/reactnativeunicorn96d3b0c8-cloudformation-template.yml",
+				"logicalId": "authreactnativeunicorn96d3b0c8"
+			},
+			"lastPushTimeStamp": "2019-12-27T15:15:52.821Z",
+			"output": {
+				"AppClientSecret": "3nktu55msnrrhvp1ssh7rii33s45eeo06pni4aupm10ob1s2iv",
+				"UserPoolId": "eu-west-1_eUvVWJiWw",
+				"AppClientIDWeb": "1fpbokd4bafp44msp1vua3rv76",
+				"AppClientID": "45t6nj6dv8el1ookio66dq6gkc",
+				"IdentityPoolId": "eu-west-1:8adecfe1-3510-4841-9156-ae7f665d4d23",
+				"IdentityPoolName": "reactnativeunicorn96d3b0c8_identitypool_96d3b0c8__dev",
+				"UserPoolName": "reactnativeunicorn96d3b0c8_userpool_96d3b0c8"
+			},
+			"lastPushDirHash": "7vKEDypqxb8fJovau6gFN+GXYuE="
+		}
+	},
+	"api": {
+		"reactnativeunicorn": {
+			"service": "AppSync",
+			"providerPlugin": "awscloudformation",
+			"output": {
+				"authConfig": {
+					"additionalAuthenticationProviders": [],
+					"defaultAuthentication": {
+						"authenticationType": "AMAZON_COGNITO_USER_POOLS",
+						"userPoolConfig": {
+							"userPoolId": "authreactnativeunicorn96d3b0c8"
+						}
+					}
+				},
+				"GraphQLAPIIdOutput": "u2kksglabbduvfpzqanwkty3lm",
+				"GraphQLAPIEndpointOutput": "https://w5igj75iwfawhbhcu33lsfy44u.appsync-api.eu-west-1.amazonaws.com/graphql"
+			},
+			"providerMetadata": {
+				"s3TemplateURL": "https://s3.amazonaws.com/amplify-reactnativeunicorn-dev-140220-deployment/amplify-cfn-templates/api/cloudformation-template.json",
+				"logicalId": "apireactnativeunicorn"
+			},
+			"lastPushTimeStamp": "2019-12-27T15:15:53.267Z",
+			"lastPushDirHash": "950Vgj8uyKc2V+DWjFGLnOjnH+o="
+		}
+	},
+	"storage": {
+		"unicorn": {
+			"service": "S3",
+			"providerPlugin": "awscloudformation",
+			"providerMetadata": {
+				"s3TemplateURL": "https://s3.amazonaws.com/amplify-reactnativeunicorn-dev-140220-deployment/amplify-cfn-templates/storage/s3-cloudformation-template.json",
+				"logicalId": "storageunicorn"
+			},
+			"lastPushTimeStamp": "2019-12-27T15:15:53.267Z",
+			"output": {
+				"BucketName": "reactnativeunicorn88300538f0f04b888c4671acbb6cc07c-dev",
+				"Region": "eu-west-1"
+			},
+			"lastPushDirHash": "uD4Tf8ZCj9yXEJ8KEexEgQeLoKY="
+		}
+	}
+}

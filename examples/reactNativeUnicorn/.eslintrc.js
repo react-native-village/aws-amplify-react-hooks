@@ -2,14 +2,14 @@ module.exports = {
   root: true,
   parser: 'babel-eslint',
   extends: ['airbnb', 'prettier', 'plugin:flowtype/recommended'],
-  plugins: ['react', 'react-native', 'jsx-a11y', 'import', 'react-hooks'],
+  plugins: ['react', 'react-native', 'jsx-a11y', 'import', 'react-hooks', 'flowtype'],
   parserOptions: {
     ecmaFeatures: {
-      jsx: true,
-    },
+      jsx: true
+    }
   },
   env: {
-    'react-native/react-native': true,
+    'react-native/react-native': true
   },
   rules: {
     'react-hooks/rules-of-hooks': 'error',
@@ -52,13 +52,13 @@ module.exports = {
     'react-native/no-inline-styles': 0,
     'react-native/no-color-literals': 0,
     'react-native/no-raw-text': 0,
-    'consistent-return': 0,
+    'consistent-return': 0
   },
   settings: {
     'import/resolver': {
       node: {
-        extensions: ['.js', '.ios.js', '.android.js'],
-      },
-    },
-  },
-};
+        extensions: ['.js', '.ios.js', '.android.js']
+      }
+    }
+  }
+}

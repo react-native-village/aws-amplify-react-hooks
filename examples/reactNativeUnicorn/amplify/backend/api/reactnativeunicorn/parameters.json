@@ -1,0 +1,11 @@
+{
+    "AppSyncApiName": "reactnativeunicorn",
+    "DynamoDBBillingMode": "PAY_PER_REQUEST",
+    "DynamoDBEnableServerSideEncryption": "false",
+    "AuthCognitoUserPoolId": {
+        "Fn::GetAtt": [
+            "authreactnativeunicorn96d3b0c8",
+            "Outputs.UserPoolId"
+        ]
+    }
+}

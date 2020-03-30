@@ -56,9 +56,18 @@
 		<string>SimpleLineIcons.ttf</string>
 		<string>Octicons.ttf</string>
 		<string>Zocial.ttf</string>
+<<<<<<< HEAD
 		<string>3270Narrow.ttf</string>
 		<string>IBM-Logo.ttf</string>
 		<string>Fontisto.ttf</string>
+=======
+		<string>Fontisto.ttf</string>
+		<string>3270Narrow.ttf</string>
+		<string>IBM-Logo.ttf</string>
+		<string>etna-free-font.otf</string>
+		<string>KLMN_Flash_Pix.ttf</string>
+		<string>TheDolbak-Brush.ttf</string>
+>>>>>>> ui-kit
 	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>

@@ -183,6 +183,13 @@ PODS:
     - React-cxxreact (= 0.61.5)
     - React-jsi (= 0.61.5)
   - React-jsinspector (0.61.5)
+<<<<<<< HEAD
+=======
+  - react-native-appearance (0.3.2):
+    - React
+  - react-native-safe-area-context (0.6.4):
+    - React
+>>>>>>> ui-kit
   - react-native-spinkit (1.4.1):
     - React
   - React-RCTActionSheet (0.61.5):
@@ -220,6 +227,7 @@ PODS:
     - React-cxxreact (= 0.61.5)
     - React-jsi (= 0.61.5)
     - ReactCommon/jscallinvoker (= 0.61.5)
+<<<<<<< HEAD
   - RNAWSCognito (3.2.0):
     - JKBigInteger2 (= 0.0.5)
     - React
@@ -230,6 +238,20 @@ PODS:
   - RNReanimated (1.4.0):
     - React
   - RNScreens (1.0.0-alpha.23):
+=======
+  - RNAWSCognito (3.2.2):
+    - JKBigInteger2 (= 0.0.5)
+    - React
+  - RNCMaskedView (0.1.6):
+    - React
+  - RNGestureHandler (1.5.3):
+    - React
+  - RNKeychain (4.0.5):
+    - React
+  - RNReanimated (1.7.0):
+    - React
+  - RNScreens (2.2.0):
+>>>>>>> ui-kit
     - React
   - RNVectorIcons (6.6.0):
     - React
@@ -252,6 +274,11 @@ DEPENDENCIES:
   - React-jsi (from `../node_modules/react-native/ReactCommon/jsi`)
   - React-jsiexecutor (from `../node_modules/react-native/ReactCommon/jsiexecutor`)
   - React-jsinspector (from `../node_modules/react-native/ReactCommon/jsinspector`)
+<<<<<<< HEAD
+=======
+  - react-native-appearance (from `../node_modules/react-native-appearance`)
+  - react-native-safe-area-context (from `../node_modules/react-native-safe-area-context`)
+>>>>>>> ui-kit
   - react-native-spinkit (from `../node_modules/react-native-spinkit`)
   - React-RCTActionSheet (from `../node_modules/react-native/Libraries/ActionSheetIOS`)
   - React-RCTAnimation (from `../node_modules/react-native/Libraries/NativeAnimation`)
@@ -265,6 +292,10 @@ DEPENDENCIES:
   - ReactCommon/jscallinvoker (from `../node_modules/react-native/ReactCommon`)
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
   - RNAWSCognito (from `../node_modules/amazon-cognito-identity-js`)
+<<<<<<< HEAD
+=======
+  - "RNCMaskedView (from `../node_modules/@react-native-community/masked-view`)"
+>>>>>>> ui-kit
   - RNGestureHandler (from `../node_modules/react-native-gesture-handler`)
   - RNKeychain (from `../node_modules/react-native-keychain`)
   - RNReanimated (from `../node_modules/react-native-reanimated`)
@@ -275,6 +306,10 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - boost-for-react-native
+<<<<<<< HEAD
+=======
+  trunk:
+>>>>>>> ui-kit
     - JKBigInteger2
 
 EXTERNAL SOURCES:
@@ -306,6 +341,13 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/jsiexecutor"
   React-jsinspector:
     :path: "../node_modules/react-native/ReactCommon/jsinspector"
+<<<<<<< HEAD
+=======
+  react-native-appearance:
+    :path: "../node_modules/react-native-appearance"
+  react-native-safe-area-context:
+    :path: "../node_modules/react-native-safe-area-context"
+>>>>>>> ui-kit
   react-native-spinkit:
     :path: "../node_modules/react-native-spinkit"
   React-RCTActionSheet:
@@ -330,6 +372,11 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon"
   RNAWSCognito:
     :path: "../node_modules/amazon-cognito-identity-js"
+<<<<<<< HEAD
+=======
+  RNCMaskedView:
+    :path: "../node_modules/@react-native-community/masked-view"
+>>>>>>> ui-kit
   RNGestureHandler:
     :path: "../node_modules/react-native-gesture-handler"
   RNKeychain:
@@ -360,6 +407,11 @@ SPEC CHECKSUMS:
   React-jsi: cb2cd74d7ccf4cffb071a46833613edc79cdf8f7
   React-jsiexecutor: d5525f9ed5f782fdbacb64b9b01a43a9323d2386
   React-jsinspector: fa0ecc501688c3c4c34f28834a76302233e29dc0
+<<<<<<< HEAD
+=======
+  react-native-appearance: c2e0666225d999f7f0e7d9a9cb6c627c6e4c4b92
+  react-native-safe-area-context: 52342d2d80ea8faadd0ffa76d83b6051f20c5329
+>>>>>>> ui-kit
   react-native-spinkit: da294fd828216ad211fe36a5c14c1e09f09e62db
   React-RCTActionSheet: 600b4d10e3aea0913b5a92256d2719c0cdd26d76
   React-RCTAnimation: 791a87558389c80908ed06cc5dfc5e7920dfa360
@@ -371,6 +423,7 @@ SPEC CHECKSUMS:
   React-RCTText: 9ccc88273e9a3aacff5094d2175a605efa854dbe
   React-RCTVibration: a49a1f42bf8f5acf1c3e297097517c6b3af377ad
   ReactCommon: 198c7c8d3591f975e5431bec1b0b3b581aa1c5dd
+<<<<<<< HEAD
   RNAWSCognito: 8cdb673873f82dc770c769b87c336eb4b67b8ae0
   RNGestureHandler: 946a7691e41df61e2c4b1884deab41a4cdc3afff
   RNKeychain: 79cfca6cd5030bbabcd1a2c009531b84e358116d
@@ -380,5 +433,17 @@ SPEC CHECKSUMS:
   Yoga: f2a7cd4280bfe2cca5a7aed98ba0eb3d1310f18b
 
 PODFILE CHECKSUM: 9ca4bce392ca01ad8dfa97c2e57238c4a560e275
+=======
+  RNAWSCognito: 545b9742a23db7a6387c984c4f205264b44e737a
+  RNCMaskedView: a88953beefbd347a29072d9eba90e42945fe291e
+  RNGestureHandler: 02905abe54e1f6e59c081a10b4bd689721e17aa6
+  RNKeychain: 840f8e6f13be0576202aefcdffd26a4f54bfe7b5
+  RNReanimated: 031fe8d9ea93c2bd689a40f05320ef9d96f74d7f
+  RNScreens: 812b79d384e2bea7eebc4ec981469160d4948fd5
+  RNVectorIcons: 0bb4def82230be1333ddaeee9fcba45f0b288ed4
+  Yoga: f2a7cd4280bfe2cca5a7aed98ba0eb3d1310f18b
+
+PODFILE CHECKSUM: 876dade16091a3aba127a75789b2021fb79ec3b9
+>>>>>>> ui-kit
 
 COCOAPODS: 1.8.3
