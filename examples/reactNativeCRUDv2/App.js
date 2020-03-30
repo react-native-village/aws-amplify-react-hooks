@@ -16,6 +16,7 @@ import {
   DebugInstructions,
   ReloadInstructions
 } from 'react-native/Libraries/NewAppScreen'
+import Icon from 'react-native-vector-icons/FontAwesome5'
 
 const App: () => React$Node = () => {
   return (
@@ -24,6 +25,7 @@ const App: () => React$Node = () => {
       <SafeAreaView>
         <ScrollView contentInsetAdjustmentBehavior="automatic" style={styles.scrollView}>
           <Header />
+          <Icon name="comments" size={30} color="#900" />
           {global.HermesInternal == null ? null : (
             <View style={styles.engine}>
               <Text style={styles.footer}>Engine: Hermes</Text>
