@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Auth } from 'aws-amplify'
 import { Formik } from 'formik'
 import * as Yup from 'yup'
-import { AppContainer, Button, Input } from '../../../components'
+import { AppContainer, Button, Input } from 'react-native-unicorn-uikit'
 import { onScreen, goBack } from '../../../constants'
 
 const Forgot = ({ route, navigation }) => {

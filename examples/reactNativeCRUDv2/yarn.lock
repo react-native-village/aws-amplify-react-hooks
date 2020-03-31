@@ -7666,10 +7666,10 @@ react-native-statusbar-alert@^0.4.0:
   resolved "https://registry.yarnpkg.com/react-native-statusbar-alert/-/react-native-statusbar-alert-0.4.0.tgz#031c2c9028d5f227b2253bb5a67aca7f0263bf46"
   integrity sha512-S5LfpIRwHZ4ygr35sFAj6bf3q0guxC5zPJ1AWpEJQ+CuZ/pPKG1Gp9nz9W47gJEGNMlUebxiZcWjjSh2m7xqdQ==
 
-react-native-unicorn-uikit@^0.0.11:
-  version "0.0.11"
-  resolved "https://registry.yarnpkg.com/react-native-unicorn-uikit/-/react-native-unicorn-uikit-0.0.11.tgz#7dca8cfba73e06aa624706473a6fa654e5774ae5"
-  integrity sha512-/gTMBOvdcqn/FOuhfwPIufPvbM9r55jmlgGR3Inah1c/4eO554HQM9Jsyenng3vqRlWr9TNIGd7gUfft1lJXAg==
+react-native-unicorn-uikit@^0.0.12:
+  version "0.0.12"
+  resolved "https://registry.yarnpkg.com/react-native-unicorn-uikit/-/react-native-unicorn-uikit-0.0.12.tgz#12063f2626757d6e1178ced86d3635328beed495"
+  integrity sha512-IlCWu4bMLsq2jVy+N8P6Y1Xh8RW0GsSUmEfStxjPPDF6j5EjhXirceT4m4QdV/+GWcefryEIncSanBfIgCmleA==
   dependencies:
     "@react-native-community/async-storage" "^1.7.1"
     "@react-navigation/native" "^5.1.2"

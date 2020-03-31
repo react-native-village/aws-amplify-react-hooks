@@ -3,7 +3,7 @@ import { Auth } from 'aws-amplify'
 import * as Keychain from 'react-native-keychain'
 import { Formik } from 'formik'
 import * as Yup from 'yup'
-import { AppContainer, Space, Button, Input, TextError } from '../../../components'
+import { AppContainer, Space, Button, Input, TextError } from 'react-native-unicorn-uikit'
 import { onScreen, goBack } from '../../../constants'
 
 const SignUp = ({ navigation }) => {

@@ -4,7 +4,7 @@ import { Hello, SignUp, SignIn, ConfirmSignUp, User, Forgot, ForgotPassSubmit } 
 
 const Stack = createStackNavigator()
 
-function AppNavigator() {
+const AppNavigator = () => {
   return (
     <Stack.Navigator
       screenOptions={{

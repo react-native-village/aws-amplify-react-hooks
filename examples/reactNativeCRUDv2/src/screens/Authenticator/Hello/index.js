@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Auth } from 'aws-amplify'
 import * as Keychain from 'react-native-keychain'
-import { Button, Space, H6 } from 'react-native-unicorn-uikit'
-import { AppContainer } from '../../../components'
+import { AppContainer, Button, Space, H6 } from 'react-native-unicorn-uikit'
 import { onScreen } from '../../../constants'
 
 const Hello = ({ navigation }) => {

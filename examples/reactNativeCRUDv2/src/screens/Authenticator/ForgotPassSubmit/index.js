@@ -3,7 +3,7 @@ import { Auth } from 'aws-amplify'
 import * as Keychain from 'react-native-keychain'
 import { Formik } from 'formik'
 import * as Yup from 'yup'
-import { AppContainer, Button, Space, Input, TextError } from '../../../components'
+import { AppContainer, Button, Space, Input, TextError } from 'react-native-unicorn-uikit'
 import { onScreen, goBack } from '../../../constants'
 
 const ForgotPassSubmit = ({ route, navigation }) => {
