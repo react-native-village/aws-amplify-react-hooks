@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Platform } from 'react-native'
 import { Auth } from 'aws-amplify'
 import * as Keychain from 'react-native-keychain'
 import { Formik } from 'formik'
@@ -27,7 +28,7 @@ const ForgotPassSubmit = ({ route, navigation }) => {
   return (
     <>
       <AppContainer title="Confirmation" onPress={goBack(navigation)} loading={loading}>
-        <Space height={60} />
+        <Space height={Platform.OS === 'ios' ? 20 : 150} />
         <Formik
           initialValues={{ email: route.params, code: '', password: '', passwordConfirmation: '' }}
           onSubmit={(values) => _onPress(values)}
