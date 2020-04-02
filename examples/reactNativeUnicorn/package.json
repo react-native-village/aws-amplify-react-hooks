@@ -3,22 +3,11 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-<<<<<<< HEAD
    "ios": "react-native run-ios --simulator='iPhone SE'",
    "android": "react-native run-android",
    "lint": "esw src/**",
    "lint-watch": "esw -w --changed src/**",
     "postinstall":"cd ./ios && pod install && cd .."
-  },
-  "precommit": "lint",
-=======
-    "android": "react-native run-android",
-    "ios": "react-native run-ios --simulator='iPhone SE'",
-    "iosx": "react-native run-ios --simulator='iPhone X'",
-    "start": "react-native start",
-    "test": "jest",
-    "lint": "esw src/**",
-    "lint-watch": "esw -w --changed src/**"
   },
   "precommit": "lint",
   "dependencies": {

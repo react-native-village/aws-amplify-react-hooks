@@ -42,7 +42,7 @@ const SignUp = ({ navigation }) => {
   return (
     <>
       <AppContainer onPress={goBack(navigation)} title="Sign Up" loading={loading}>
-        <Space height={120} />
+        <Space height={80} />
         <Formik
           initialValues={{ email: '', password: '', passwordConfirmation: '' }}
           onSubmit={(values) => _onPress(values)}

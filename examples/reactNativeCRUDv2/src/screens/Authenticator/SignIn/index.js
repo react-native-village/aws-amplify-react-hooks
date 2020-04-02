@@ -16,11 +16,14 @@ const SignIn = ({ navigation }) => {
     setError('')
     try {
       const { email, password } = values
+      console.log('values', values)
       const user = await Auth.signIn(email, password)
+      console.log('user', user)
       await Keychain.setInternetCredentials('auth', email, password)
       user && onScreen('USER', navigation)()
       setLoading(false)
     } catch (err) {
+      console.log('err', err)
       setLoading(false)
       if (err.code === 'UserNotConfirmedException') {
         setError('Account not verified yet')
@@ -41,7 +44,7 @@ const SignIn = ({ navigation }) => {
       <AppContainer onPress={goBack(navigation)} title="Sign In" loading={loading}>
         <Space height={140} />
         <Formik
-          initialValues={{ email: '', password: '' }}
+          initialValues={{ email: 'raoffonom@icloud.com', password: 'qwerty123' }}
           onSubmit={(values) => _onPress(values) && setUserInfo(values.email)}
           validationSchema={Yup.object().shape({
             email: Yup.string().email().required(),
