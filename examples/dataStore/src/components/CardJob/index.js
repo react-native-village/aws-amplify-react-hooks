@@ -44,9 +44,9 @@ const styles = StyleSheet.create({
   }
 })
 
-const CardJob = memo(({ item: { position, description, rate, owner }, onPress }) => {
+const CardJob = memo(({ item: { position, description, rate }, onPress }) => {
   const { card, h1, h2, footer, h3, h4 } = styles
-  const userSlice = owner.slice(0, 10)
+  //const userSlice = owner.slice(0, 10)
   return (
     <TouchableWithoutFeedback onPress={onPress}>
       <View style={card}>
@@ -55,7 +55,6 @@ const CardJob = memo(({ item: { position, description, rate, owner }, onPress })
           {description}
         </Text>
         <View style={footer}>
-          <Text style={h3}>{userSlice}</Text>
           <Text style={h4}>{rate}$</Text>
         </View>
       </View>

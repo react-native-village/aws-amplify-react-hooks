@@ -12,6 +12,7 @@ module.exports = {
     'react-native/react-native': true
   },
   rules: {
+    'no-param-reassign': 0,
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'warn',
     'react/jsx-filename-extension': ['off'],

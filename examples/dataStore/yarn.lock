@@ -6167,6 +6167,11 @@ inherits@2, inherits@2.0.4, inherits@^2.0.3, inherits@~2.0.3:
   resolved "https://registry.yarnpkg.com/inherits/-/inherits-2.0.4.tgz#0fa2c64f932917c3433a0ded55363aae37416b7c"
   integrity sha512-k/vGaX4/Yla3WzyMCvTQOXYeIHvqOKtnqBduzTHpzpQZzAskKMhZ2K+EnBiSM9zGSoIFeMpXKxa4dYeZIQqewQ==
 
+ini@^1.3.5:
+  version "1.3.5"
+  resolved "https://registry.yarnpkg.com/ini/-/ini-1.3.5.tgz#eee25f56db1c9ec6085e0c22778083f596abf927"
+  integrity sha512-RZY5huIKCMRWDUqZlEi72f/lmXKMvuszcMBduliQ3nnWbx9X/ZBQO7DijMEYS9EhHBb2qacRUMtC7svLwe0lcw==
+
 inquirer@3.0.6:
   version "3.0.6"
   resolved "https://registry.yarnpkg.com/inquirer/-/inquirer-3.0.6.tgz#e04aaa9d05b7a3cb9b0f407d04375f0447190347"
@@ -6206,7 +6211,7 @@ inquirer@^3.0.6:
     strip-ansi "^4.0.0"
     through "^2.3.6"
 
-inquirer@^6.2.2:
+inquirer@^6.2.2, inquirer@^6.5.1:
   version "6.5.2"
   resolved "https://registry.yarnpkg.com/inquirer/-/inquirer-6.5.2.tgz#ad50942375d036d327ff528c08bd5fab089928ca"
   integrity sha512-cntlB5ghuB0iuO65Ovoi8ogLHiWGs/5yNrtUcKjFhSSiVeAIVpD7koaSU9RM8mpXw5YDi9RdYXGQMaOURB7ycQ==
@@ -8838,10 +8843,10 @@ react-native-statusbar-alert@^0.4.0:
   resolved "https://registry.yarnpkg.com/react-native-statusbar-alert/-/react-native-statusbar-alert-0.4.0.tgz#031c2c9028d5f227b2253bb5a67aca7f0263bf46"
   integrity sha512-S5LfpIRwHZ4ygr35sFAj6bf3q0guxC5zPJ1AWpEJQ+CuZ/pPKG1Gp9nz9W47gJEGNMlUebxiZcWjjSh2m7xqdQ==
 
-react-native-unicorn-uikit@^0.0.15:
-  version "0.0.15"
-  resolved "https://registry.yarnpkg.com/react-native-unicorn-uikit/-/react-native-unicorn-uikit-0.0.15.tgz#7da47f111ca12ff4693891b697f3b5508691a523"
-  integrity sha512-pLXvR1iRaa9rmfufWV0Sci789+pUFYsDh7Z71RIypmXwoc+Y0fFoJAXx+OBKDvFFzCANbpMRLwsYTq+Uza0n4Q==
+react-native-unicorn-uikit@^0.0.17:
+  version "0.0.17"
+  resolved "https://registry.yarnpkg.com/react-native-unicorn-uikit/-/react-native-unicorn-uikit-0.0.17.tgz#ed0d0ccb21c0b7c7309f4ac7ad53f64de5dfcfa8"
+  integrity sha512-szrC6i28M5qq4DsFIs0w6Ry8jFEQDshLgm9Mtd8vBWDnDdBybf51Mxu+znp0j25XHu+49GDkZb8RESP7NNBxqQ==
   dependencies:
     "@react-native-community/async-storage" "^1.7.1"
     "@react-navigation/native" "^5.1.2"

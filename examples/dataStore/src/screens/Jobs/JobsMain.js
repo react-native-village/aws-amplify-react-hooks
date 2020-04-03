@@ -1,52 +1,61 @@
 import React, { useEffect, useState } from 'react'
-import { Text, View, TextInput, ScrollView } from 'react-native'
-import { AppContainer, Button, Space, TextLink } from 'react-native-unicorn-uikit'
+import { FlatList } from 'react-native'
+import { Auth } from 'aws-amplify'
+import { AppContainer, CardVacancies, Space } from 'react-native-unicorn-uikit'
 import { DataStore } from '@aws-amplify/datastore'
-import { Message } from '../../models'
-import { Card } from '../../components'
-import { goBack, PINK } from '../../constants'
-
-const initialState = { color: 'black', title: '' }
+import { Header } from '../../components'
+import { Job } from '../../models'
+import { goBack, onScreen } from '../../constants'
 
 const JobsMain = ({ navigation }) => {
-  const [formState, updateFormState] = useState(initialState)
-  const [messages, updateMessages] = useState([])
+  const [data, updateJobs] = useState([])
 
-  const fetchMessages = async () => {
-    const mess = await DataStore.query(Message)
-    updateMessages(mess)
+  const fetchJobs = async () => {
+    const mess = await DataStore.query(Job)
+    updateJobs(mess)
   }
 
   useEffect(() => {
-    fetchMessages()
-    const subscription = DataStore.observe(Message).subscribe(() => fetchMessages())
-    return () => subscription.unsubscribe()
-  }, [formState])
+    // let isSubscribed = true // eslint-disable-line
+    fetchJobs()
+    const subscription = DataStore.observe(Job).subscribe(() => fetchJobs())
+    return () => {
+      subscription.unsubscribe()
+      //isSubscribed = false
+    }
+  }, [data])
 
-  const onChangeText = (key, value) => {
-    updateFormState({ ...formState, [key]: value })
+  const _renderItem = ({ item }) => {
+    const owner = Auth.user.attributes.sub
+    const check = owner === item.owner
+    return (
+      <>
+        <CardVacancies obj={item} onPress={onScreen(check ? 'JOB_ADD' : 'JOB_DETAIL', navigation, item)} />
+        <Space height={20} />
+      </>
+    )
   }
 
-  const createMessage = async () => {
-    if (!formState.title) return
-    await DataStore.save(new Message({ ...formState }))
-    updateFormState(initialState)
-  }
+  const _keyExtractor = (obj) => obj.id.toString()
 
   return (
-    <AppContainer onPress={goBack(navigation)}>
-      {console.log('m', messages)}
-      <TextInput onChangeText={(v) => onChangeText('title', v)} placeholder="Message title" value={formState.title} />
-      <TextInput
-        onChangeText={(v) => onChangeText('color', v)}
-        placeholder="Message color"
-        value={formState.color}
-        autoCapitalize="none"
+    <AppContainer onPress={goBack(navigation)} flatlist>
+      <FlatList
+        scrollEventThrottle={16}
+        data={data}
+        renderItem={_renderItem}
+        keyExtractor={_keyExtractor}
+        onEndReachedThreshold={0.5}
+        ListHeaderComponent={
+          <Header
+            onPress={goBack(navigation)}
+            onPressRight={onScreen('JOB_ADD', navigation)}
+            iconLeft="angle-dobule-left"
+            iconRight="plus-a"
+          />
+        }
+        stickyHeaderIndices={[0]}
       />
-      <Button onPress={createMessage} title="Create Message" />
-      {messages.map(({ title, id }) => (
-        <Text key={id}>{title}</Text>
-      ))}
     </AppContainer>
   )
 }
