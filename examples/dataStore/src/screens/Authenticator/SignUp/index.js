@@ -44,7 +44,7 @@ const SignUp = ({ navigation }) => {
       <AppContainer onPress={goBack(navigation)} title="Sign Up" loading={loading}>
         <Space height={70} />
         <Formik
-          initialValues={{ email: '', password: '', passwordConfirmation: '' }}
+          initialValues={{ email: 'raoffonom@icloud.com', password: 'qwerty123', passwordConfirmation: 'qwerty123' }}
           onSubmit={(values) => _onPress(values)}
           validationSchema={Yup.object().shape({
             email: Yup.string().email().required(),

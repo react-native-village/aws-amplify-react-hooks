@@ -46,7 +46,7 @@ const App = () => {
   const scheme = useColorScheme()
   return (
     <>
-      <ThemeProvider theme={Platform.OS === 'ios' ? DarkTheme : LightTheme}>
+      <ThemeProvider theme={Platform.OS !== 'ios' ? DarkTheme : LightTheme}>
         <AppNavigator />
       </ThemeProvider>
     </>

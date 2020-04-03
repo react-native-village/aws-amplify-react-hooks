@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Auth } from 'aws-amplify'
 import * as Keychain from 'react-native-keychain'
 import { AppContainer, Button } from 'react-native-unicorn-uikit'
-import { goHome } from '../../../constants'
+import { goHome, onScreen } from '../../../constants'
 
 const User = ({ navigation }) => {
   const [loading, setLoading] = useState(false)
@@ -26,9 +26,12 @@ const User = ({ navigation }) => {
     }
   }
 
+  const _onPressJob = () => onScreen('JOBS_MAIN', navigation)()
+
   return (
     <AppContainer message={error} loading={loading}>
       <Button title="Sign Out" onPress={_onPress} />
+      <Button title="Jobs" onPress={_onPressJob} />
     </AppContainer>
   )
 }
