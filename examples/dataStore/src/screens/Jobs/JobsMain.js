@@ -16,12 +16,10 @@ const JobsMain = ({ navigation }) => {
   }
 
   useEffect(() => {
-    // let isSubscribed = true // eslint-disable-line
     fetchJobs()
     const subscription = DataStore.observe(Job).subscribe(() => fetchJobs())
     return () => {
       subscription.unsubscribe()
-      //isSubscribed = false
     }
   }, [data])
 
