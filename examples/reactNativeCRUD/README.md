@@ -117,6 +117,7 @@ Android
 If incomprehensible errors appear, it means that somewhere you made a mistake in the configuration, so it is better to start from the beginning.
 
 1. Delete the amplfy folder
+`amplify delete`
 
 `rm -rf amplify`
 
