@@ -116,16 +116,18 @@ Android
 
 If incomprehensible errors appear, it means that somewhere you made a mistake in the configuration, so it is better to start from the beginning.
 
-1. Delete the amplfy folder
+1. Delete the amplfy
 `amplify delete`
+
+2. Delete the amplfy folder
 
 `rm -rf amplify`
 
-2. Delete the amplfy configuration file
+3. Delete the amplfy configuration file
 
 `rm -rf aws-exports.js`
 
-3. We go through these [steps](https://github.com/react-native-village/aws-amplify-react-hooks/blob/master/examples/reactNativeCRUD/README.md#step-3---init-amplify
+4. We go through these [steps](https://github.com/react-native-village/aws-amplify-react-hooks/blob/master/examples/reactNativeCRUD/README.md#step-3---init-amplify
 ) again
 
 
